@@ -1,2 +1,2 @@
-# RU_Python_II
+# RU Python II
 Course materials for RU Python II
