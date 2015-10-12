@@ -1,8 +1,3 @@
-<!DOCTYPE html>
-<head>
-</head>
-<html>
-<pre>
 #!/usr/bin/env python
 #!*-* coding:utf-8 *-*
 
@@ -16,10 +11,10 @@ LAB01 Learning Objective: Familiarization with argparse and parsing command line
 
 a. Review argparse module documentation
 
-b. Build an ArgumentParser object using the following parameters: 
+b. Build an ArgumentParser object using the following parameters:
    description: "Patent database search engine"
 
-c. Add support for the following arguments and argument attributes: 
+c. Add support for the following arguments and argument attributes:
    -a --author last first
    -p --patent_num
    -f --filing_date
@@ -31,6 +26,3 @@ e. Construct a generator called test_db_load() that returns a random function fr
    Test your generator with stub functions. (HINT: random is a module)
 
 """
-</pre>
-</body>
-</html>
