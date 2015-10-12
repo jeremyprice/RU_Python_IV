@@ -36,3 +36,9 @@ def foo_fixed(bar=None):
         bar = []
     bar.append('baz')
     return bar
+
+# further discussion: It can be said, too, that adding/changing the value of
+# something passed in as an argument is bad form.  It can have unexpected
+# consequences for the caller of the function if their variable is changed
+# as a result of calling the function.  Pass by value is often assumed in
+# Python, but there are some data types that are pass by reference.
