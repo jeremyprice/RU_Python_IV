@@ -3,11 +3,10 @@
 
 """
 
-:mod:`lab01_pyreview` -- Python review
+:mod:`lab_pyreview` -- Python review
 =========================================
 
-LAB01 Learning Objective: Familiarization with argparse and parsing command line arguments.
-      Optional Objective: Use docopt instead of argparse for this lab.
+LAB PyReview Learning Objective: Familiarization with argparse and parsing command line arguments.
 
 a. Review argparse module documentation
 
