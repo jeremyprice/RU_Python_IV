@@ -1,0 +1,170 @@
+<html>
+<head>
+</head>
+</body>
+<pre>
+#!/usr/bin/env python2
+#!*-* coding:utf-8 *-*
+
+"""
+
+:mod:`lab08_multiprocessing` -- Multiprocessing
+================================================
+
+LAB08 Learning Objective: Use multiple processes and a Queue to synchronize
+      work units for consumer.
+
+::
+
+  a. Ask for a directory to process (use raw_input())
+
+  b. Create a multiprocessing.Queue for producer/consumer processes to use
+
+  c. Find sub-directories in the given directory
+
+  d. Producer side: 
+     For each sub-directory, start a new multiprocessing.Process that walks 
+     the sub-directory, recursively building a dictionary of regular files, 
+     where the key is a SHA1 hash of the contents, and the value 
+     is the full path name. If duplicate files are discovered, 
+     print the paths.  When done, add the dictionary to the Queue.
+
+  e. Consumer side:
+     As directories become available on the Queue, merge them into a master 
+     dictionary called *rollup_dict*. Once again, if duplicate files are discovered,
+     print the paths.
+
+  f. When all processes have finished (how can you tell?), report their pid
+     numbers and exit codes. Also report the number of unique files in the given
+     directory.
+
+"""
+
+
+from multiprocessing import Process, Queue
+import os
+import sys
+import re
+import os
+import time
+import hashlib
+
+
+def _subdirectory_list(path):
+    """
+        Returns a list of fully qualified directory names in given path.
+    """
+
+    dirpath, dir_list, file_list = os.walk(path, topdown=True).next()
+    abs_dir_list = []
+    for dir in dir_list:
+        abs_dir_list.append(os.path.join(dirpath, dir))
+    return abs_dir_list
+    
+
+def _merge_dicts(rollup_dict, new_dict):
+    """ 
+        Merges two dictionaries together, reporting key collisions with values. The dictionary
+        values are pathnames of their key. Returns merged dictionary.
+    """
+
+    for key in new_dict:
+        if key in rollup_dict:
+            print "PATH:%s SAME AS %s" % (re.escape(rollup_dict[key]), re.escape(new_dict[key]))
+        else:
+            rollup_dict[key] = new_dict[key]
+    return rollup_dict
+     
+
+def _subtree_SHA1_dict_generator(path, workQ):
+    """ 
+        Construct and put a dictionary for given path (recursively) on workQ. Key is SHA1 of the path 
+        contents, value is the absolute path. Only do regular files.
+    """
+
+    new_dict = {}
+    file_count = 0
+    # walk the directory recursively, keeping a dict of found files by SHA1 digest
+    for dirpath, dir_list, file_list in os.walk(path, topdown=True):
+        for file in file_list:
+            abs_path = os.path.join(dirpath, file)
+     
+            # only allow regular files
+            if not os.path.isfile(abs_path):
+                continue
+
+            file_count += 1
+
+            # get SHA1
+            abs_path_sha1 = _sha1(abs_path)
+
+            if abs_path_sha1 in new_dict:
+                # already have this file
+                print "PATH:%s SAME AS %s" % (re.escape(abs_path), re.escape(new_dict[abs_path_sha1]))
+            else:
+                # not seen before, so remember it
+                new_dict[abs_path_sha1] = abs_path
+
+    print "path:", path, "done [", file_count, "files processed]"
+    workQ.put(new_dict)
+    
+
+def _start_subdirectory_processes(workQ, fn, dir_list):
+    """ 
+        Starts one multiprocessing.Process for each directory in dir_list using the given
+        function as target. The function receives a directory and Queue as parameters.
+    """
+
+    process_list = []
+    for dir in dir_list:
+        print "starting process for", dir
+        p = Process(target=fn, args=(dir, workQ))
+        p.start()
+        process_list.append(p)
+    return process_list
+
+
+def _sha1(path):
+    """ Returns the SHA1 hash of given path. """
+
+    sha1_obj = hashlib.sha1()
+    with open(path) as fh:
+        sha1_obj.update(fh.read())
+    return sha1_obj.hexdigest()
+
+
+if __name__ == "__main__":
+
+    path = raw_input("Enter path: ")
+    dir_list = _subdirectory_list(path)
+    if not dir_list:
+        print "No sub directories found in given path"
+        sys.exit()
+
+    workQ = Queue()
+    process_list = _start_subdirectory_processes(workQ, 
+                                                _subtree_SHA1_dict_generator,
+                                                dir_list)
+
+    # master dictionary 
+    rollup_dict = {}
+    
+    for i in range(len(process_list)):
+        new_dict = workQ.get()  # get a finished dictionary to merge into rollup
+        print "merging dict len=", len(new_dict)
+        _merge_dicts(rollup_dict, new_dict)
+        print "rollup_dict len=", len(rollup_dict)
+        
+    print "wait for all processes to terminate"
+    for p in process_list:
+        p.join()
+
+    print "process pid's and exit codes"
+    for p in process_list:
+        print "pid=",p.pid,"return code=",p.exitcode
+
+    print "unique files=", len(rollup_dict)
+    print "done"
+</pre>
+</body>
+</html>

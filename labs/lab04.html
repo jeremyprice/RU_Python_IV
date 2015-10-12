@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+</head>
+<html>
+<pre>
+#!/usr/bin/env python
+#!*-* coding:utf-8 *-*
+
+"""
+
+:mod:`lab04_DBAPI` -- DBAPI (PEP-249)
+=========================================
+
+LAB04 Learning Objective: Familiarization with DB-API
+      Optional Objective: Use the re module for step b
+      NOTE: Remember, you must commit() for updates to take effect
+
+ a. Define a new data-only class called PatentData with the following attributes:
+     #. last_name
+     #. first_name
+     #. patent_number
+     #. filing_date
+
+     PatentData has a method get_patent_dict() that returns a dict of instance data
+     using attribute names as the keys.
+
+ b. Now a choice. You can either use patent_data.sgm as the data source (use
+    the *re* module to source instances of PatentData) OR make up your own PatentData 
+    instances/data per a) above.
+
+ c. Implement a new class called PatentDB with the following methods:
+       NOTE: Feel free to combine functions (such as the finds) if easier
+       #. define_DB() with appropriate SQL statements to create the needed database and
+          tables (may want to include a drop database, if previous database exists).
+          Have it raise a DefineDBError exception with a message if an error occurs
+       #. load_DB() with appropriate SQL statements to load the data of
+          PatentData serialized records from either a file (i.e. the sgm file above) or
+          some other reference (such as hardcoded values or a custom made json file). Raise
+          LoadError exception with message if error occurs.
+       #. find_by_author() :  Use SQL SELECT statements to return a list of
+          patent numbers held by the given author, else None
+       #. find_by_patent_number():Use SQL SELECT statements to return all
+          attributes of the given patents as a list, else raise a PatentNotFoundError
+          exception
+       #. find_by_filing_date()Use SQL SELECT statements to return a list of
+          patent numbers filed on the given date (ISO8601 format), else None
+
+ d. Save PatentDB in a module called patentDB.py with a main() function,
+    and argparse (or docopt) code to support arguments for all method inputs.
+
+ e. Test your new module by running the following in main():
+       #. Define database with PatentDB.defineDB()
+       #. Populate with PatentDB.load_DB()
+       #. Test find_by_patent_number() 
+
+"""
+</pre>
+</body>
+</html>
+

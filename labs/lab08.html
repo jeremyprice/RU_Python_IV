@@ -1,0 +1,44 @@
+<html>
+<head>
+</head>
+</body>
+<pre>
+#!/usr/bin/env python2
+#!*-* coding:utf-8 *-*
+
+"""
+
+:mod:`lab08_multiprocessing` -- Multiprocessing
+================================================
+
+LAB08 Learning Objective: Use multiple processes and a Queue to synchronize
+      work units for consumer.
+
+::
+
+  a. Ask for a directory to process (use raw_input())
+
+  b. Create a multiprocessing.Queue for producer/consumer processes to use
+
+  c. Find sub-directories in the given directory
+
+  d. Producer side: 
+     For each sub-directory, start a new multiprocessing.Process that walks 
+     the sub-directory, recursively building a dictionary of regular files, 
+     where the key is a SHA1 hash of the contents, and the value 
+     is the full path name. If duplicate files are discovered, 
+     print the paths.  When done, add the dictionary to the Queue.
+
+  e. Consumer side:
+     As directories become available on the Queue, merge them into a master 
+     dictionary called *rollup_dict*. Once again, if duplicate files are discovered,
+     print the paths.
+
+  f. When all processes have finished (how can you tell?), report their pid
+     numbers and exit codes. Also report the number of unique files in the given
+     directory.
+
+"""
+</pre>
+</body>
+</html>

@@ -1,0 +1,140 @@
+{
+    "access": {
+        "serviceCatalog": [
+            {
+                "endpoints": [
+                    {
+                        "publicURL": "https://cdn2.clouddrive.com/v1/MossoCloudFS_081c4a74-7573-4f37-8b5a-d7d5788a69b1", 
+                        "region": "ORD", 
+                        "tenantId": "MossoCloudFS_081c4a74-7573-4f37-8b5a-d7d5788a69b1"
+                    }, 
+                    {
+                        "publicURL": "https://cdn1.clouddrive.com/v1/MossoCloudFS_081c4a74-7573-4f37-8b5a-d7d5788a69b1", 
+                        "region": "DFW", 
+                        "tenantId": "MossoCloudFS_081c4a74-7573-4f37-8b5a-d7d5788a69b1"
+                    }
+                ], 
+                "name": "cloudFilesCDN", 
+                "type": "rax:object-cdn"
+            }, 
+            {
+                "endpoints": [
+                    {
+                        "publicURL": "https://servers.api.rackspacecloud.com/v1.0/546532", 
+                        "tenantId": "546532", 
+                        "versionId": "1.0", 
+                        "versionInfo": "https://servers.api.rackspacecloud.com/v1.0", 
+                        "versionList": "https://servers.api.rackspacecloud.com/"
+                    }
+                ], 
+                "name": "cloudServers", 
+                "type": "compute"
+            }, 
+            {
+                "endpoints": [
+                    {
+                        "internalURL": "https://snet-storage101.ord1.clouddrive.com/v1/MossoCloudFS_081c4a74-7573-4f37-8b5a-d7d5788a69b1", 
+                        "publicURL": "https://storage101.ord1.clouddrive.com/v1/MossoCloudFS_081c4a74-7573-4f37-8b5a-d7d5788a69b1", 
+                        "region": "ORD", 
+                        "tenantId": "MossoCloudFS_081c4a74-7573-4f37-8b5a-d7d5788a69b1"
+                    }, 
+                    {
+                        "internalURL": "https://snet-storage101.dfw1.clouddrive.com/v1/MossoCloudFS_081c4a74-7573-4f37-8b5a-d7d5788a69b1", 
+                        "publicURL": "https://storage101.dfw1.clouddrive.com/v1/MossoCloudFS_081c4a74-7573-4f37-8b5a-d7d5788a69b1", 
+                        "region": "DFW", 
+                        "tenantId": "MossoCloudFS_081c4a74-7573-4f37-8b5a-d7d5788a69b1"
+                    }
+                ], 
+                "name": "cloudFiles", 
+                "type": "object-store"
+            }, 
+            {
+                "endpoints": [
+                    {
+                        "publicURL": "https://ord.loadbalancers.api.rackspacecloud.com/v1.0/546532", 
+                        "region": "ORD", 
+                        "tenantId": "546532"
+                    }, 
+                    {
+                        "publicURL": "https://dfw.loadbalancers.api.rackspacecloud.com/v1.0/546532", 
+                        "region": "DFW", 
+                        "tenantId": "546532"
+                    }
+                ], 
+                "name": "cloudLoadBalancers", 
+                "type": "rax:load-balancer"
+            }, 
+            {
+                "endpoints": [
+                    {
+                        "publicURL": "https://dfw.servers.api.rackspacecloud.com/v2/546532", 
+                        "region": "DFW", 
+                        "tenantId": "546532", 
+                        "versionId": "2", 
+                        "versionInfo": "https://dfw.servers.api.rackspacecloud.com/v2", 
+                        "versionList": "https://dfw.servers.api.rackspacecloud.com/"
+                    }, 
+                    {
+                        "publicURL": "https://ord.servers.api.rackspacecloud.com/v2/546532", 
+                        "region": "ORD", 
+                        "tenantId": "546532", 
+                        "versionId": "2", 
+                        "versionInfo": "https://ord.servers.api.rackspacecloud.com/v2", 
+                        "versionList": "https://ord.servers.api.rackspacecloud.com/"
+                    }
+                ], 
+                "name": "cloudServersOpenStack", 
+                "type": "compute"
+            }, 
+            {
+                "endpoints": [
+                    {
+                        "publicURL": "https://ord.databases.api.rackspacecloud.com/v1.0/546532", 
+                        "region": "ORD", 
+                        "tenantId": "546532"
+                    }, 
+                    {
+                        "publicURL": "https://dfw.databases.api.rackspacecloud.com/v1.0/546532", 
+                        "region": "DFW", 
+                        "tenantId": "546532"
+                    }
+                ], 
+                "name": "cloudDatabases", 
+                "type": "rax:database"
+            }, 
+            {
+                "endpoints": [
+                    {
+                        "publicURL": "https://monitoring.api.rackspacecloud.com/v1.0/546532", 
+                        "tenantId": "546532"
+                    }
+                ], 
+                "name": "cloudMonitoring", 
+                "type": "rax:monitor"
+            }, 
+            {
+                "endpoints": [
+                    {
+                        "publicURL": "https://dns.api.rackspacecloud.com/v1.0/546532", 
+                        "tenantId": "546532"
+                    }
+                ], 
+                "name": "cloudDNS", 
+                "type": "rax:dns"
+            }
+        ], 
+        "token": { "expires": "2012-09-27T23:50:36.000-05:00", "id": "e0608174-a29d-43b7-a7dc-e70c7020e8f3", "tenant": { "id": "544444", "name": "544444" } }, 
+        "user": {
+            "RAX-AUTH:defaultRegion": "ORD", 
+            "id": "84290", 
+            "name": "pvi00", 
+            "roles": [
+                {
+                    "description": "User Admin Role.", 
+                    "id": "3", 
+                    "name": "identity:user-admin"
+                }
+            ]
+        }
+    }
+}

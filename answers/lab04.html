@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<pre>
+<head>
+</head>
+<html>
+#!/usr/bin/env python
+#!*-* coding:utf-8 *-*
+
+"""
+
+:mod:`lab04_DBAPI` -- DBAPI (PEP-249)
+=========================================
+
+LAB04 Learning Objective: Familiarization with DB-API
+
+ a. Define a new data-only class called PatentData with the following attributes:
+     #. last_name
+     #. first_name
+     #. patent_number
+     #. filing_date
+
+     PatentData has a method get_patent_dict() that returns a dict of instance data
+     using attribute names as the keys.
+
+ b. Now a choice. You can either use patent_data.sgm as the data source (use
+    the *re* module to source instances of PatentData) OR make up your own PatentData 
+    instances per a) above.
+
+ c. Use json to persist the PatentData instances in a file. What data type(s)
+    could you use?
+
+ d. Implement a new class called PatentDB with the following methods:
+       #. define_DB() with appropriate SQL statements. Raises DefineDBError
+          exception with a message if error occurs
+       #. load_DB() with appropriate SQL statements to load the file of
+          PatentData serialized records from the json file. Raises
+          LoadError exception with message if error occurs
+       #. find_by_author() :  Use SQL SELECT statements to return a list of
+          patent numbers held by the given author, else None
+       #. find_by_patent_number():Use SQL SELECT statements to return all
+          attributes of the given patents as a list, else raise a PatentNotFoundError
+          exception
+       #. find_by_filing_date()Use SQL SELECT statements to return a list of
+          patent numbers filed on the given date (ISO8601 format), else None
+
+ e. Wrap PatentDB in a module called patentDB_runner.py with a main() function,
+    and argparse code to support arguments for all method inputs.
+
+ f. Create a mini patent database using the patentDB_runner module:
+       #. Define database with PatentDB.defineDB()
+       #. Populate with PatentDB.load_DB()
+       #. Test find_by_patent_number() 
+
+"""
+
+import MySQLdb
+import json
+import argparse
+
+
+class LoadError(Exception): 
+    pass
+
+
+class PatentNotFoundError(Exception): 
+    pass
+
+
+class DefineDBError(Exception): 
+    pass
+
+
+class PatentData(object):
+    
+    """ Defines instance (row) data for a patent. """
+   
+    def set_last_name(self, last_name):
+        self.last_name = last_name
+
+
+    def set_first_name(self, first_name):
+        self.first_name = first_name
+
+  
+    def set_patent_number(self, patent_number):
+        self.patent_number = patent_number
+
+
+    def set_filing_date(self, filing_date):
+        self.filing_date = filing_date
+
+    def __init__(self, last_name=None, first_name=None, patent_number=None, filing_date=None):
+
+        self.last_name = last_name
+        self.first_name = first_name
+        self.patent_number = patent_number
+        self.filing_date = filing_date
+
+
+    def get_patent_dict(self):
+
+        """ Returns a dict of patent instance data. """
+
+        return { "last_name":self.last_name,
+                 "first_name":self.first_name,
+                 "patent_number":self.patent_number,
+                 "filing_date":self.filing_date }
+
+class PatentDB(object):
+
+    def get_db_cursor(self, user, pswd):
+
+        """ Open db and return cursor. """
+
+        connect=MySQLdb.connect(passwd=pswd, user=user)
+        return connect.cursor()
+
+
+    def define_DB(self,cursor):
+
+        """ Defines the lab database environment. Raise DefineDBError. """
+
+        try:
+
+            cursor.execute("drop database if exists lab")
+            print "\ndrop database if exists lab::", cursor.fetchall()
+
+            cursor.execute("create database lab")
+            print "\ncreate database lab::", cursor.fetchall()
+
+            cursor.execute("show databases")
+            print "\nshow databases::", cursor.fetchall()
+
+            cursor.execute("use lab")
+            print "\nuse lab::", cursor.fetchall()
+
+            cursor.execute("create table patents (last_name varchar(50) null, \
+                                                            first_name varchar(30) null, \
+                                                            patent_number varchar(20) null,  \
+                                                            filing_date date null)")
+            print "\ncreate table patents ...::", cursor.fetchall()
+    
+            cursor.execute("show tables")
+            print "\nshow tables::", cursor.fetchall()
+
+        except Exception as e:
+            raise DefineDBError(e.message)
+
+
+    def load_DB(self, cursor, patent_data):
+
+        """ Load patent table from given patent data. Raises LoadError. """
+
+        for patent_dict in patent_data:
+
+            if patent_dict["filing_date"] is not None:
+
+                reform_date = (patent_dict["filing_date"][0:4] + '-' +
+                           patent_dict["filing_date"][4:6] + '-' +
+                           "01")
+            else:
+                reform_date = "0"*8 
+
+            try:
+                cursor.execute("insert into patents values(%s, %s, %s, %s)",
+                               (patent_dict["last_name"],
+                               patent_dict["first_name"],
+                               patent_dict["patent_number"],
+                               reform_date)
+                               )
+            except Exception as e:
+                raise LoadError(e.message)
+
+        cursor.execute("select * from patents")
+        print "\nselect * from patents:", cursor.fetchall()
+
+
+    def find_by_author(self, cursor, last_name):
+
+        """ Find by author. """
+
+        cursor.execute("select * from patents where last_name = %s", (last_name,))
+        return cursor.fetchall()
+
+
+    def find_by_patent_number(self, cursor, patent_number):
+
+        """ Find by patent_number. Raises: PatentNotFoundError. """
+
+        try:
+            cursor.execute("select * from patents where patent_number = %s",(patent_number,))
+            return cursor.fetchall()
+
+        except Exception as e:
+            raise PatentNotFoundError(e.message) 
+
+
+    def find_by_filing_date(self, cursor, filing_date):
+
+        """ Find by filing_date. """
+
+        cursor.execute("select * from patents where filing_date = %s",(filing_date,))
+        return cursor.fetchall()
+
+
+def main():
+
+    parser = argparse.ArgumentParser(description='Patent database search engine')
+    parser.add_argument('-f', '--patent_file', dest='patent_file',
+                       default="patent_data_json",
+                       help='Patent file name containing JSON patent info')
+    args = parser.parse_args()
+
+    patent_db = PatentDB()
+    cursor = patent_db.get_db_cursor("lab", "lab")
+    patent_db.define_DB(cursor)
+
+    # load the database with JSON data created externally
+
+    try:
+        with open(args.patent_file) as fh:
+            patent_data = json.load(fh)
+
+    except IOError as e:
+        print "Error opening JSON patent file:", e
+        sys.exit(127)
+ 
+    patent_db.load_DB(cursor, patent_data)
+
+    # look for any patents by last name Lee
+    print "\nPatents by author last name Lee:\n"
+    results = patent_db.find_by_author(cursor, "Lee")
+    for patent in results:
+        for field in patent:
+            print field,
+        print
+    print
+
+
+
+if __name__ == "__main__":
+
+    main()
+
+</body></html>
+

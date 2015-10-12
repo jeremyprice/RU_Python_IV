@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+</head>
+<html>
+<pre>
+#!/usr/bin/env python
+#!*-* coding:utf-8 *-*
+
+"""
+
+:mod:`lab09_patentDB_REST_server` -- REST server
+=================================================
+
+LAB08 Learning Objective: Familiarization with implementing a basic REST server
+      Optional Objective: Use the framework of your choosing (Tornado, Twisted, Flask, etc.)
+
+ #. Read the documentation for *bottle* web server micro framework at http://bottlepy.org
+
+ #. Copy the patentDB_runner.py module from lab04 into a new module called patentDB_REST_server.py
+
+ #. Modify patentDB_REST_server.py:
+
+    #. Remove code that initializes and loads the database (keep the methods however)
+
+    #. Convert into a *bottle* web app. Use host='0.0.0.0', port=80, debug=False, reloader=True on the run() method. You must be root 
+       to start the server, so su root or login as root (same password as student). Note: use port 411XX to access your VM port 80, 
+       where XX is your station number.
+
+    #. Now we create a partial REST API to our database. Bind the PatentDB find_by_author() method to a GET request for '/patent/<last>'.
+       Return a JSON payload containing a dictionary with keys "Results" and "Message". Return "Success" as the "Message" unless there 
+       is an exception, in which case the exception message should be returned. "Results" should be a list
+
+    #. Bind '/patent/form' to a GET that returns a form to enter author last, author first, and a patent number. Specify the action to
+       invoke '/patent'
+
+    #. Bind '/patent' to a POST that inserts a new patent with a zero filing date
+
+    #. Remove any remaining unused code
+
+ #. Test your new URLs and add yourself as a new patent holder
+
+"""
+</pre>
+</body></html>
+

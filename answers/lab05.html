@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<pre>
+<head>
+</head>
+<html>
+
+#!/usr/bin/env python
+#!*-* coding:utf-8 *-*
+
+"""
+
+:mod:`lab05_subprocess` -- subprocess module
+============================================
+
+LAB05 Learning Objective: Familiarization with subprocess
+
+::
+
+ a. Use the subprocess call function to run "ls -l" and print the output.
+
+ b. Do the same as a), but suppress stdout.
+
+ c. Do the same as a), but run the command "/bogus/command". What is the return code?
+
+ d. Use the platform module to determine what OS you are using, then execute a
+    command unique to that OS i.e. "yum search gcc" if Red Hat or Cent OS, or apt-get 
+    if Debian or Ubuntu
+
+ e. Use subprocess Popen to run "du -h" and output stdout to a pipe. Read the pipe
+    and print the output.
+
+ f. Create a new function commander() which takes any number of commands to execute
+    (as strings) on the arg list, then runs them sequentially printing stdout.
+
+"""
+
+import subprocess
+import platform
+import time
+
+
+def commander(*cmds):
+   
+    """ Runs the given command arguments """
+
+    for cmd in cmds:
+        print "\ncommander is doing [",cmd,"]"
+        p = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
+        print p.stdout.read()
+
+
+if __name__ == "__main__":
+
+
+    rc = subprocess.call("ls -l", shell=True)
+    print "return code for a) is",rc
+
+    rc = subprocess.call("ls -l", shell=True, stdout=open("/dev/null","w"))
+    print "return code for b) is",rc,"(output suppressed)"
+
+    try:
+        rc = subprocess.call(("/bogus/command","arg1","arg2"), shell=False)
+        print "return code for c) is",rc
+    except OSError:
+        print "Caught OSError"
+
+    my_platform = platform.system()
+
+    if my_platform == "Linux":
+        print "On Linux: using yum"
+        subprocess.call("yum search gcc", shell=True) 
+    elif my_platform == "Darwin":
+        print "On Darwin: no yum or apt-get. Tried fink?"
+    elif my_platform == "Debian":
+        print "On Debian: using apt-get"
+        subprocess.call("apt-get search gcc", shell=True) 
+    else:
+        print "On",my_platform,"which is not supported for this operation. Please call support..."
+
+    p = subprocess.Popen(["/usr/bin/du", "-h"], shell=False, stdout=subprocess.PIPE)
+    output = p.stdout.readlines()
+    for line in output:
+        print line.strip()
+
+    print '\nCalling commander() with "uname -a","ls patent*"'
+    commander("uname -a","ls patent*")
+
+</body></html>
+

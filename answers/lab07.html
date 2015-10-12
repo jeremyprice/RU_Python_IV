@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<pre>
+<head>
+</head>
+<html>
+#!/usr/bin/env python
+#-*- coding=utf-8 -*-
+
+"""
+
+:mod:`lab07_threads` -- Threads
+=========================================
+
+LAB07 -- Learning Objective: Familiarization with threading module and 
+         boss/worker pattern.
+
+::
+
+ 1. Read the doc for the threading module.
+
+ 2. Create a boss/worker model by threading the following functions: 
+
+    a) boss(): generates random work using the (3) patent find functions from lab04, 
+       then inserts the new work (as functions) in a data structure for worker 
+       threads. Use a Condition variable to synchronize access to the work data structure.
+
+    b) worker(): Run in daemon mode. Waits for an Event called *connections_avail_event*, 
+       then obtains and saves a *connection* object from a dictionary using it's thread 
+       id or name as the key. Use thread local storage to save connection object. 
+       Removes work from the work data structure managed by boss thread when *notified*. 
+       Executes the work item (a function). 
+
+    c) connection_mgr(): Waits for an Event called *init_complete_event*, then obtains 
+       and inserts a connection object for database access. The connection object can 
+       be any object i.e. can be simulated.
+
+  3. Create mainline code to initialize at least 4 worker threads, the boss, and 
+     connection_mgr threads. Test by generating at least 10 work items.
+
+
+"""
+import sys
+import time
+import random
+import threading
+
+    
+def printx(line):
+    """ Single thread output."""
+    with threading.Semaphore() as s: 
+        print line
+
+       
+def connection_mgr():
+    """ Store connections in connection_dict using thread id as key. """
+    init_complete_event.wait()  # wait for initialization to complete 
+    n = 100
+    for thread_id in worker_thread_ids:
+        worker_connections[thread_id] = n
+        n += 100
+    connections_avail_event.set() 
+
+    
+def boss(*args, **kwargs):
+    """ Produce and queue random work for workers. """
+    number_work_items = args[0]
+    work_generator = random_work()
+    for work in range(number_work_items):
+        work_cv.acquire()
+        work_item = work_generator.next()
+        work_queue.append(work_item)
+        printx("boss queued %s" % str(work_item))
+        work_cv.notifyAll()
+        work_cv.release()
+        time.sleep(random.randint(0,3))  # stop terrible boss
+
+    
+def worker(*args, **kwargs):
+    """ De-queue and consume work from boss. """
+    connections_avail_event.wait()  # first wait for Connection object
+    local_store = threading.local()  
+    local_store.connection = worker_connections[threading.current_thread().name]
+    while True:
+        work_cv.acquire()
+        while not work_queue:
+            work_cv.wait()
+        work_item = work_queue.pop()
+        work_cv.release()
+        printx("worker %s de-queued %s" % (str(threading.current_thread()),str(work_item)))
+        work_item()  # do some work then return to the water cooler
+
+     
+def find_by_author():
+    printx("doing find_by_author() on %s" % str(threading.current_thread()))
+
+
+def find_by_patent():
+    printx("doing find_by_patent() on %s" % str(threading.current_thread()))
+
+
+def find_by_date():
+    printx("doing find_by_date() on %s" % str(threading.current_thread()))
+
+
+def random_work():
+    """ Generator to return a random find function. """
+    func_set = [ find_by_author, find_by_patent, find_by_date ]
+    while True:
+        next_func = random.randint(0,len(func_set) - 1)
+        yield func_set[next_func]
+
+
+if __name__ == "__main__":
+    
+    number_worker_threads = 4
+    number_work_items = 10
+    worker_thread_ids = []  # created worker thread ids
+    worker_connections = {}  # key == thread id; value is connection object
+    work_queue = []  # the work queue produced by boss and consumed by worker
+    work_queue_lock = threading.RLock()
+    work_cv = threading.Condition(work_queue_lock)  # controls work_queue resource
+    connections_avail_event = threading.Event()  # gates access to worker_connections
+    init_complete_event = threading.Event()  # gates threads waiting for initialization
+    
+    connection_mgr_thread = threading.Thread(target=connection_mgr)
+    connection_mgr_thread.start()
+    printx("connection_mgr %s" % str(connection_mgr_thread))
+
+    for i in range(number_worker_threads):
+        worker_thread = threading.Thread(target=worker)
+        #worker_thread_ids.append(id(worker_thread))
+        worker_thread_ids.append(worker_thread.name)
+        worker_thread.daemon = True
+        worker_thread.start()
+        printx("worker %s" % str(worker_thread))
+    
+    boss_thread = threading.Thread(target=boss,args=(number_work_items,))
+    boss_thread.start()
+    printx("boss %s" % str(boss_thread))
+    
+    init_complete_event.set()  # signal initialization complete
+    boss_thread.join()  
+    connection_mgr_thread.join()
+    
+    time.sleep(1)
+    print "done"
+    
+
+</body></html>
+

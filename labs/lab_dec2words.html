@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<pre>
+<head>
+</head>
+<html>
+
+#!/usr/bin/env python
+#!*-* coding:utf-8 *-*
+
+"""
+
+LAB01 Learning Objective: Python Review
+
+"""
+
+class DecimalRangeError(Exception):
+    pass
+
+def dec2words(number):
+    digit_decoder = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+    teens_decoder = ['ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen']
+    tens_decoder = ['N/A', 'ten', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety']
+    result = ''
+
+    # sanity check the range 1 - 999 inclusive
+
+    if not 0 < number < 1000:
+        raise DecimalRangeError("Can't convert " + str(number))
+   
+    while number > 0:
+        if number > 99:
+            hundreds = str(number)[0]
+            result += digit_decoder[int(hundreds)] + " hundred "
+            number = number  % 100
+            continue
+        elif number > 19:
+            tens = str(number)[0]
+            result += tens_decoder[int(tens)] + " "
+            number  = number % 10
+            continue
+        elif 9 < number < 20:
+            result += teens_decoder[number - 10] + " "
+            number = 0
+            continue
+        else:
+            result += digit_decoder[number]
+            number = 0
+
+    return result.strip()
+
+if __name__ == '__main__':
+
+    assert dec2words(4) == 'four'
+    assert dec2words(133) == 'one hundred thirty three'
+    assert dec2words(12) == 'twelve'
+    assert dec2words(101) ==  'one hundred one'
+    assert dec2words(212) == 'two hundred twelve'
+    assert dec2words(40) == 'forty'
+    
+    try:
+        print dec2words(682)
+        #print dec2words(1002)
+        print dec2words(-1002)
+
+    except DecimalRangeError as exc:
+        print "Whoops, range error:", exc.message
+
+</body></html>
+
