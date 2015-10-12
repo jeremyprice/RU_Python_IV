@@ -26,7 +26,7 @@ LAB_JSON Learning Objective: Learn to navigate a JSON file and convert to a
      iii. get_compute_public_URL(region) # solve this programmatically
                                          # i.e. don't hard code
 
- d. Also provide these functions using the information given in class:
+ d. Also provide these functions:
      NOTE: Feel free to combine functions if easier
      i. get_image_id()  # use an ID of your choosing (Ex. 9db746f3-c54f-491b-b139-dea4b73bb9cb)
      ii. get_flavor_id()  # return 2

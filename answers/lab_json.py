@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-    Lab02 Example
+    lab_json Example solution
 """
 
 
@@ -15,15 +15,15 @@ def get_flavor():
     return 2
 
 def get_token_id(auth_response):
-    " Pull token from an OpenStack Auth response "
+    """ Pull token from an OpenStack Auth response """
     return auth_response['access']['token']['id']
 
 def get_tenant_id(auth_response):
-    " Pull tenant ID from an OpenStack Auth response "
+    """ Pull tenant ID from an OpenStack Auth response """
     return auth_response['access']['token']['tenant']['id']
 
 def get_compute_public_URL(auth_response):
-    " Pull Compute's Public URL from an OpenStack Auth response "
+    """ Pull Compute's Public URL from an OpenStack Auth response """
     endpoints = list()
     services = [service for service in
                     auth_response['access']['serviceCatalog']
