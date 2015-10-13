@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
 """
     Compute API JSON Module
@@ -20,13 +20,13 @@ def auth(username,
          url="https://identity.api.rackspacecloud.com/v2.0/tokens"):
 
     payload = {"auth":
-                   {"passwordCredentials":
+                   {"RAX-KSKEY:apiKeyCredentials":
                         {"username": username,
-                         "password": password}}}
+                         "apiKey": password}}}
     payload = bytes(json.dumps(payload),"utf-8")
     request = Request.Request(url=url, data=payload, headers=headers)
     response = Request.urlopen(request)
-    return str(response.read(),"utf-8")
+    return json.loads(str(response.read(),"utf-8"))
 
 def get_image_id():
     return "9db746f3-c54f-491b-b139-dea4b73bb9cb"
@@ -72,3 +72,5 @@ if __name__ == "__main__":
     auth_response = auth(username=args.username,
                          password=args.password)
     print(json.dumps(auth_response))
+    update_cache(auth_response)
+    update_cache(auth_response, "compute_api_info")

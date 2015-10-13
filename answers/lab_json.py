@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python2
 
 """
     lab_json Example solution
