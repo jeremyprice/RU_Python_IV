@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+	<html class="sl-root base export loaded">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Python II: Slides</title>
+		<meta name="description" content="Slides">
+
+		<link rel="stylesheet" type="text/css" href="lib/offline-v2.css">
+	</head>
+	<body class="reveal-viewport theme-font-sketch theme-color-black-mint">
+		<div class="reveal">
+			<div class="slides">
+				<section class="stack"><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 250px; height: auto;" data-block-id="ad3407264e7490d69eb2f0b07e9513bd"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1>Python II</h1>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="4a683bd29543f28dc44ec41528e376f3"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Introductions</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="83c8b940600f2461b8d61ec9a81786cc"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>Name</li>
+	<li>Role/Job</li>
+	<li>Length of tenure</li>
+	<li>Programming experience
+	<ul>
+		<li>Python specifically</li>
+	</ul>
+	</li>
+	<li>Why did you sign up?</li>
+	<li>Define success for you in this course</li>
+</ul>
+</div></div></section></section><section class="stack"><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="bfe0d01db43acd1db45e598386b04480"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>What this class is</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="1fd51f4791f4d2e7da331874dd897f24"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>Intermediate / Advanced topics in Python</li>
+	<li>Lots of hands-on lab work</li>
+	<li>Lots of class participation
+	<ul>
+		<li>Share your war stories and experiences</li>
+	</ul>
+	</li>
+	<li>A walk through some real-world usages for the language</li>
+	<li>The Alpha release, and delivery, of the course material</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="3cf698189734b2ce397b042f4d00e346"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>What this class isn't</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="45fb3b4585f52960aecf1a573134697a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>In depth information on specific Python modules</li>
+	<li>Every intermediate/advanced topic in Python</li>
+	<li>Rigidly structured</li>
+	<li>Finished yet...</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="13b1ceeebfbdddb32f5e59fc9b359103"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Alpha - My ask of you</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="2d44861f43abf34dd7925b26e44cc2b4"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>Feedback!</li>
+	<li>What's working?</li>
+	<li>What's not working?</li>
+	<li>What would you change?</li>
+	<li>What knowledge was too deep?
+	<ul>
+		<li>Too shallow?</li>
+	</ul>
+	</li>
+	<li>What topics were good, bad, ugly?</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="1fb4a42d1b19476d9c64c02cbe973270"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Class Structure</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="f058bf6e11e64917c7537c4182315439"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>We have a lot of topics we can cover in this class</li>
+	<li>I want to focus on the topics that are important to you</li>
+	<li>Each of the topics is (mostly) standalone
+	<ul>
+		<li>We will work "modules" in the course in the order voted on by you (TBD)</li>
+	</ul>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="df9d48edb735a6c9c318d75964606296"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Socrative</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="55817d68ba49059ae081fa22d0cbee90"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>We will be using Socrative to poll/quiz/register discontent</li>
+	<li>
+<a href="http://socrative.com" target="_blank">http://socrative.com/</a>
+	<ul>
+		<li>Choose "Student Login"</li>
+		<li>Enter my Room code: JEREMYPRICE</li>
+	</ul>
+	</li>
+</ul>
+</div></div></section></section><section class="stack"><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="64bace901e699e8279a4f6f0d6cece26"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" dir="ui"><h1>Pre-Work</h1></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="9980632bbfa3a5795e738a7f9c9cfa36"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>System Config</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="4539550632a53790a3a96ec8dc2974e8"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>Make sure Python is installed
+	<ul>
+		<li>Python 2 for this course</li>
+	</ul>
+	</li>
+	<li>Lab machines have CentOS 7 with Python 2 already installed </li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="f5829f0feae9e1427b5658c5df4b155f" style="min-width: 30px; min-height: 30px; width: 500px; height: 36px; left: 230px; top: 444px;"><div class="sl-block-content" style="z-index: 13;"><pre><code>python --version</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="3ba29c67a710fd0946b8e82fb84e8fe0"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Editor Config</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="bbc01c4121783d0bac050ece9a30362c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>Install and setup your favorite editor
+	<ul>
+		<li>vim, atom.io, emacs, nano, etc.</li>
+	</ul>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 27px; height: auto;" data-block-id="40cfd2e3d56311c07e4cc4c11babd64e"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Virtualenv</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 125px; height: auto;" data-block-id="42fcf6637525a64761769fba83bf3817"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="text-align: left; z-index: 11;">
+<ul>
+	<li>virtualenv allows us to setup isolated python environment customized to your version and dependency requirements</li>
+	<li>Comes with distribute, easy_install, and pip</li>
+	<li>Allows control of environments where root authority is lacking</li>
+</ul>
+
+<p> </p>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="2d6f41ead025e714270875e950bb5737" style="min-width: 30px; min-height: 30px; width: 395px; height: 262px; left: 283px; top: 368px;"><div class="sl-block-content" style="z-index: 13;" data-highlight-theme="zenburn"><pre class="bash"><code>#install on CentOS 7
+sudo yum install -y python-virtualenv
+
+# create a new virtual env
+virtualenv &lt;directory_name&gt;
+
+# work in the new virtual env
+cd &lt;directory_name&gt;
+source bin/activate
+
+# stop working on the virtual env
+deactivate
+</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="ec42fd503445740e79faef2635e27b1b"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>PIP</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="c90f6297826ca79f7bbb4bab43b0a3b0"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>PIP is a Python package manager
+	<ul>
+		<li>built on setuptools package</li>
+		<li>finds packages in the cheese shop
+		<ul>
+			<li><a href="https://pypi.python.org/pypi" target="_blank">https://pypi.python.org/pypi</a></li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+	<li>Standard package commands:
+	<ul>
+		<li>install, uninstall, list, search</li>
+	</ul>
+	</li>
+	<li>Installation instructions:
+	<ul>
+		<li>Already installed by virtualenv!</li>
+	</ul>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="50f8450ca8ee01bc2fefcbc1c6f065c0"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>IPython</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="1a7d3268faab9a4bcc9cdb0d6ad24d7c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>We will use IPython in this class for a lot of our shell interaction</li>
+	<li>You can create a virtualenv if desired
+	<ul>
+		<li>IPython, and dependencies, won't be the only packages we will install</li>
+	</ul>
+	</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 500px; height: 55px; left: 230px; top: 490px;" data-block-id="45335f7549cf5d9f65932a1f1ad5c00f"><div class="sl-block-content" style="z-index: 13;" data-highlight-theme="zenburn"><pre class="none"><code># make sure you are in the virtualenv
+pip install ipython</code></pre></div></div></section><section class="has-dark-background" data-background-color="#274e13"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="4f01f61d1caf8201cf1393f864bb66f9"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Lab</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="afb72248ecf9aa3ed4bbc9630e90f0e1"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>Verify Python version info</li>
+	<li>Install virtualenv</li>
+	<li>Create a virtualenv
+	<ul>
+		<li>activate it</li>
+	</ul>
+	</li>
+	<li>Install IPython in tthe virtualenv</li>
+	<li>Register your completion in Socrative</li>
+</ul>
+</div></div></section></section><section class="stack"><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="9f747b7c1e3b12fada2f607d614a50f4"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1>Python Review</h1>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="b66f37fe21f8fdf4d4e30998e10d1027"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Anatomy of a Module</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="c4df4c3e1e48fe4a70561ab78742437a" style="min-width: 30px; min-height: 30px; width: 500px; height: 249px; left: 230px; top: 274px;"><div class="sl-block-content" style="z-index: 12;"><pre class="python"><code>#!/usr/bin/env python2
+# -*- coding: utf-8 -*-
+# Line #1 = shebang
+# Line #2 = encoding declaration
+
+"""Docstrings"""
+# Inline documentation
+
+Import(s)
+
+Statements</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="7207b49664da6f8faa4266d46c97e156"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Python Keywords</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 498px; height: 157px; left: 230px; top: 274px;" data-block-id="d10afe5d979474ad3ceb2f151721741f"><div class="sl-block-content" style="z-index: 12;"><pre class="asciidoc"><code>and       del       from      not       while
+as        elif      global    or        with
+assert    else      if        pass      yield
+break     except    import    print
+class     exec      in        raise
+continue  finally   is        return
+def       for       lambda    try</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="08d70c1ef35ca9f24cea85b2fda35372"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Tuple Type</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="38edd88794132f02c51a31ffe87c11cb"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>Tuples are sequences of other objects that cannot be changed (they are “immutable”)</li>
+	<li>Tuples can contain any type of object, and can be sliced (remember, they’re ordered)</li>
+	<li>A one element tuple is formed by (element,) where the comma makes it a tuple</li>
+	<li>Examples:</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="c6be75fadd3465c5d47bc7110836a4c8" style="min-width: 30px; min-height: 30px; width: 500px; height: 94px; left: 230px; top: 560px;"><div class="sl-block-content" style="z-index: 13;"><pre><code>tup = (1, "a", 3)
+tup = tuple()
+tup = (1,) # Comma needed for single element
+gen = (x**2 for x in range(1,4)) # Not a tuple!</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="b4b3d0e2d6fa75c6eef81fce92a6d820"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>List Type</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="16f3e21c11e4f1a638e0c130000b45ca"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>
+	<p>Lists are sequences that can be changed (“mutable”)</p>
+	</li>
+	<li>
+	<p>Lists can contain other object types and be sliced</p>
+	</li>
+	<li>
+	<p>A list is a set of objects separated by commas and closed in square brackets</p>
+	</li>
+	<li>
+	<p>Examples:</p>
+	</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="82208a2140c376065e7483a87d10a1ac" style="min-width: 30px; min-height: 30px; width: 308px; height: 80px; left: 326px; top: 489px;"><div class="sl-block-content" style="z-index: 13;"><pre><code>lst = [1, "a", 3]
+lst = list()
+lst = [x for x in xrange(5)]</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="d40195872fda290df1f1f1f3b76feeb4"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Dictionary Type</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="40169bf3489037768a8faed168c6f42c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>
+	<p>A dictionary (“dict”) type is a set of expressions that are associated 1 to 1 with other expressions</p>
+	</li>
+	<li>
+	<p>A dict provides a handy “mapping” between a “key” expression and its associated “value” expression</p>
+	</li>
+	<li>
+	<p>A dict is not an ordered sequence, it’s a mapping.</p>
+	</li>
+	<li>
+	<p>Examples:</p>
+	</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="8a23f2cb11145212ebea58d33fe741cf" style="min-width: 30px; min-height: 30px; width: 423px; height: 80px; left: 269px; top: 520px;"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code>dic = {"a": 1}
+dic = dict(a=1)
+dic = {x: ord(x) for x in range(97, 107)}</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 57px; height: auto;" data-block-id="8a477cb23399eacc10633d38502cc588"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Set Type</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 146px; height: auto;" data-block-id="31d0ceecff74adcbcdc82e871d8d23de"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>A set is a mutable group of unordered immutable objects with unique values i.e. no duplicates (so the set is mutable, but not the objects within it)</li>
+	<li>Uses the ‘{}’ symbols just like a dictionary, but doesn’t have ‘:’ i.e. no key/value pairs</li>
+	<li>Slicing is not allowed (why?), but iterators work</li>
+	<li>Set operations are powerful, but perhaps not the most efficient</li>
+	<li>Examples:</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="4a55bf33bffbd75cd6dbc7e5438ca259" style="min-width: 30px; min-height: 30px; width: 296px; height: 80px; left: 332px; top: 505px;"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code>st = {1,2,2,3}
+st = set(1,2,2,3)
+st = {x for x in range(1,4)}</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 33px; height: auto;" data-block-id="7c0ad5c7c209ff9b4418e96015b23b16"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Yield Statement</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 140px; height: auto;" data-block-id="e52b425aabe0c088939626fbce491f4a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>
+	<p>yield is similar to return, but suspends execution of the called function instead of ending the function</p>
+
+	<ul>
+		<li>
+		<p>Saves the state</p>
+		</li>
+	</ul>
+	</li>
+	<li>
+	<p>On the next call to the function, yield picks up where it left off, with all identifier values still holding the same values</p>
+	</li>
+	<li>
+	<p>A function with a yield statement is a generator</p>
+	</li>
+	<li>
+	<p>Example:</p>
+	</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="537c59722f164aeb0d028e055e55261f" style="min-width: 30px; min-height: 30px; width: 205px; height: 97px; left: 378px; top: 489px;"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code>def foo(bar=10):
+    i = 1
+    while i &lt; bar:
+        yield i</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 33px; height: auto;" data-block-id="013cc27fc181f2d53eb3eceea4be9908"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>With Statement</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 140px; height: auto;" data-block-id="23d483949552ab56084691b4e4d9c69c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>
+	<p>The with statement is used to run a suite of other statements under a “context manager”</p>
+	</li>
+	<li>
+	<p>Special methods __entry__() and __exit() are called to setup and takedown a “context”</p>
+	</li>
+	<li>
+	<p>Common for doing i/o (which auto-closes the file handle) and threading (which auto-acquires and releases lock)</p>
+	</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 375px; height: 55px; left: 293px; top: 444px;" data-block-id="6479886d43802d800630c69b42ef8d09"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code>with file("foo.txt", "r") as infile:
+    all_txt = infile.read()
+</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="c0edc73c719b6cd3bdc61f7e77156c2e"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Import and From Statements</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="39864f663da4015ab35b2a64bb29d82b"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>
+	<p>To make a set of identifiers in another module available for use by your module, you must first use import or from</p>
+	</li>
+	<li>
+	<p>import pulls in identifiers from module(s) but the module name must be used as a prefix</p>
+
+	<ul>
+		<li>
+		<p>only module name is added to local namespace</p>
+		</li>
+	</ul>
+	</li>
+	<li>
+	<p>from pulls in identifiers from modules but avoids need to prefix with the module name</p>
+
+	<ul>
+		<li>
+		<p>identifier is added to local namespace</p>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div></div></section><section class="has-dark-background" data-background-color="#274e13"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="b224d248ab6226880227c7fa177b762c"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Lab - Pyreview</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="6fb8e0bc4e5a108cf25b8170dfa8e990"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>Follow the instructions in:</li>
+</ul>
+
+<pre style="text-align:center">lab_pyreview.py</pre>
+
+<ul>
+	<li>Register your completion in Socrative</li>
+</ul>
+</div></div></section></section><section class="stack"><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="62e347971a15c8502c2f2af1900fdeb2"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1>Serialization</h1>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="f1c61382a232e515813b48cce34fb1ab"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>JSON</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="4eba138fe49fecfcf546031bbb70bd60"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>
+	<p>Javascript Object Notation</p>
+	</li>
+	<li>
+	<p>Part of Javascript language definition</p>
+	</li>
+	<li>
+	<p>Easy for parse for humans and machines</p>
+	</li>
+	<li>
+	<p>Language independent</p>
+	</li>
+	<li>
+	<p>“lightweight data interchange format”</p>
+	</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="800931370d5d072862fc49e3df4c671d" style="min-width: 30px; min-height: 30px; width: 469px; height: 50px; left: 246px; top: 510px;"><div class="sl-block-content" style="z-index: 13;"><pre class="bash"><code>Name/value pair collection (dict in Python)
+Ordered list of values (list in Python)</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="aebd62350cbaf19e817f078f04919c58"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>JSON Details</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="94d04a290a62b131dbed1f61d74fecea"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>
+	<p>An “object” is an unordered set of name:value pairs (called “members”) separated by commas and surrounded by curly braces</p>
+
+	<ul>
+		<li>
+		<pre>{ Name1:Value1, Name2:Value1,… }</pre>
+		</li>
+	</ul>
+	</li>
+	<li>
+	<p>An “array” is a set of “elements” surrounded by square brackets</p>
+
+	<ul>
+		<li>
+		<pre>[ element1, element2,… ]</pre>
+		</li>
+	</ul>
+	</li>
+	<li>
+	<p>Elements are strings, numbers, true, false, null, object, array</p>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="c678f0328a614915951ca2407b239304"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>More JSON</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="293c4d15e70bf170390b1c5057d66094"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>
+	<p>Strings are made of:</p>
+
+	<ul>
+		<li>
+		<p>Unicode chars (\uhhhh)</p>
+		</li>
+		<li>
+		<p>\,\\,/,\b,\f,\n,\r,\t</p>
+		</li>
+	</ul>
+	</li>
+	<li>
+	<p>Numbers are signed integer, decimal, or exponent (“e”) flavors only</p>
+	</li>
+	<li>
+	<p>Whitespace is fine</p>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="c3bb888daef9d80c90500b0f1a5d6e76"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Python to JSON</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="807708580a6b5c0ebc530e5cbc02abc9"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<ul>
+	<li>import the json module</li>
+	<li>Serialize a Python object to JSON</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="decd5574bb4cf0f1c303f9dfe7424d55" style="min-width: 30px; min-height: 30px; width: 427px; height: 80px; left: 267px; top: 380px;"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code>import json
+json.dump(python_obj, fo, **kwargs)
+json.dumps(python_obj, **kwargs)</code></pre></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="88add78d2a2fead0efe2757e4698368c" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 181px; top: 497px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;">
+<p>Note: JSON is not a ”framed” protocol <br>
+i.e. can’t append multiple JSON objects to same file</p>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="f9fa1cfb90d2de856c89be3157de2873"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>JSON to Python</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="5bbe142efbdfc5dba9d21a32ab8fdc51"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>import the json module</li>
+	<li>Deserialize a JSON object to Python</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 427px; height: 80px; left: 267px; top: 373px;" data-block-id="8a081ff60452964cb3fa1bf39f818fe0"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code>import json
+python_obj = json.load(fo, **kwargs)
+python_obj = json.loads(string, **kwargs)</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="9ede19392aea62a261328d879a86b97f"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>JSON Module Caveats</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="48c9e150199bb1754997f503691d9d94"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>
+	<p>JSON keys in key/value pairs are always strings. Unlike Python.</p>
+	</li>
+	<li>
+	<p>Default json module encoder only encodes “ASCII-compatible” strings. Use u for other encodings</p>
+	</li>
+	<li>
+	<p>Same name in name:value pairs uses the last one</p>
+	</li>
+	<li>
+	<p>Out of range floats are handled correctly (nan, inf, -inf)</p>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="cc1835a7d49530070be014445e1311d4"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Python to JSON Translations</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 346px; left: 307px; top: 280px; height: auto;" data-block-id="3c84b5f7667594174378740f10d8b80a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<pre><span style="font-size:0.7em">dict -&gt; object
+list, tuple -&gt; array
+str, unicode -&gt; string
+int, float -&gt; number
+True, False -&gt; true, false
+None -&gt; null</span></pre>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="881ec559d261971dbea03d8a56a5b69c"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Pickle and Shelve</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="ba4a4795c71c329ec4d1636454a2992c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>
+	<p>The pickle module does a similar job to JSON, but is Python specific</p>
+
+	<ul>
+		<li>
+		<p>Not good for machine data interchange</p>
+		</li>
+		<li>
+		<p>Allows multiple pickled objects to be dumped to the same file</p>
+
+		<ul>
+			<li>
+			<p>must be loaded in same order on way back</p>
+			</li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+	<li>
+	<p>The shelve module essentially provided a persistent dict for pickled objects in a database</p>
+	</li>
+	<li>
+	<p>Opinion: Only use these for interchange within your own app</p>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="977e7f5c48d480797cd48b1bc346fdf4"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Performance</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="08330435217626112cd4465c9633ff16"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>The builtin json module can be slow</li>
+	<li>Other pypi packages have C extensions to speed them up
+	<ul>
+		<li>simplejson, yajl, python-cjson, UltraJSON</li>
+	</ul>
+	</li>
+	<li>Opinion:
+	<ul>
+		<li>Don't load/save huge json objects</li>
+		<li>profile your app to make sure it is the json encode/decode</li>
+	</ul>
+	</li>
+</ul>
+</div></div></section><section class="has-dark-background" data-background-color="#274e13"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="a92b84003797bbec17e8d9c97840723d"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Lab JSON</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="217cc7414054ab50d218d266cdfc50f6"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>
+<span style="color:rgb(255, 255, 255); text-align:left">Follow the instructions in:</span>
+	<ul>
+		<li>
+		<pre>lab_json.py</pre>
+		</li>
+	</ul>
+	</li>
+	<li>
+<span style="color:rgb(255, 255, 255); text-align:left">​</span>Register your completion in Socrative</li>
+</ul>
+</div></div></section></section><section class="stack"><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="d5cabbf27fd3a150dc2745ecfad57079"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1>REST</h1>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="657d76438a9577ada30b47a8d2d17297"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>REST Principles</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="d4c7b45f1f784756319f8b9c29134d04"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>
+	<p>Representational State Transfer</p>
+	</li>
+	<li>
+	<p>A simple, client/server web services API currently in favor</p>
+	</li>
+	<li>
+	<p>Way of locating and manipulating “resources” (usually XML or JSON documents) on a network</p>
+	</li>
+	<li>
+	<p>Commonly based HTTP protocol (GET, POST, PUT, DELETE)</p>
+	</li>
+	<li>
+	<p>Stateless (all state on client or server)</p>
+	</li>
+	<li>
+	<p>Simple, predictable resource pathing scheme based on URL</p>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 103px; height: auto;" data-block-id="4108edf05663aeefa534bee0fa7982bc"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>More RESTing</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 199px; height: auto;" data-block-id="266e7392a124b6c37353105dbf8d8344"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>
+	<p>ReSTful services generally map a CRUD interface (Create, Read, Update, Delete) by URL mappings that embed data</p>
+
+	<ul>
+		<li>
+		<p>e.g. GET v2/{tenant_id}/servers</p>
+		</li>
+		<li>
+		<p>HTTP POST -&gt; Create</p>
+		</li>
+		<li>
+		<p>GET -&gt; Read</p>
+		</li>
+		<li>
+		<p>PUT -&gt; Update</p>
+		</li>
+		<li>
+		<p>DELETE -&gt; Delete</p>
+		</li>
+	</ul>
+	</li>
+	<li>
+	<p>HTTP GET calls to a ReSTful service should not change state i.e. read only</p>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="48475dd6bdaef35fb95f630c84c3623e"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>OpenStack REST API</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="352a906ab65dbbec6c5eef4ed7f5b4b8"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>
+	<p>Openstack uses ReST to implement it’s user-controlled cloud provisioning service</p>
+	</li>
+	<li>
+	<p>Requires a set of “endpoint” URL’s which have service request data appended e.g.</p>
+	</li>
+	<li>
+	<p>Adding “v2.0/tokens” to the Identity service “endpoint” URL, inserting login credentials, and POST’ing will return a “token” that allows use of the v2.0 API</p>
+	</li>
+	<li>
+	<p>e.g. Adding “v2/{tenant_id}/servers/ips for the Compute service will return server IP addresses</p>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 13px; height: auto;" data-block-id="1565470f9d34238332a376c7e6583b17"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>OpenStack REST API</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 99px; height: auto;" data-block-id="869ff10e9f4e2590540e3dc8853cbbf8"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>
+	<p>See the Openstack API Reference at http://api.openstack.org/ for complete API</p>
+	</li>
+	<li>
+	<p>Workflow to use Openstack API:</p>
+
+	<ul>
+		<li>
+		<p>Obtain tenant id and API key and authenticate (24 hour timeout)</p>
+		</li>
+		<li>
+		<p>Extract token id and appropriate endpoint URL for the desired service from the response</p>
+		</li>
+		<li>
+		<p>Send API request(s) to the appropriate service endpoint(s) including the X-Auth-Token HTTP header for each request</p>
+		</li>
+		<li>
+		<p>If a 401 HTTP response occurs, re-authenticate</p>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 54px; height: auto;" data-block-id="0380f6313628350d0f03d0650907d4fd"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Accessing Web Data: urllib2</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 149px; height: auto;" data-block-id="c4d8526eb21af6603819813131411ef7"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>
+	<p>Client functions to access URL’s</p>
+	</li>
+	<li>
+	<pre>import urllib2</pre>
+	</li>
+	<li>
+	<p>urllib2.urlopen(url[,data]) is a common call signature</p>
+
+	<ul>
+		<li>
+		<p>url is the URL of the target resource</p>
+		</li>
+		<li>
+		<p>data is to be sent to the server</p>
+		</li>
+	</ul>
+	</li>
+	<li>
+	<p>Only HTTP uses data currently</p>
+	</li>
+	<li>
+	<p>If data exists</p>
+
+	<ul>
+		<li>
+		<p>it must be URL encoded</p>
+		</li>
+		<li>
+		<p>HTTP GET becomes a POST</p>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 66px; height: auto;" data-block-id="888913486f103d1e5cc2cf74aa4d0509"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>urllib2</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 177px; height: auto;" data-block-id="cd3149a7dd880b12bfd96a83d21533f1"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>
+	<p>A “file-like object” is returned from urlopen() which can be accessed with file semantics (read, readlines, etc.)</p>
+	</li>
+	<li>
+	<pre>Raises:
+URLError (subclass of IOError)
+HTTPError (subclass of URLError)</pre>
+	</li>
+	<li>
+	<p>Also takes urllib2.Request objects, useful for including HTTP headers in a dict (or use Request add_header method)</p>
+	</li>
+	<li>
+	<p>Can handle redirections, HTTP error responses, cookies, proxies, HTTP authentication</p>
+	</li>
+</ul>
+</div></div></section><section class="has-dark-background" data-background-color="#274e13"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="e896244e6ba7ca27354f879a2dc85fe5"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Lab urllib2 REST</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="a51517af7b6576f0f8dc1551e249e8f5"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>Follow the instructions in:
+	<ul>
+		<li>
+		<pre>lab_urllib2_REST.py</pre>
+		</li>
+	</ul>
+	</li>
+	<li>
+<span style="color:rgb(255, 255, 255); text-align:left">Bonus points: print your repos from GitHub</span>
+	<ul>
+		<li><a href="https://api.github.com/users/&lt;your_username&gt;/repos" target="_blank">https://api.github.com/users/&lt;your_username&gt;/repos</a></li>
+	</ul>
+	</li>
+	<li>Register your completion in Socrative</li>
+</ul>
+</div></div></section></section>
+			</div>
+		</div>
+
+		<script>
+			var SLConfig = {"deck": {"id":512444,"slug":"python-ii","title":"Python II","description":"Course materials for the penultimate class in the software development curriculum: Python II","visibility":"self","published_at":null,"sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/secure/770c85/decks.jpg","view_count":0,"user":{"id":105368,"username":"racku","name":"Rackspace University","description":"","thumbnail_url":"https://www.gravatar.com/avatar/4fdd35b37f5a9854774386e628b420fe?s=140\u0026d=https%3A%2F%2Fs3.amazonaws.com%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","pro":true,"enterprise":false,"enterprise_manager":false,"settings":{"id":245,"present_controls":true,"present_upsizing":true,"present_notes":true},"registered":true},"background_transition":"concave","transition":"default","theme_id":null,"theme_font":"sketch","theme_color":"black-mint","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":false,"rolling_links":false,"center":false,"should_loop":false,"share_notes":false,"rtl":false,"version":2,"notes":{}}};
+			SLConfig.current_user = {
+				name: "Rackspace University",
+				username: "racku",
+				pro: true
+			};
+		</script>
+
+		<script src="lib/head.min.js"></script>
+		<script src="lib/reveal.min.js"></script>
+		<script>
+			// Make Slides speaker notes available in the reveal.js speaker view
+			if( SLConfig.deck.notes ) {
+				[].forEach.call( document.querySelectorAll( '.reveal .slides section' ), function( slide ) {
+
+					var value = SLConfig.deck.notes[ slide.getAttribute( 'data-id' ) ];
+					if( value && typeof value === 'string' ) {
+						slide.setAttribute( 'data-notes', value );
+					}
+
+				} );
+			}
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				mouseWheel: false,
+				showNotes: SLConfig.deck.share_notes,
+
+				autoSlide: SLConfig.deck.auto_slide_interval || 0,
+				autoSlideStoppable: true,
+
+				rolling_links: SLConfig.deck.rolling_links || true,
+				center: SLConfig.deck.center || false,
+				loop: SLConfig.deck.should_loop || false,
+				rtl: SLConfig.deck.rtl || false,
+
+				transition: SLConfig.deck.transition,
+				backgroundTransition: SLConfig.deck.background_transition,
+
+				maxScale: 2,
+
+				dependencies: [
+					{ src: 'lib/reveal-plugins/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/reveal-plugins/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/reveal-plugins/highlight/highlight.js', async: true, callback: function() { hljs.initHighlighting(); hljs.initHighlightingOnLoad(); } },
+					{ src: 'lib/reveal-plugins/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+		</script>
+
+		
+
+	</body>
+</html>
