@@ -1,22 +1,17 @@
-<!DOCTYPE html>
-<pre>
-<head>
-</head>
-<html>
-<pre>
 #!/usr/bin/env python
 #!*-* coding:utf-8 *-*
 
 """
 
-:mod:`lab03_urllib2_REST` -- urllib2 and REST
+:mod:`lab_urllib2_REST` -- urllib2 and REST
 =============================================
 
-LAB03 Learning Objective: Familiarization with urllib2 module and client REST 
+LAB urllib2 REST
+      Learning Objective: Familiarization with urllib2 module and client REST
       API usage.
       Optional Objective: Can use requests and docopt for this lab
 
- a. Use argparse to accept the following parameters: 
+ a. Use argparse to accept the following parameters:
 
      -c --creds  takes (2) arguments: username and api-key OR username and password
 
@@ -43,7 +38,7 @@ LAB03 Learning Objective: Familiarization with urllib2 module and client REST
  c. Call your compute_api_json update_auth_response() to update the auth_api_info cache file.
 
  d. Run the following curl, then convert into a urllib2 call:
- 
+
    curl -s https://dfw.servers.api.rackspacecloud.com/v2/TENANT/servers/detail \
      -H "X-Auth-Token: TOKEN"
 
@@ -52,6 +47,3 @@ LAB03 Learning Objective: Familiarization with urllib2 module and client REST
  e. Run your program and print the results.
 
 """
-</pre>
-</body>
-</html>
