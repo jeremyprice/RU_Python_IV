@@ -290,7 +290,7 @@ lst = [x for x in xrange(5)]</code></pre></div></div></section><section><div cla
 </div></div>
 <div class="sl-block" data-block-type="code" data-block-id="8a23f2cb11145212ebea58d33fe741cf" style="min-width: 30px; min-height: 30px; width: 423px; height: 80px; left: 269px; top: 520px;"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code>dic = {"a": 1}
 dic = dict(a=1)
-dic = {x: ord(x) for x in range(97, 107)}</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 57px; height: auto;" data-block-id="8a477cb23399eacc10633d38502cc588"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+dic = {x: chr(x) for x in range(97, 107)}</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 57px; height: auto;" data-block-id="8a477cb23399eacc10633d38502cc588"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
 <h2>Set Type</h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 146px; height: auto;" data-block-id="31d0ceecff74adcbcdc82e871d8d23de"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
@@ -303,7 +303,7 @@ dic = {x: ord(x) for x in range(97, 107)}</code></pre></div></div></section><sec
 </ul>
 </div></div>
 <div class="sl-block" data-block-type="code" data-block-id="4a55bf33bffbd75cd6dbc7e5438ca259" style="min-width: 30px; min-height: 30px; width: 296px; height: 80px; left: 332px; top: 505px;"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code>st = {1,2,2,3}
-st = set(1,2,2,3)
+st = set([1,2,2,3])
 st = {x for x in range(1,4)}</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 33px; height: auto;" data-block-id="7c0ad5c7c209ff9b4418e96015b23b16"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
 <h2>Yield Statement</h2>
 </div></div>
@@ -329,10 +329,11 @@ st = {x for x in range(1,4)}</code></pre></div></div></section><section><div cla
 	</li>
 </ul>
 </div></div>
-<div class="sl-block" data-block-type="code" data-block-id="537c59722f164aeb0d028e055e55261f" style="min-width: 30px; min-height: 30px; width: 205px; height: 97px; left: 378px; top: 489px;"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code>def foo(bar=10):
+<div class="sl-block" data-block-type="code" data-block-id="537c59722f164aeb0d028e055e55261f" style="min-width: 30px; min-height: 30px; width: 205px; height: 114px; left: 378px; top: 489px;"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code>def foo(bar=10):
     i = 1
     while i &lt; bar:
-        yield i</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 33px; height: auto;" data-block-id="013cc27fc181f2d53eb3eceea4be9908"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+        yield i
+        i = i + 1</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 33px; height: auto;" data-block-id="013cc27fc181f2d53eb3eceea4be9908"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
 <h2>With Statement</h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 140px; height: auto;" data-block-id="23d483949552ab56084691b4e4d9c69c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
@@ -341,7 +342,7 @@ st = {x for x in range(1,4)}</code></pre></div></div></section><section><div cla
 	<p>The with statement is used to run a suite of other statements under a “context manager”</p>
 	</li>
 	<li>
-	<p>Special methods __entry__() and __exit() are called to setup and takedown a “context”</p>
+	<p>Special methods __enter__() and __exit__() are called to setup and takedown a “context”</p>
 	</li>
 	<li>
 	<p>Common for doing i/o (which auto-closes the file handle) and threading (which auto-acquires and releases lock)</p>
@@ -762,6 +763,575 @@ HTTPError (subclass of URLError)</pre>
 		<li><a href="https://api.github.com/users/&lt;your_username&gt;/repos" target="_blank">https://api.github.com/users/&lt;your_username&gt;/repos</a></li>
 	</ul>
 	</li>
+	<li>Register your completion in Socrative</li>
+</ul>
+</div></div></section></section><section class="stack"><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="2f2668d20a783c95e34a56aa531e85c1"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1>Subprocessing</h1>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="83b30e5ca810a1f224df479286d9f19b"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Subprocessing in Python</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="7b5eff37132e4d84679efa6574ec66d3"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>
+	<p>Python can spawn and control entire processes using the subprocess module</p>
+	</li>
+	<li>
+	<p>Generally means redirecting the basic file descriptors (stdin, stdout, stderr) to gain programmatic access</p>
+	</li>
+	<li>
+	<p>Forks a new process and uses pipes for redirection</p>
+	</li>
+	<li>
+	<p>As usual, beware of invoking a process based on direct or indirect user input</p>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="3cbd70b304757d3d4830aba9d58f0567"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Subprocess Module</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="4b02d3aa58ad59539881a1d6703bb63a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>
+	<p>Contains many convenience functions for creating and managing subprocesses</p>
+	</li>
+	<li>
+	<p>subprocess.Popen class is the most full-featured interface</p>
+	</li>
+	<li>
+	<p>subprocess.call() is the simplest interface</p>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 10px; height: auto;" data-block-id="ad788fb002b807e1169a303879541273"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Subprocess - Details</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 99px; height: auto;" data-block-id="b0812f19601d7950fe4aa03f63445cb4"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>
+	<p><span style="color:#FFA07A">call()</span> - spawn a subprocess, wait for completion, return exit code</p>
+	</li>
+	<li>
+	<p><span style="color:#FFA07A">check_call()</span> - same as call(), but <span style="color:rgb(255, 255, 255); text-align:left">raises CalledProcessError exception if exit code isn't 0</span></p>
+	</li>
+	<li>
+	<p><span style="color:rgb(255, 160, 122); text-align:left">check_output()</span><span style="color:rgb(255, 255, 255); text-align:left"> - same as call(), but </span><span style="color:rgb(255, 255, 255); text-align:left">returns process output as a byte string</span></p>
+	</li>
+	<li>
+	<p>Caveats:</p>
+
+	<ul>
+		<li>
+		<p>Don’t use pipes for stdout or stderr</p>
+		</li>
+		<li>
+		<p>Only use shell=True if need shell features</p>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="f26ccae3598c6eda2b4aa5fd42fd039f" style="min-width: 30px; min-height: 30px; width: 808px; height: 200px; left: 76px; top: 495px;"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code>subprocess.call(args, *, stdin=None, stdout=None, stderr=None, shell=False)
+subprocess.check_call(args, *, stdin=None, stdout=None, stderr=None, shell=False)
+subprocess.check_output(args, *, stdin=None, stdout=None, stderr=None, shell=False)
+
+# examples
+exit_code = subprocess.call(['ls', '-al'])
+exit_code = subprocess.check_call('false')
+exit_code = subprocess.check_output(['ls', '-al'])</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 10px; height: auto;" data-block-id="c0e0668d069f14af92b3017986ba896c"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Subprocess - POpen</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 99px; height: auto;" data-block-id="2f01a525fbe5b76aae3277da1009231e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>
+	<p>Swiss army knife of subprocess spawning</p>
+	</li>
+	<li>
+	<p>Can map stderr to stdout using subprocess.STDOUT</p>
+	</li>
+	<li>
+	<p>Use subprocess.PIPE in stdin, stdout, stderr</p>
+	</li>
+	<li>
+	<p>Check out all the args/kwargs in the docs:</p>
+
+	<ul>
+		<li>
+		<p><span style="font-size:0.7em"><a href="https://docs.python.org/2/library/subprocess.html#subprocess.Popen" target="_blank">https://docs.python.org/2/library/subprocess.html#subprocess.Popen</a></span></p>
+		</li>
+		<li>
+		<pre><span style="font-size:0.7em">​​​- poll() sees if child is terminated
+- wait() waits for child to terminate
+- communicate(input=None) sends input to child stdin. Use instead of stdin.write()
+- send_signal(signal) sends given signal to child
+- terminate() and kill() send respective signals to child</span></pre>
+		</li>
+	</ul>
+	</li>
+</ul>
+
+<p> </p>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 485px; height: 75px; left: 238px; top: 593px;" data-block-id="d1dba794cdfddce32f637a7aefd10f5f"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code># example
+subproc = subprocess.POpen(['ls', '-al'])
+(stdoutdata, stderrdata) = subproc.communicate()</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 10px; height: auto;" data-block-id="c76a3a2cbaebeb40da9147488cf930a2"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Subprocess - Caveats</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 99px; height: auto;" data-block-id="b50d0f31a3ae0153675200e78f34f158"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>
+	<p>Note: if args is a string, must use shell=True to specify args</p>
+	</li>
+	<li>
+	<p>Once again, don’t use shell=True with user entered data</p>
+	</li>
+	<li>
+	<p>shell=False does not call a shell either directly or indirectly, allowing all characters (even metacharacters) to be passed safely</p>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 10px; height: auto;" data-block-id="70272e2afd5583ee9b93d9f0751f71b4"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Subprocess - POpen Interaction</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 99px; height: auto;" data-block-id="49ed01ba6c02ddcec60e8d990b0cb325"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>
+	<p>Popen.std* are file objects if std*=PIPE was used in Popen constructor</p>
+	</li>
+	<li>
+	<p>Popen.pid is child process ID</p>
+	</li>
+	<li>
+	<p>Popen.returncode is child exit code. Set by poll(), wait(). None if child not terminated. If negative, indicates child was terminated by that signal number.</p>
+	</li>
+</ul>
+</div></div></section><section class="has-dark-background" data-background-color="#274e13"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="3550af322b5321b30c93d68064f5dd16"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Lab Subprocess</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="0c7b492c0846e54e01e5dfceb045656e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>Follow the instructions in:</li>
+</ul>
+
+<pre style="text-align: center;">lab_subprocess.py</pre>
+
+<ul>
+	<li>Register your completion in Socrative</li>
+</ul>
+</div></div></section></section><section class="stack"><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="a4cdff24d7ffd833848200116b4aebf0"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1>Multiprocessing / Multithreading</h1>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 79px; top: 50px; height: auto;" data-block-id="4f5aeecd47abc86b91382ee4263fc1d9"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Threads Vs. Processes</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 473px; height: 288.004px; left: 244px; top: 146px;" data-block-id="ab3ad5025a285b166fdd57e8ba3325b9"><div class="sl-block-content"><img data-natural-width="450" data-natural-height="274" style="" data-src="python-ii/1828455-threads_v_processes.gif"></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="0884d4c0b0426bae769115a066917e22"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Threads</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="83ee363cf6e832469cad68714a19a96c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>
+	<p>Threads are independently scheduled streams of instructions that run within a single OS process</p>
+	</li>
+	<li>
+	<p>Threads have their own stack, registers, scheduling attributes, priorities, signal mask, and thread local memory</p>
+	</li>
+	<li>
+	<p>Threads allow logical concurrency of execution (and possibly parallel execution if configured)</p>
+	</li>
+	<li>
+	<p>Threads introduce the need for synchronization!</p>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="3468d1894fcd1b3ce8874f75c067bca7"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Threads</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="2093308fd805244424a11f8f1b784c13"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>
+	<p>Threads share the same instructions (bytecodes) same identifier bindings, same open files, and other resources</p>
+	</li>
+	<li>
+	<p>Threads cannot exist outside of an OS process</p>
+	</li>
+	<li>
+	<p>Threads are “lightweight” – the overhead of creating them is much less than creating a real process</p>
+	</li>
+	<li>
+	<p>Threads are used for capturing a higher % of available cycles on a single CPU, realtime systems, an asynchronous event handling.</p>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 19px; height: auto;" data-block-id="66a64033797866320649b816d34affe5"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Threading Models</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 89px; height: auto;" data-block-id="e7f182bb73fd5d065e6f3f12487412b0"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>Some common threading models exist:</li>
+	<li>Boss/worker
+	<ul>
+		<li>Boss thread creates worker threads, then loops receiving work requests from a queue or socket</li>
+		<li>Worker threads loop on work assignments from boss</li>
+	</ul>
+	</li>
+	<li>
+	<p>Peer</p>
+
+	<ul>
+		<li>
+		<p>All threads work on the backlog without a “manager” thread</p>
+		</li>
+		<li>
+		<p>All threads work on a protected/synchronized queue</p>
+		</li>
+	</ul>
+	</li>
+	<li>
+	<p>Pipeline</p>
+
+	<ul>
+		<li>
+		<p>Each thread does a stage of a work pipeline</p>
+
+		<ul>
+			<li>
+			<p>Each thread accepts work from “previous” thread, passes to “next” thread</p>
+			</li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 19px; height: auto;" data-block-id="1cf7c3e991b15357f16caac45eeb2a26"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Threading Module</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 121px; height: auto;" data-block-id="06fb9fd7530c3381277b83cd6bde6d8c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>
+	<p>Contains all the necessary primitives to handle threading:</p>
+
+	<ul>
+		<li>
+		<p>threading.Thread() - create a thread from a callable</p>
+		</li>
+		<li>
+		<p>threading.Condition() - create a condition to use for waiting</p>
+		</li>
+		<li>
+		<p><span style="color:rgb(255, 255, 255); text-align:left">threading.Event() - create an event to use for waiting</span></p>
+		</li>
+		<li>
+		<p><span style="color:rgb(255, 255, 255); text-align:left">threading.Lock()/RLock() - Lock a critical section or variable</span></p>
+		</li>
+		<li>
+		<p><span style="color:rgb(255, 255, 255); text-align:left">threading.Semaphore() - Classic acquire/release semaphore</span></p>
+		</li>
+		<li>
+		<p>threading.Timer() - run a callable after timer expires</p>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="72ed16714824769011f877886ba083cf"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Running a Thread</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="b89ce3fe6e8ea2b7ebcb83ff916bcc65" style="min-width: 30px; min-height: 30px; width: 500px; height: 300px; left: 230px; top: 280px;"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code>import threading
+import time
+
+def xyz():
+    for i in range(10):
+        print "thread"
+        time.sleep(1)
+
+th = threading.Thread(target=xyz)
+th.start()
+for i in range():
+    print "main"
+    time.sleep(1)
+</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="081310e2600c0d32a08ca28ed87f56ae"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Threading Module</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="7c16bbb41c4c5c100d3e929410dda544"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>
+	<p>Calling another threads join() causes the caller to wait for thread to end</p>
+	</li>
+	<li>
+	<p>Pass arguments to new thread using the args and kwargs keywords</p>
+	</li>
+	<li>
+	<p>Locks have acquire() and release() methods that can be automatically invoked on the with statement</p>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="f9b26a633fd494354025f07e4e0159fd"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Threading Module</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="a1a7a5985be04512fa251f7c9d988694"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>
+	<p>Condition variables have a wait() to wait for the condition to be reached</p>
+	</li>
+	<li>
+	<p>Condition variables also have notify() and notify_all() that can be used to indicate to other threads that the condition variable has changed</p>
+	</li>
+	<li>
+	<p>Semaphore objects also have acquire() and release() for easy use with with</p>
+	</li>
+	<li>
+	<p>Event objects have set(), clear(), and wait() which indicate if event has happened or not</p>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="01e1d7f08f45661a42daca276f604619"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Bad Bits about Threads</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="e726617dabb978901da4f4c203cdb041"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>The CPython interpreter uses something called the Global Interpreter Lock (GIL) to protect access to the inner workings of the interpreter</li>
+	<li>One Python thread at a time can have that lock, thus only one thread at a time can run</li>
+	<li>Many threads can be waiting (on data, cpu, etc.)
+	<ul>
+		<li>Only one can be active regardless of the number of CPUs/cores/etc.</li>
+	</ul>
+	</li>
+	<li>There are ways around this, but there is peril therein</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 20px; height: auto;" data-block-id="cb7a06b9f4cb1305ee1594057cb7adf1"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Threading Worker Example</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="8c388e5d469800442bde615fc567931d" style="min-width: 30px; min-height: 30px; width: 489px; height: 479px; left: 236px; top: 102px;"><div class="sl-block-content" style="z-index: 12;"><pre><code>import Queue
+import threading
+
+num_worker_threads = 5
+
+def worker():
+    thread_id = threading.current_thread().name
+    while True:
+        item = q.get()
+        print "Worker %s:" % thread_id, item
+        q.task_done()
+
+q = Queue.Queue()
+for i in range(num_worker_threads):
+     t = threading.Thread(target=worker)
+     t.daemon = True
+     t.start()
+
+work_items = xrange(20)
+for item in work_items:
+    q.put(item)
+
+q.join()       # block until all tasks are done
+</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="37f8d3c6ed85cd1913806f55f7d053bf"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Multiprocessing</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="0e12214c4af076a0b6229ffeeecdf1c9"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>Multiprocessing module has same interface as threading, but spawns processes instead of threads</li>
+	<li>Doesn't suffer from GIL problems of threads</li>
+	<li>Higher overhead because it spawns a Python interpreter for each process</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="74e8a364f6c48bba876caa36857ec988"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Multiprocessing</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="06fec45b3a8fef1f606a4f265cda8ef7"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>Processes can exchange information via Pipes and Queues</li>
+	<li>Can synchronize like Threads</li>
+	<li>Can share memory amongst processes</li>
+	<li>Can create a pool of workers to map tasks to</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="768acec7e44db576ad91e92fe16836d4"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Running a Process</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 500px; height: 300px; left: 230px; top: 280px;" data-block-id="bc03343da107d35cf1a6f63c610d4789"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code>import multiprocessing
+import time
+
+def xyz():
+    for i in range(10):
+        print "thread"
+        time.sleep(1)
+
+proc = multiprocessing.Process(target=xyz)
+proc.start()
+for i in range(10):
+    print "main"
+    time.sleep(1)
+</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 33px; height: auto;" data-block-id="3372d92f76ddb98f2357db329d3330fe"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Process Worker Example</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 610px; height: 517px; left: 175px; top: 113px;" data-block-id="5a127615f3f525c0d3e680624b2058a9"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code>import multiprocessing
+import os
+
+def worker(q):
+    process_id = os.getpid()
+    while True:
+        item = q.get()
+        print "Worker %s:" % process_id, item
+        q.task_done()
+
+if __name__ == "__main__":
+    num_worker_processes = 5
+    num_work_items = 20
+    q = multiprocessing.JoinableQueue(num_work_items+1)
+    for i in range(num_worker_processes):
+        p = multiprocessing.Process(target=worker, args=[q])
+        p.daemon = True
+        p.start()
+
+    work_items = xrange(num_work_items)
+    for item in work_items:
+        q.put(item)
+
+    q.join()       # block until all tasks are done
+    print "All done"
+</code></pre></div></div></section><section class="has-dark-background" data-background-color="#274e13"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="1e1348c32a62a2607b555945a7f723b3"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Lab multiprocessing / multithreading</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 338px; height: auto;" data-block-id="2abec1a809c674c724fbd1fece3ebd7b"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>Follow the instructions in:</li>
+</ul>
+
+<pre style="text-align: center;">​lab_multi.py</pre>
+
+<ul>
+	<li>Register your completion in Socrative</li>
+</ul>
+</div></div></section></section><section class="stack"><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="e63b2fc8c28429142fa60dbea1f2684b"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1>UnitTest</h1>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 91px; height: auto;" data-block-id="084149ecb795c7eb215b86ede5f22b1d"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Test Driven Development</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 180px; height: auto;" data-block-id="8bb4f30a53f710cded87b8c0790a4e43"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>
+	<p>Best early detection of bugs:</p>
+
+	<ul>
+		<li>
+		<p>Pair programming</p>
+		</li>
+		<li>
+		<p>Continuous Integration</p>
+		</li>
+		<li>
+		<p>Test Driven Development</p>
+		</li>
+	</ul>
+	</li>
+	<li>
+	<p>Test Driven Development (TDD) says essentially:</p>
+
+	<ul>
+		<li>
+		<p>Write a test that for a proposed feature and verify it fails</p>
+		</li>
+		<li>
+		<p>Write the minimal amount of code to make the test pass</p>
+		</li>
+		<li>
+		<p>Refactor</p>
+		</li>
+		<li>
+		<p>Repeat</p>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 27px; height: auto;" data-block-id="25d8a812597e352a1b37f0034a7d20ff"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Unittest Module</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 125px; height: auto;" data-block-id="fe45886466c52c677c2064bff68b1f28"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>
+	<p>Module in Python used to implement TDD</p>
+
+	<ul>
+		<li>
+		<p>or other unit testing needs</p>
+		</li>
+	</ul>
+	</li>
+	<li>
+	<p>Derive a class from unittest.TestCase</p>
+	</li>
+	<li>
+	<p>For a test runner, unittest.main() is the default, or roll your own</p>
+	</li>
+	<li>
+	<p>Simple test to see if two values were multiplied correctly:</p>
+	</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="749ce9476336ee1f9be472548e20399d" style="min-width: 30px; min-height: 30px; width: 500px; height: 239px; left: 230px; top: 441px;"><div class="sl-block-content" style="z-index: 13;"><pre><code>import calculator.operations.arithmetic as arith
+import unittest
+
+class TestCalculations(unittest.TestCase):
+    def test_multiply(self):
+        """ test multiply 2 * 2 """
+        testVal = arith.mult(2,2)
+        self.assertEqual(testVal, 4)
+
+if __name__ == "__main__":
+    unittest.main()</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 58px; height: auto;" data-block-id="17748876aa3acb093513b2fe939344d5"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Unittest Module</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 161px; height: auto;" data-block-id="d2871cb90df0a5cb402e0a46eedf3d5a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>
+	<p>If a test fixture is needed to setup/takedown the calculator for each test, we can add methods setUp() and tearDown()</p>
+	</li>
+	<li>
+	<p>The naming standard is that each test method name start with test</p>
+	</li>
+	<li>
+	<p>For unit tests, the TestCase class offers (3) primary verifiers:</p>
+
+	<ul>
+		<li>
+		<p>assertEqual(): result is equal to the value we expect</p>
+		</li>
+		<li>
+		<p>assertTrue(): result is a True assertion</p>
+		</li>
+		<li>
+		<p>assertRaises(): result is the Exception we expect</p>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 0px; height: auto;" data-block-id="92839211d1b4214284e49caa9a62d3f7"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Unittest Test</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="460c69a12ce78fa56bdab473623420fa"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>
+	<p>There are more assert methods to make life easy:</p>
+
+	<ul>
+		<li>
+		<p>assertNotEqual(): a != b<br>
+		assertTrue(): a is True<br>
+		assertFalse(): a is False<br>
+		assertIs(): a is b<br>
+		assertIsNot(): a is not b<br>
+		assertIsNone(): a is None<br>
+		assertIsNotNone(): a is not None<br>
+		assertIn(): a in b<br>
+		assertNotIn(): a not in b<br>
+		assertIsInstance(): isinstance(a, b) is True<br>
+		assertIsNotInstance(): isinstance(a, b) is False<br>
+		assertGreater(a, b): a &gt; b<br>
+		assertRaises(ex): raises ex<br>
+		assertRegexMatches(x, re): regex.search(x) is True</p>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div></div></section><section class="has-dark-background" data-background-color="#274e13"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="b299d4e3707dbabf3eee648cab585c1d"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Lab</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="5ad5b87684cd4e7b3eb392964420a825"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>Follow the instructions in:</li>
+</ul>
+
+<pre style="text-align: center;">lab_unittest.py</pre>
+
+<ul>
 	<li>Register your completion in Socrative</li>
 </ul>
 </div></div></section></section>
