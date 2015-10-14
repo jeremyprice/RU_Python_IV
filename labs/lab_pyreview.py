@@ -21,7 +21,7 @@ c. Add support for the following arguments and argument attributes:
 d. Run parse_args() to build arguments objects and print the Namespace
 
 e. Construct a generator called test_db_load() that returns a random function from a list of functions.
-   The list will support find_by_author(), find_by_patent_number(), and find_by_filing date()
+   The list will support find_by_author(), find_by_patent_number(), and find_by_filing_date()
    Test your generator with stub functions. (HINT: random is a module)
 
 """

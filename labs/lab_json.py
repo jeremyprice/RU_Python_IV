@@ -13,7 +13,7 @@ LAB_JSON Learning Objective: Learn to navigate a JSON file and convert to a
  a. Based on a sample Openstack authentication response file, what python
     syntax would you use to access items in the serviceCatalog?
 
-    What path would access the publicURL for the DFW CloudServersOpenStack endpoint?
+    What path would access the publicURL for the DFW cloudServersOpenStack endpoint?
 
  b. Provide a new dict called compute_api_info and add keys "image_id"
     and "flavor_id". Use None for values. Dump compute_api_info
