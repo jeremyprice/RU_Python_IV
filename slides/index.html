@@ -1334,12 +1334,407 @@ if __name__ == "__main__":
 <ul>
 	<li>Register your completion in Socrative</li>
 </ul>
-</div></div></section></section>
+</div></div></section></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="b3437ed936e39a539119d947b777f8bb"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1>Mock</h1>
+</div></div></section><section class="stack"><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="752aa9eafffbf6cbbfee9ddf69abbe5f"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1>Decorators</h1>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 33px; height: auto;" data-block-id="9e55018179af360e70fa532ec8c4dce2"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Functions</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 140px; height: auto;" data-block-id="3d02e0bdacb1ff3dd937b8c677a01007"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>We all know about functions:</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="7ec3879df1c563828b0fdd6891a78e73" style="min-width: 30px; min-height: 30px; width: 170px; height: 93px; left: 395px; top: 210px;"><div class="sl-block-content" style="z-index: 13;"><pre><code>def func():
+    return "hi"
+
+print func()
+</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="57e063c2da71aecb4462521875ac2a9b"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Scope (namespace)</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="2c6f04263b5b5d1341be01d15f277f22"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>Identifiers (names) are looked up in the namespace</li>
+	<li>Local to global in steps</li>
+	<li>First occurrence found wins</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="01ba34fce3f6df436eb89548c5bd8e80" style="min-width: 30px; min-height: 30px; width: 286px; height: 157px; left: 337px; top: 446px;"><div class="sl-block-content" style="z-index: 13;"><pre><code>info = "hello world"
+
+def localonly():
+    print locals()
+
+print globals()
+localonly()</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="193787186b0002a0969019df49291637"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Scope (globals)</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="c0c0b05dedf32773397c15588d0bbc7a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>We can still access global variables, but we have to explicitly reference them</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 286px; height: 157px; left: 337px; top: 378px;" data-block-id="eee4d4388db9fbb2bb46cdb26380d6fe"><div class="sl-block-content" style="z-index: 13;"><pre><code>info = "hello world"
+
+def localonly():
+    print info
+
+localonly()</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="603317f81eb77185f73f460d8b8d58f8"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Scope (global shadowing)</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="858da15f3ad08625f12f4ac17c3a6467"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>If we try to assign the variable it won't do what we think</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 303px; height: 182px; left: 337px; top: 378px;" data-block-id="51f54e1cccfbb6769656b4ba512be01c"><div class="sl-block-content" style="z-index: 13;"><pre><code>info = "hello world"
+
+def localonly():
+   info = "inside localonly"
+   print info
+
+localonly()
+print info</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="84eeacca5cc6b8fd87a78902b8a76ae4"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Variable lifetime</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="6345f2c69b844b13234d3245aeb08215"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>Variables exist as long as they are in scope</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 303px; height: 182px; left: 337px; top: 378px;" data-block-id="87c51c7220f93dc352664108b9a626c6"><div class="sl-block-content" style="z-index: 13;"><pre><code>def localonly():
+   info = "inside localonly"
+   print info
+
+localonly()
+print info</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="4e83e54fbe10da345e37f06131ad26bf"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Function parameters and args</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="6d2a7ad9cf6dbcbbbc15113a61548722"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>Become local variables to the function</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 197px; height: 93px; left: 337px; top: 378px;" data-block-id="4ba1d2e6b6c2fd0fcc41ef37c8acef30"><div class="sl-block-content" style="z-index: 13;"><pre><code>def hello(arg1):
+   print locals()
+
+hello(1)</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="e818255a5b56207669ec6c3f706d9bf8"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Function parameters and args</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="e7c57fb4962c077527764cd21fd3a1f5"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>Have names and positions</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 290px; height: 198px; left: 337px; top: 378px;" data-block-id="b50ad790f72870086f15993915c12e93"><div class="sl-block-content" style="z-index: 13;"><pre><code>def hello(arg1, arg2=0):
+   print locals()
+
+hello(1)
+hello(1, 3)
+hello()
+hello(arg2=15, arg1=10)
+hello(arg2=99)</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="7c901198090acddd6b206477cc60964e"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Nested functions</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="fdc6ba703658f299cc63d88a4a25285f"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>We can define functions within functions</li>
+	<li>Variable lifetime and scoping rules still apply</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 272px; height: 159px; left: 337px; top: 378px;" data-block-id="243cc787a4e2008a1f5a59bf5d5517fa"><div class="sl-block-content" style="z-index: 13;"><pre><code>def outside():
+    info = 1
+    def inside():
+        print info
+    inside()
+
+outside()</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="50def78bdb37f07d7c0244da59d2cab7"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Functions are 1st class objects</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="e75757af139975ff8c56d8ea6b3af0fa"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>(nearly) Everything in Python is an object</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 365px; height: 159px; left: 337px; top: 378px;" data-block-id="79d496e0253835dd85dfce2c4f206c71"><div class="sl-block-content" style="z-index: 13;"><pre><code>def func():
+    pass
+
+type(func)
+func.__class__
+issubclass(func.__class__, object)</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="5c66895dd1a458b74273917c584d5d6a"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Treating functions as objects</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="b2f52066ca83ebe36351550b73a5d772"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;" dir="ui">
+<ul>
+	<li>We can use functions just like integers and other primitives</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 410px; height: 234px; left: 275px; top: 350px;" data-block-id="4753d28423f18d61f76ba048c19bdc05"><div class="sl-block-content" style="z-index: 13;"><pre><code>def add(x, y):
+    return x + y
+
+def sub(x, y):
+    return x + y
+
+def do_math(operation, x, y):
+    return operation(x, y)
+
+do_math(sub, 10, 5)
+do_math(add, 2, 2)</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="2b7dd4e303a9b25dc971e671f6760405"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>What about inner functions?</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="439c2ebe020ba654285e130db47d0b97"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;" dir="ui">
+<ul>
+	<li>Functions defined in other functions are still just objects</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 452px; height: 180px; left: 254px; top: 350px;" data-block-id="1285161787b743c696074f09f9f71cf9"><div class="sl-block-content" style="z-index: 13;"><pre><code>def outside():
+    def inside():
+        print "inside the inner function"
+    return inside
+
+my_func = outside()
+my_func
+my_func()</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="df49b8aba533bc4eeef7e9b6ffa0c5ff"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Closures</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="d7a7500c6bd22598245cf0f91ac4b6b3"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;" dir="ui">
+<ul>
+	<li>Closures are a way to handle scoping and variable lifetimes so the function objects act as expected</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 452px; height: 193px; left: 254px; top: 350px;" data-block-id="dc25cbc173fa336cd9eef139f379199c"><div class="sl-block-content" style="z-index: 13;"><pre><code>def outside():
+    info = 1
+    def inside():
+        print info
+    return inside
+
+my_func = outside()
+my_func.func_closure
+my_func()</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="8348c5557cfde1f0fc099df67b7cc033"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Closures</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="64ff70ca94baf0e56a767b43cc832943"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;" dir="ui">
+<ul>
+	<li>Even with function arguments!</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 342px; height: 210px; left: 309px; top: 350px;" data-block-id="033db74c9c48d075b1a74477e75c67e2"><div class="sl-block-content" style="z-index: 13;"><pre><code>def outside(arg1):
+    def inside():
+        print arg1
+    return inside
+
+my_func1 = outside(123)
+my_func2 = outside('xyz')
+my_func1()
+my_func2()</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="742c2707af69cbb07aa7cabcadc15676"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Decorators (finally)</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="bda88dc37a6a9c72eccac90df40beefc"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;" dir="ui">
+<ul>
+	<li>Decorators rely on "functions as objects" and closures</li>
+	<li>They wrap one function in another</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 395px; height: 257px; left: 283px; top: 350px;" data-block-id="c26d0c090af104d83a9d05f3a6036741"><div class="sl-block-content" style="z-index: 13;"><pre><code>def wrapper(passed_in_func):
+    def inside():
+        print "before passed_in_func"
+        retval = passed_in_func()
+        return retval + 1
+    return inside
+
+def constant():
+    return 2
+
+decorated = wrapper(constant)
+decorated()</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 81px; top: 23px; height: auto;" data-block-id="c131645e2c7bbb8947cc90e01dba64bf"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Useful Decorator</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 97px; height: auto;" data-block-id="ca0706ad718854c8ef39524e82e1a7df"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;" dir="ui">
+<ul>
+	<li>Decorators can be used to add bounds checking or other features to our code</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 455px; height: 280px; left: 253px; top: 210px;" data-block-id="8dd959bad6e907e90c79e663943f25b9"><div class="sl-block-content" style="z-index: 13;"><pre><code>def add_two_numbers(x, y):
+    return x + y
+
+def ensure_positivity(func):
+    def inner(x, y):
+        return func(abs(x), abs(y))
+    return inner
+
+add_two_numbers(-10, 10)
+
+add_two_numbers = ensure_positivity(add_two_numbers)
+
+add_two_numbers(-10, 10)
+</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 81px; top: 23px; height: auto;" data-block-id="72e50d746b03be124b52fea47ad7e8c5"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Useful Decorator Syntax</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 97px; height: auto;" data-block-id="70b34747cb26c700988c0a3d3cc07cc8"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;" dir="ui">
+<ul>
+	<li>The @ symbol can be used as "syntactic sugar" to apply a decorator to a function</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 366px; height: 223px; left: 253px; top: 210px;" data-block-id="7dee83bbe0a7268a01a06fac245d42d4"><div class="sl-block-content" style="z-index: 13;"><pre><code>def ensure_positivity(func):
+    def inner(x, y):
+        return func(abs(x), abs(y))
+    return inner
+
+@ensure_positivity
+def add_two_numbers(x, y):
+    return x + y
+
+add_two_numbers(-10, 10)
+</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 81px; top: 23px; height: auto;" data-block-id="815462cfd64c0915de83a29822e730cb"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Args and Kwargs</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 97px; height: auto;" data-block-id="e50fdcf1e39e1baaa8c97525488ce971"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;" dir="ui">
+<ul>
+	<li>We can catch all the args to a function in the special * variable (usually called *args)</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 366px; height: 242px; left: 297px; top: 229px;" data-block-id="e5e50806334d398fc2af842c54f2b3c2"><div class="sl-block-content" style="z-index: 13;"><pre><code>def argless(*args):
+    print args
+
+argless()
+argless(1,2,3)
+
+def twoargs(x, y, *args):
+    print x, y, args
+
+twoargs(1, 2, 3)
+twoargs('a', 'b')</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 81px; top: 23px; height: auto;" data-block-id="56fc7458a8c62add0b2bb8c0e551b945"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Args and Kwargs</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 97px; height: auto;" data-block-id="ca9a88f7dbd423c9b41be8a61e6b73b9"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;" dir="ui">
+<ul>
+	<li>We can also apply a list to an argument list</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 215px; height: 171px; left: 374px; top: 231px;" data-block-id="89575c81e2a2ce8b62e7412ac555af25"><div class="sl-block-content" style="z-index: 13;"><pre><code>def subtract(x, y):
+    return x - y
+
+
+subtract(10, 5)
+lst = [10, 5]
+subtract(*lst)</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 81px; top: 23px; height: auto;" data-block-id="f63e141606215475c746d7bab1169aa6"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Args and Kwargs</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 97px; height: auto;" data-block-id="25d90ddf66867ff5c3da55cd2b3c8e3d"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;" dir="ui">
+<ul>
+	<li>Kwargs can be handled the same way - but with ** (usually used as **kwargs)</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 253px; height: 280px; left: 355px; top: 221px;" data-block-id="7fdcbcf863c8e991fefa47ffbbec5974"><div class="sl-block-content" style="z-index: 13;"><pre><code>def kwargless(**kwargs):
+    print kwargs
+
+
+kwargless()
+kwargless(x=1, y=2)
+
+
+def subtract(x, y):
+    return x - y
+
+values = {x: 10, y: 5}
+subtract(**values)</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 81px; top: 23px; height: auto;" data-block-id="26f2909890b6d61c9709f09b044e5bf4"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Args and Kwargs in Decorators</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 97px; height: auto;" data-block-id="124769b7f85d0cea123aaff9a6bb815e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;" dir="ui">
+<ul>
+	<li>We can pass along any args or kwargs we have from the decorator to the wrapped function</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 732px; height: 273px; left: 114px; top: 200px;" data-block-id="faacb641d8b8a49d0ee0165f4dddcb52"><div class="sl-block-content" style="z-index: 13;"><pre><code>def debug_call(func):
+    def inner(*args, **kwargs):
+        print "{} called with {} {}".format(func.func_name, args, kwargs)
+        func(*args, **kwargs)
+    return inner
+
+@debug_call
+def add(x, y=0):
+    return x + y
+
+print add(1, 2)
+print add(y=3, x=5)
+print add(5)</code></pre></div></div></section><section class="has-dark-background" data-background-color="#274e13"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="c7963f8367f479937571a8ab895bffe4"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Lab decorators</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="36573126f8e71698d8a93cd7f2a9ac40"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>Follow the instructions in:</li>
+</ul>
+
+<pre style="text-align:center">lab_decorators.py</pre>
+
+<ul>
+	<li>Register your completion in Socrative</li>
+</ul>
+</div></div></section></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="63def5736e0c23e0e0d7fe2fda548d16"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1>Meta Classes</h1>
+</div></div></section><section class="stack"><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="a3babbfa9413a1412d7d73b6308aa9b2"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1>Objects</h1>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="057a382ca4f801ab3b40baf9340e4415"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Python and Objects</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="900e57d437d1ca3950a57907612cde97"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>Everything in Python is an object</li>
+	<li>For instance, try the following code:</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="6dfd29489e0e98302ceb5950e1e2e71b" style="min-width: 30px; min-height: 30px; width: 184px; height: 164px; left: 388px; top: 369px;"><div class="sl-block-content" style="z-index: 13;"><pre><code>class FakeClass:
+    pass
+
+a = 1
+b = 'hello'
+c = FakeClass()
+print a, b, c</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="5bd0951cc0f6a2b8c5914103af852ddb"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>"Variables" in Python</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="a93adb2c334247785bf8900421df3dca"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>In most programming languages, variables are a spot to put values</li>
+	<li>In Python, we don't create variables and assign values to them
+	<ul>
+		<li>We create names and bind them to objects</li>
+	</ul>
+	</li>
+	<li>for instance, c = FakeClass() tells Python:
+	<ul>
+		<li>"I want to refer that FakeClass instance as c"</li>
+	</ul>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="53a8fc76797909801cb8c8e7277b3f4b"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>More about binding</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="0dcb9872861cdab00509403fc03246a4"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>Does the following code do what you expect?</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="37469f0717a48b2adadba5877e1af031" style="min-width: 30px; min-height: 30px; width: 186px; height: 243px; left: 387px; top: 350px;"><div class="sl-block-content" style="z-index: 13;"><pre><code>class FakeClass:
+    pass
+
+a = FakeClass()
+b = a
+
+print b.hello
+
+a.hello = 'world'
+
+print b.hello</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="aefeaec658906ee67ba065bdffaee44b"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text"><h2>Title Text</h2></div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="3875c091494e7c14fca42cb2d4f765a4"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"><ul>
+<li>Bullet One</li>
+<li>Bullet Two</li>
+<li>Bullet Three</li>
+</ul></div></div></section></section>
 			</div>
 		</div>
 
 		<script>
-			var SLConfig = {"deck": {"id":512444,"slug":"python-ii","title":"Python II","description":"Course materials for the penultimate class in the software development curriculum: Python II","visibility":"all","published_at":"2015-10-13T12:15:02.218Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/secure/770c85/decks.jpg","view_count":5,"user":{"id":105368,"username":"racku","name":"Rackspace University","description":"","thumbnail_url":"https://www.gravatar.com/avatar/4fdd35b37f5a9854774386e628b420fe?s=140\u0026d=https%3A%2F%2Fs3.amazonaws.com%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","pro":true,"enterprise":false,"enterprise_manager":false,"settings":{"id":245,"present_controls":true,"present_upsizing":true,"present_notes":true},"registered":true},"background_transition":"concave","transition":"default","theme_id":null,"theme_font":"sketch","theme_color":"black-mint","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":false,"rolling_links":false,"center":false,"should_loop":false,"share_notes":false,"rtl":false,"version":2,"notes":{}}};
+			var SLConfig = {"deck": {"id":512444,"slug":"python-ii","title":"Python II","description":"Course materials for the penultimate class in the software development curriculum: Python II","visibility":"all","published_at":"2015-10-13T12:15:02.218Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/secure/770c85/decks.jpg","view_count":7,"user":{"id":105368,"username":"racku","name":"Rackspace University","description":"","thumbnail_url":"https://www.gravatar.com/avatar/4fdd35b37f5a9854774386e628b420fe?s=140\u0026d=https%3A%2F%2Fs3.amazonaws.com%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","pro":true,"enterprise":false,"enterprise_manager":false,"settings":{"id":245,"present_controls":true,"present_upsizing":true,"present_notes":true},"registered":true},"background_transition":"concave","transition":"default","theme_id":null,"theme_font":"sketch","theme_color":"black-mint","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":false,"rolling_links":false,"center":false,"should_loop":false,"share_notes":false,"rtl":false,"version":2,"notes":{}}};
 			SLConfig.current_user = {
 				name: "Rackspace University",
 				username: "racku",
