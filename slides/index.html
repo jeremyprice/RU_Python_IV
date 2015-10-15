@@ -1334,9 +1334,49 @@ if __name__ == "__main__":
 <ul>
 	<li>Register your completion in Socrative</li>
 </ul>
-</div></div></section></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="b3437ed936e39a539119d947b777f8bb"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+</div></div></section></section><section class="stack"><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="b3437ed936e39a539119d947b777f8bb"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
 <h1>Mock</h1>
-</div></div></section><section class="stack"><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="752aa9eafffbf6cbbfee9ddf69abbe5f"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 66px; height: auto;" data-block-id="3ded5643e523d118097f6f2d52a4b5ac"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Mock Example</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 545px; height: 204px; left: 208px; top: 178px;" data-block-id="bdde9d5e3ee7d706b95b3bfcdf459816"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code># in Python 2
+from mock import MagicMock
+# in Python 3
+# from unittest.mock import MagicMock
+thing = ProductionClass()
+thing.method = MagicMock(return_value=3)
+thing.method(3, 4, 5, key='value')
+3
+thing.method.assert_called_with(3, 4, 5, key='value')
+</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 66px; height: auto;" data-block-id="7e90c53d6d914eb2e09f2d2da768c8aa"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Mock</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 153px; height: auto;" data-block-id="3a19667592899447cebf27bd00ee3f55"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>Mock is a library for mocking objects in Python</li>
+	<li>It fits well with the unittest library</li>
+	<li>Mock and MagicMock objects create attributes and methods as you use them
+	<ul>
+		<li>store details about how they've been used</li>
+	</ul>
+	</li>
+	<li>Mock is available in Python 3 (&gt; 3.3) and has backports available for Python 2</li>
+</ul>
+
+<pre>pip install mock</pre>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 66px; height: auto;" data-block-id="ad45acba609bb34b33085b996605f451"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Side Effects</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 154px; height: auto;" data-block-id="1e32d12b7901a8a6e407dddb4301182d"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>You can have the mocked object create side effects</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 431px; height: 103px; left: 265px; top: 261px;" data-block-id="96225a56d6d8a944330707f66f293570"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code>from mock import Mock
+
+thing = Mock(side_effect=KeyError('bam'))
+thing()
+</code></pre></div></div></section></section><section class="stack"><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="752aa9eafffbf6cbbfee9ddf69abbe5f"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
 <h1>Decorators</h1>
 </div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 33px; height: auto;" data-block-id="9e55018179af360e70fa532ec8c4dce2"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
 <h2>Functions</h2>
