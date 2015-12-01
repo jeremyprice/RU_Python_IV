@@ -6,22 +6,23 @@
 :mod:`lab_pyreview` -- Python review
 =========================================
 
-LAB PyReview Learning Objective: Familiarization with argparse and parsing command line arguments.
+LAB PyReview Learning Objective: Review the topics from the previous courses
 
-a. Review argparse module documentation
+a. Load the data from the two dictionary files in the data directory into two
+   list objects.  data/dictionary1.txt data/dictionary2.txt
+   Print the number of entries in each list of words.
 
-b. Build an ArgumentParser object using the following parameters:
-   description: "Patent database search engine"
+b. Use sets in Python to merge the two lists of words with no duplications (union).
+   Print the number of words in the combined list.
 
-c. Add support for the following arguments and argument attributes:
-   -a --author last first
-   -p --patent_num
-   -f --filing_date
+c. Import the random library and use one of the functions to print out five random
+   words from the combined list of words.
 
-d. Run parse_args() to build arguments objects and print the Namespace
+d. Use a list comprehension to find all the words that start with the letter 'a'.
+   Print the number of words that begin with the letter 'a'.
 
-e. Construct a generator called test_db_load() that returns a random function from a list of functions.
-   The list will support find_by_author(), find_by_patent_number(), and find_by_filing_date()
-   Test your generator with stub functions. (HINT: random is a module)
-
+e. Create a function called wordcount() with a yield that takes the list of
+   all words as an argument and yields a tuple of
+   (letter, number_of_words_starting_with_that_letter) with each iteration.
+   
 """
