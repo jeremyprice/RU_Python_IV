@@ -4,7 +4,7 @@ import time
 def xyz():
     for i in range(10):
         print "thread"
-        time.sleep(1)
+        time.sleep(1.5)
 
 th = threading.Thread(target=xyz)
 th.start()

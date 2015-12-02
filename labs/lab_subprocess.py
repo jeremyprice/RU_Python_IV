@@ -16,9 +16,7 @@ LAB subprocess Learning Objective: Familiarization with subprocess
 
  c. Do the same as a), but run the command "/bogus/command". What happens?
 
- d. Use the platform module to determine what OS you are using, then execute a
-    command unique to that OS i.e. "yum search gcc" if Red Hat or Cent OS, or apt-get
-    if Debian or Ubuntu.
+
 
  e. Use subprocess Popen to run "du -h" and output stdout to a pipe. Read the pipe
     and print the output.

@@ -14,7 +14,7 @@ print foo()
 print "Second run"
 print foo()
 print "Third run"
-print foo()
+# print foo()
 
 
 
