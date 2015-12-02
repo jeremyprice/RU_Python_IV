@@ -10,9 +10,6 @@ a. Create a decorator that times the function it wraps.  It should start the tim
    before the function starts, and stop it after the wrapped function returns.  Print the
    elapsed time.
 
-b. Optional: Add a parameter to your decorator called debug that is a boolean that indicates
-   whether to print out the elapsed time.  Add the logic to implement it.
-
 An example of timing a function is as follows:
 start_time = time.time()
 do_something()
