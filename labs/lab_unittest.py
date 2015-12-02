@@ -8,7 +8,7 @@
 
 a. Create a series of unittest tests to verify the classes below.  Create the following tests:
   1. verify exceptions are generated as expected (for invalid shapes)
-  2. verify that calculations are done correctly or the shape type
+  2. verify that calculations are done correctly for the shape type
   3. verify names are set as expected
   4. test all the things!
 

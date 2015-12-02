@@ -118,3 +118,5 @@ if __name__ == "__main__":
     stop = time.time()
     elapsed = stop-start
     print("Elapsed {} ({} msec)".format(elapsed, elapsed*1000.0))
+    avg = elapsed / config.items
+    print "Avg. time per work item: {} ({} msec)".format(avg, avg*1000.0)

@@ -18,28 +18,35 @@ b. Write a print_object_flags function that uses the is_* functions to find the 
 
 def is_callable(obj):
     """ returns True if the object is callable """
-    # __call__
-    pass
+    return hasattr(obj, '__call__')
 
 def is_with(obj):
     """ returns True if the object can be used in a "with" context """
-    # __enter__, __exit__
-    pass
+    return hasattr(obj, '__enter__') and hasattr(obj, '__exit__')
 
 def is_math(obj):
     """ returns True if the object supports +, -, /, and * """
     # __add__, ...
-    pass
+    retval = hasattr(obj, '__add__') and hasattr(obj, '__mul__') and \
+             hasattr(obj, '__sub__') and hasattr(obj, '__div__')
+    return retval
 
 def is_iterable(obj):
     """ returns True if the object is iterable """
     # __iter__
-    pass
+    return hasattr(obj, '__iter__')
 
 def print_object_flags(obj):
     """ assess the object for various characteristics and print them """
-    pass
-
+    if is_iterable(obj):
+        print 'ITERABLE',
+    if is_math(obj):
+        print 'MATH',
+    if is_with(obj):
+        print 'WITH',
+    if is_callable(obj):
+        print 'CALLABLE',
+    print
 
 if __name__ == "__main__":
     print_object_flags(1)
