@@ -1150,245 +1150,8 @@ if __name__ == "__main__":
 	<li>Follow the instructions in:</li>
 </ul>
 
-<pre style="text-align: center;">​lab_multi.py</pre>
-
-<ul>
-	<li>Register your completion in Socrative</li>
-</ul>
-</div></div></section></section><section class="stack"><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="e63b2fc8c28429142fa60dbea1f2684b"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
-<h1>UnitTest</h1>
-</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 91px; height: auto;" data-block-id="084149ecb795c7eb215b86ede5f22b1d"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
-<h2>Test Driven Development</h2>
-</div></div>
-<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 180px; height: auto;" data-block-id="8bb4f30a53f710cded87b8c0790a4e43"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
-<ul>
-	<li>
-	<p>Best early detection of bugs:</p>
-
-	<ul>
-		<li>
-		<p>Pair programming</p>
-		</li>
-		<li>
-		<p>Continuous Integration</p>
-		</li>
-		<li>
-		<p>Test Driven Development</p>
-		</li>
-	</ul>
-	</li>
-	<li>
-	<p>Test Driven Development (TDD) says essentially:</p>
-
-	<ul>
-		<li>
-		<p>Write a test that for a proposed feature and verify it fails</p>
-		</li>
-		<li>
-		<p>Write the minimal amount of code to make the test pass</p>
-		</li>
-		<li>
-		<p>Refactor</p>
-		</li>
-		<li>
-		<p>Repeat</p>
-		</li>
-	</ul>
-	</li>
-</ul>
-</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 27px; height: auto;" data-block-id="25d8a812597e352a1b37f0034a7d20ff"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
-<h2>Unittest Module</h2>
-</div></div>
-<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 125px; height: auto;" data-block-id="fe45886466c52c677c2064bff68b1f28"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
-<ul>
-	<li>
-	<p>Module in Python used to implement TDD</p>
-
-	<ul>
-		<li>
-		<p>or other unit testing needs</p>
-		</li>
-	</ul>
-	</li>
-	<li>
-	<p>Derive a class from unittest.TestCase</p>
-	</li>
-	<li>
-	<p>For a test runner, unittest.main() is the default, or roll your own</p>
-	</li>
-	<li>
-	<p>Simple test to see if two values were multiplied correctly:</p>
-	</li>
-</ul>
-</div></div>
-<div class="sl-block" data-block-type="code" data-block-id="749ce9476336ee1f9be472548e20399d" style="min-width: 30px; min-height: 30px; width: 500px; height: 239px; left: 230px; top: 441px;"><div class="sl-block-content" style="z-index: 13;"><pre><code>import calculator.operations.arithmetic as arith
-import unittest
-
-class TestCalculations(unittest.TestCase):
-    def test_multiply(self):
-        """ test multiply 2 * 2 """
-        testVal = arith.mult(2,2)
-        self.assertEqual(testVal, 4)
-
-if __name__ == "__main__":
-    unittest.main()</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 58px; height: auto;" data-block-id="17748876aa3acb093513b2fe939344d5"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
-<h2>Unittest Module</h2>
-</div></div>
-<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 161px; height: auto;" data-block-id="d2871cb90df0a5cb402e0a46eedf3d5a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
-<ul>
-	<li>
-	<p>If a test fixture is needed to setup/takedown the calculator for each test, we can add methods setUp() and tearDown()</p>
-	</li>
-	<li>
-	<p>The naming standard is that each test method name start with test</p>
-	</li>
-	<li>
-	<p>For unit tests, the TestCase class offers (3) primary verifiers:</p>
-
-	<ul>
-		<li>
-		<p>assertEqual(): result is equal to the value we expect</p>
-		</li>
-		<li>
-		<p>assertTrue(): result is a True assertion</p>
-		</li>
-		<li>
-		<p>assertRaises(): result is the Exception we expect</p>
-		</li>
-	</ul>
-	</li>
-</ul>
-</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 0px; height: auto;" data-block-id="92839211d1b4214284e49caa9a62d3f7"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
-<h2>Unittest Test</h2>
-</div></div>
-<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="460c69a12ce78fa56bdab473623420fa"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
-<ul>
-	<li>
-	<p>There are more assert methods to make life easy:</p>
-
-	<ul>
-		<li>
-		<p>assertNotEqual(): a != b<br>
-		assertTrue(): a is True<br>
-		assertFalse(): a is False<br>
-		assertIs(): a is b<br>
-		assertIsNot(): a is not b<br>
-		assertIsNone(): a is None<br>
-		assertIsNotNone(): a is not None<br>
-		assertIn(): a in b<br>
-		assertNotIn(): a not in b<br>
-		assertIsInstance(): isinstance(a, b) is True<br>
-		assertIsNotInstance(): isinstance(a, b) is False<br>
-		assertGreater(a, b): a &gt; b<br>
-		assertRaises(ex): raises ex<br>
-		assertRegexMatches(x, re): regex.search(x) is True</p>
-		</li>
-	</ul>
-	</li>
-</ul>
-</div></div></section><section class="has-dark-background" data-background-color="#274e13"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="b299d4e3707dbabf3eee648cab585c1d"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
-<h2>Lab</h2>
-</div></div>
-<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="5ad5b87684cd4e7b3eb392964420a825"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
-<ul>
-	<li>Follow the instructions in:</li>
-</ul>
-
-<pre style="text-align: center;">lab_unittest.py</pre>
-
-<ul>
-	<li>Register your completion in Socrative</li>
-</ul>
-</div></div></section></section><section class="stack"><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="b3437ed936e39a539119d947b777f8bb"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
-<h1>Mock</h1>
-</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="ee827ae8eaa215921b264b33fa434a58"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
-<h2>What is a Mock?</h2>
-</div></div>
-<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="431c7beade22c2e3de9ab44caaa2f25a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
-<ul>
-	<li>Let's say you have some code that talks to a database
-	<ul>
-		<li>If you implement unit tests you probably don't want your code to talk to the actual database</li>
-	</ul>
-	</li>
-	<li>A Mock is an object that looks like the thing your are testing against
-	<ul>
-		<li>It doesn't have all the underlying logic to DO anything</li>
-		<li>Think of it like an actor
-		<ul>
-			<li>"I'm not a real database, I just play one on TV"</li>
-		</ul>
-		</li>
-	</ul>
-	</li>
-</ul>
-</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="0243043a9f2106b7176559a230c30048"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
-<h2>Why use Mocks?</h2>
-</div></div>
-<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="eaa019aa63b42636bb591020077e5414"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
-<ul>
-	<li>Maybe your resource isn't available</li>
-	<li>Maybe you can't force an error on the resource to test how your code will respond</li>
-	<li>Maybe it is too costly to use a real resource</li>
-	<li>Maybe the real resource takes too long
-	<ul>
-		<li>Not parallel</li>
-	</ul>
-	</li>
-</ul>
-</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="340edd6fd0a4a5072bcf903ae45dfdcc"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
-<h2>Drawbacks to Mocks</h2>
-</div></div>
-<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="4ee9e37bceae4432d9301dd23fe9127c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
-<ul>
-	<li>Building an accurate Mock is time consuming and difficult
-	<ul>
-		<li>Has to track the resource changes</li>
-	</ul>
-	</li>
-	<li>You built the Mock, and the code, pollution is possible</li>
-</ul>
-</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 66px; height: auto;" data-block-id="7e90c53d6d914eb2e09f2d2da768c8aa"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
-<h2>Mock</h2>
-</div></div>
-<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 153px; height: auto;" data-block-id="3a19667592899447cebf27bd00ee3f55"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
-<ul>
-	<li>Mock is a library for mocking objects in Python</li>
-	<li>It fits well with the unittest library</li>
-	<li>Mock and MagicMock objects create attributes and methods as you use them
-	<ul>
-		<li>store details about how they've been used</li>
-	</ul>
-	</li>
-	<li>Mock is available in Python 3 (&gt; 3.3) and has backports available for Python 2</li>
-</ul>
-
-<pre>pip install mock</pre>
-</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 66px; height: auto;" data-block-id="3ded5643e523d118097f6f2d52a4b5ac"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
-<h2>Mock Example</h2>
-</div></div>
-<div class="sl-block" data-block-type="code" style="width: 545px; height: 204px; left: 208px; top: 178px;" data-block-id="bdde9d5e3ee7d706b95b3bfcdf459816"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code># in Python 2
-from mock import MagicMock
-# in Python 3
-# from unittest.mock import MagicMock
-thing = ProductionClass()
-thing.method = MagicMock(return_value=3)
-thing.method(3, 4, 5, key='value')
-3
-thing.method.assert_called_with(3, 4, 5, key='value')
-</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 66px; height: auto;" data-block-id="ad45acba609bb34b33085b996605f451"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
-<h2>Side Effects</h2>
-</div></div>
-<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 154px; height: auto;" data-block-id="1e32d12b7901a8a6e407dddb4301182d"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
-<ul>
-	<li>You can have the mocked object create side effects</li>
-</ul>
-</div></div>
-<div class="sl-block" data-block-type="code" style="width: 431px; height: 103px; left: 265px; top: 261px;" data-block-id="96225a56d6d8a944330707f66f293570"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code>from mock import Mock
-
-thing = Mock(side_effect=KeyError('bam'))
-thing()
-</code></pre></div></div></section></section><section class="stack"><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="a3babbfa9413a1412d7d73b6308aa9b2"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<pre style="text-align:center">​lab_multi.py</pre>
+</div></div></section></section><section class="stack"><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="a3babbfa9413a1412d7d73b6308aa9b2"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
 <h1>Objects</h1>
 </div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="057a382ca4f801ab3b40baf9340e4415"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
 <h2>Python and Objects</h2>
@@ -1440,12 +1203,125 @@ print b.hello
 
 a.hello = 'world'
 
-print b.hello</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="aefeaec658906ee67ba065bdffaee44b"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text"><h2>Title Text</h2></div></div>
-<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="3875c091494e7c14fca42cb2d4f765a4"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"><ul>
-<li>Bullet One</li>
-<li>Bullet Two</li>
-<li>Bullet Three</li>
-</ul></div></div></section></section><section class="stack"><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="752aa9eafffbf6cbbfee9ddf69abbe5f"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+print b.hello</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="aefeaec658906ee67ba065bdffaee44b"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Everything is an Object<br>
+(Including integers)</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="9c0792d2a42c0e1c7559fd831847bdc8" style="min-width: 30px; min-height: 30px; width: 282px; height: 88px; left: 339px; top: 350px;"><div class="sl-block-content" style="z-index: 12;"><pre class="python"><code>x = 123
+print x.__add__
+print dir(x)</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 960px; left: 0px; top: 1px; height: auto;" data-block-id="c2e851113e0738308888a32505f9956f"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Since everything is just names bound to objects...</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 546px; height: 531px; left: 207px; top: 152px;" data-block-id="4fce6facc1c0fdbd1ef88f9eb6971c1b"><div class="sl-block-content" style="z-index: 12;"><pre class="python"><code>from __future__ import print_function
+import datetime
+import imp
+
+print(datetime.datetime.now())
+print(datetime.datetime.max, datetime.datetime.min)
+
+class PartyTime():
+    def __call__(self, *args):
+        imp.reload(datetime)
+        value = datetime.datetime(*args)
+        datetime.datetime = self
+        return value
+
+    def __getattr__(self, value):
+        if value == 'now':
+            return lambda: print('Party Time!')
+        else:
+            imp.reload(datetime)
+            value = getattr(datetime.datetime, value)
+            datetime.datetime = self
+            return value
+
+datetime.datetime = PartyTime()
+print(datetime.datetime.now())
+print(datetime.datetime.max, datetime.datetime.min)
+</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="3636060b6e6d2dc4da1597b6000db67d"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Mutable vs. Immutable</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 263px; height: auto;" data-block-id="4adad857df6286489ab5c31ff8e202fe"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>mutable objects <span style="color:#EE82EE"><strong>can</strong></span> be changed after they are created
+	<ul>
+		<li>lists, dictionaries</li>
+	</ul>
+	</li>
+	<li>immutable objects <span style="color:#EE82EE"><strong>cannot</strong></span> be changed after they are created
+	<ul>
+		<li>strings, tuples</li>
+	</ul>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="3d517d09e14a37a67e314eafe406e772"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Immutable Strings?</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="79a3783e9b3cdb7b3ce1159aeb35220e" style="min-width: 30px; min-height: 30px; width: 126px; height: 117px; left: 417px; top: 280px;"><div class="sl-block-content" style="z-index: 12;"><pre class="python"><code>x = 'abc'
+print id(x)
+
+x += 'def'
+print id(x)</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="8cedd067dcd5bd80c341ad287b417826"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Immutable Tuples?</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 434px; height: 400px; left: 263px; top: 144px;" data-block-id="52457d7bbb0a5ec7c413fb17599de3af"><div class="sl-block-content" style="z-index: 12;"><pre class="python"><code>class myInt():
+    def __init__(self):
+        self.value = 0
+    def __str__(self):
+        return str(self.value)
+    def __repr__(self):
+        return str(self.value)
+
+x = myInt()
+print x, id(x)
+
+x_t = (x, x)
+print x_t, id(x_t), id(x_t[0]), id(x_t[1])
+
+x_t[0] = 999 # exception!
+
+x.value = 999
+print x, id(x)
+print x_t, id(x_t), id(x_t[0]), id(x_t[1])
+</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="9a216cd161ef1fc0360b4aa994406075"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>More Names and Binding</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 280px; height: 250px; left: 340px; top: 155px;" data-block-id="248c211ac4139db0edfc02aa4df87acc"><div class="sl-block-content" style="z-index: 12;"><pre class="python"><code>def list_widget(in_list):
+    in_list[0] = 10
+
+    in_list = range(1, 10)
+    print in_list
+    in_list[0] = 10
+    print in_list
+
+my_list = [9, 9, 9, 9]
+list_widget(my_list)
+print my_list
+</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="8db8c032018182356d71a8a4c848e389"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Even Functions are Objects</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 355px; height: 278px; left: 303px; top: 154px;" data-block-id="033085eaccf6c8355d3529ca6bca8ae7"><div class="sl-block-content" style="z-index: 12;"><pre class="python"><code>def myFunc():
+    x = 1
+    y = 2
+    z = 'abc'
+    return x + y
+
+print myFunc.func_name
+print myFunc.func_code.co_varnames
+print myFunc.func_code.co_consts
+print myFunc.func_code.co_code
+
+import dis
+dis.disassemble(myFunc.func_code)</code></pre></div></div></section><section class="has-dark-background" data-background-color="#274e13"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="d19cf8a08903713018600c49be8ec733"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Lab</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="437ad4a9137c41ece8733cf242d5065a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>Follow the instructions in:</li>
+</ul>
+
+<pre style="text-align: center;">​lab_objects.py</pre>
+</div></div></section></section><section class="stack"><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="752aa9eafffbf6cbbfee9ddf69abbe5f"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
 <h1>Decorators</h1>
 </div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 33px; height: auto;" data-block-id="9e55018179af360e70fa532ec8c4dce2"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
 <h2>Functions</h2>
@@ -1757,7 +1633,7 @@ subtract(**values)</code></pre></div></div></section><section><div class="sl-blo
 <div class="sl-block" data-block-type="code" style="width: 801px; height: 273px; left: 80px; top: 200px;" data-block-id="faacb641d8b8a49d0ee0165f4dddcb52"><div class="sl-block-content" style="z-index: 13;"><pre><code>def debug_call(func):
     def inner(*args, **kwargs):
         print "{} called with {} {}".format(func.func_name, args, kwargs)
-        func(*args, **kwargs)
+        return func(*args, **kwargs)
     return inner
 
 @debug_call
@@ -1775,18 +1651,345 @@ print add(5)</code></pre></div></div></section><section class="has-dark-backgrou
 </ul>
 
 <pre style="text-align:center">lab_decorators.py</pre>
+</div></div></section></section><section class="stack"><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="9f2b0cb493cc8b150be54ab75fea0d34"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1>Decorators</h1>
+
+<p>with Parameters</p>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="7ca3fea116a94160270ba80958fc2f21"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Decorator without parameters</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="67d0cd5d7544f656bed6a093e33a098d" style="min-width: 30px; min-height: 30px; width: 736px; height: 300px; left: 112px; top: 200px;"><div class="sl-block-content" style="z-index: 12;"><pre class="python"><code>def debug_call(func):
+    def inner(*args, **kwargs):
+        print "{} called with {} {}".format(func.func_name, args, kwargs)
+        return func(*args, **kwargs)
+    return inner
+
+@debug_call
+def add(x, y=0):
+    return x + y
+
+print add(1, 2)
+print add(y=3, x=5)
+print add(5)</code></pre></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="5f021fa8bce71727c2d2ccab64aa7f42" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 521px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;">
+<p>What if we wanted to add a parameter to debug_call?</p>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="4762e146b7e8129da2d7afffc1bfeed8"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Example</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="30c9ed71b6e131973f83ac1b4a4e0e89"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>I want to add a parameter to debug_call that enables or disables the printing
+	<ul>
+		<li>(perhaps I could make this a global to turn off/on debugging)</li>
+	</ul>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="5595ba7fda169b1a84eb5ed24dfe26b2"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Decorators return functions</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 257px; height: 142px; left: 352px; top: 210px;" data-block-id="164f0875665cf647679070b0504f4d16"><div class="sl-block-content" style="z-index: 12;"><pre class="python"><code>@debug_call
+def add(x, y=0):
+    return x + y
+
+# translates into:
+add = debug_call(add)</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="5a1ae51363fdcc0603c6975e956ac17c"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2 style="color:rgb(255, 255, 255)">Decorators with Parameters return ???</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 81px; top: 362px; height: auto;" data-block-id="4fa3eddbb6ac53e23cacf2a13f2478f0"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>The decorator then becomes a function that:
+	<ul>
+		<li>accepts an argument,</li>
+		<li>and returns a function that:
+		<ul>
+			<li>accepts a function that:
+			<ul>
+				<li>returns another function</li>
+			</ul>
+			</li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="1f560a580099bac5d4aa848d0d90955d" style="min-width: 30px; min-height: 30px; width: 403px; height: 133.5px; left: 279px; top: 218px;"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code>@decorator_with_args(arg)
+def foo(*args, **kwargs):
+    pass
+
+# translates into:
+foo = decorator_with_args(arg)(foo)
+</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="91a89214fd6e97d3c18cbaff3381302f"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2 style="color:rgb(255, 255, 255)">Decorator with Parameter</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 817px; height: 398px; left: 72px; top: 162px;" data-block-id="cb69aafbbad1720d05ee4daf161f0670"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code>def debug_call(enabled=True):
+    def real_debug_call(func):
+        def inner(*args, **kwargs):
+            if enabled:
+                print "{} called with {} {}".format(func.func_name, args, kwargs)
+            return func(*args, **kwargs)
+        return inner
+    return real_debug_call
+
+@debug_call()
+def add(x, y=0):
+    return x + y
+
+@debug_call(enabled=False)
+def sub(x, y):
+    return x - y
+
+print add(1, 2)
+print sub(3, 4)</code></pre></div></div></section><section class="has-dark-background" data-background-color="#274e13"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="9a2f81a417cd14085f189fc87beda993"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Lab decorators with parameters</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="08842290b1ab12a9dbe112d7c9c39bee"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>Follow the instructions in:</li>
+</ul>
+
+<pre style="text-align:center">lab_decorators_with_parameters.py</pre>
+</div></div></section></section><section class="stack"><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="e63b2fc8c28429142fa60dbea1f2684b"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1>UnitTest</h1>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 91px; height: auto;" data-block-id="084149ecb795c7eb215b86ede5f22b1d"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Test Driven Development</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 180px; height: auto;" data-block-id="8bb4f30a53f710cded87b8c0790a4e43"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>
+	<p>Best early detection of bugs:</p>
+
+	<ul>
+		<li>
+		<p>Pair programming</p>
+		</li>
+		<li>
+		<p>Continuous Integration</p>
+		</li>
+		<li>
+		<p>Test Driven Development</p>
+		</li>
+	</ul>
+	</li>
+	<li>
+	<p>Test Driven Development (TDD) says essentially:</p>
+
+	<ul>
+		<li>
+		<p>Write a test that for a proposed feature and verify it fails</p>
+		</li>
+		<li>
+		<p>Write the minimal amount of code to make the test pass</p>
+		</li>
+		<li>
+		<p>Refactor</p>
+		</li>
+		<li>
+		<p>Repeat</p>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 27px; height: auto;" data-block-id="25d8a812597e352a1b37f0034a7d20ff"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Unittest Module</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 125px; height: auto;" data-block-id="fe45886466c52c677c2064bff68b1f28"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>
+	<p>Module in Python used to implement TDD</p>
+
+	<ul>
+		<li>
+		<p>or other unit testing needs</p>
+		</li>
+	</ul>
+	</li>
+	<li>
+	<p>Derive a class from unittest.TestCase</p>
+	</li>
+	<li>
+	<p>For a test runner, unittest.main() is the default, or roll your own</p>
+	</li>
+	<li>
+	<p>Simple test to see if two values were multiplied correctly:</p>
+	</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="749ce9476336ee1f9be472548e20399d" style="min-width: 30px; min-height: 30px; width: 500px; height: 239px; left: 230px; top: 441px;"><div class="sl-block-content" style="z-index: 13;"><pre><code>import calculator.operations.arithmetic as arith
+import unittest
+
+class TestCalculations(unittest.TestCase):
+    def test_multiply(self):
+        """ test multiply 2 * 2 """
+        testVal = arith.mult(2,2)
+        self.assertEqual(testVal, 4)
+
+if __name__ == "__main__":
+    unittest.main()</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 58px; height: auto;" data-block-id="17748876aa3acb093513b2fe939344d5"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Unittest Module</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 161px; height: auto;" data-block-id="d2871cb90df0a5cb402e0a46eedf3d5a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>
+	<p>If a test fixture is needed to setup/takedown the calculator for each test, we can add methods setUp() and tearDown()</p>
+	</li>
+	<li>
+	<p>The naming standard is that each test method name start with test</p>
+	</li>
+	<li>
+	<p>For unit tests, the TestCase class offers (3) primary verifiers:</p>
+
+	<ul>
+		<li>
+		<p>assertEqual(): result is equal to the value we expect</p>
+		</li>
+		<li>
+		<p>assertTrue(): result is a True assertion</p>
+		</li>
+		<li>
+		<p>assertRaises(): result is the Exception we expect</p>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 0px; height: auto;" data-block-id="92839211d1b4214284e49caa9a62d3f7"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Unittest Test</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="460c69a12ce78fa56bdab473623420fa"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>
+	<p>There are more assert methods to make life easy:</p>
+
+	<ul>
+		<li>
+		<p>assertNotEqual(): a != b<br>
+		assertTrue(): a is True<br>
+		assertFalse(): a is False<br>
+		assertIs(): a is b<br>
+		assertIsNot(): a is not b<br>
+		assertIsNone(): a is None<br>
+		assertIsNotNone(): a is not None<br>
+		assertIn(): a in b<br>
+		assertNotIn(): a not in b<br>
+		assertIsInstance(): isinstance(a, b) is True<br>
+		assertIsNotInstance(): isinstance(a, b) is False<br>
+		assertGreater(a, b): a &gt; b<br>
+		assertRaises(ex): raises ex<br>
+		assertRegexMatches(x, re): regex.search(x) is True</p>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div></div></section><section class="has-dark-background" data-background-color="#274e13"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="b299d4e3707dbabf3eee648cab585c1d"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Lab</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="5ad5b87684cd4e7b3eb392964420a825"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>Follow the instructions in:</li>
+</ul>
+
+<pre style="text-align: center;">lab_unittest.py</pre>
 
 <ul>
 	<li>Register your completion in Socrative</li>
 </ul>
-</div></div></section></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="63def5736e0c23e0e0d7fe2fda548d16"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+</div></div></section></section><section class="stack"><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="b3437ed936e39a539119d947b777f8bb"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1>Mock</h1>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="ee827ae8eaa215921b264b33fa434a58"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>What is a Mock?</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="431c7beade22c2e3de9ab44caaa2f25a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>Let's say you have some code that talks to a database
+	<ul>
+		<li>If you implement unit tests you probably don't want your code to talk to the actual database</li>
+	</ul>
+	</li>
+	<li>A Mock is an object that looks like the thing your are testing against
+	<ul>
+		<li>It doesn't have all the underlying logic to DO anything</li>
+		<li>Think of it like an actor
+		<ul>
+			<li>"I'm not a real database, I just play one on TV"</li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="0243043a9f2106b7176559a230c30048"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Why use Mocks?</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="eaa019aa63b42636bb591020077e5414"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>Maybe your resource isn't available</li>
+	<li>Maybe you can't force an error on the resource to test how your code will respond</li>
+	<li>Maybe it is too costly to use a real resource</li>
+	<li>Maybe the real resource takes too long
+	<ul>
+		<li>Not parallel</li>
+	</ul>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="340edd6fd0a4a5072bcf903ae45dfdcc"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Drawbacks to Mocks</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="4ee9e37bceae4432d9301dd23fe9127c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>Building an accurate Mock is time consuming and difficult
+	<ul>
+		<li>Has to track the resource changes</li>
+	</ul>
+	</li>
+	<li>You built the Mock, and the code, pollution is possible</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 66px; height: auto;" data-block-id="7e90c53d6d914eb2e09f2d2da768c8aa"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Mock</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 153px; height: auto;" data-block-id="3a19667592899447cebf27bd00ee3f55"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>Mock is a library for mocking objects in Python</li>
+	<li>It fits well with the unittest library</li>
+	<li>Mock and MagicMock objects create attributes and methods as you use them
+	<ul>
+		<li>store details about how they've been used</li>
+	</ul>
+	</li>
+	<li>Mock is available in Python 3 (&gt; 3.3) and has backports available for Python 2</li>
+</ul>
+
+<pre>pip install mock</pre>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 66px; height: auto;" data-block-id="3ded5643e523d118097f6f2d52a4b5ac"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Mock Example</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 545px; height: 204px; left: 208px; top: 178px;" data-block-id="bdde9d5e3ee7d706b95b3bfcdf459816"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code># in Python 2
+from mock import MagicMock
+# in Python 3
+# from unittest.mock import MagicMock
+thing = ProductionClass()
+thing.method = MagicMock(return_value=3)
+thing.method(3, 4, 5, key='value')
+3
+thing.method.assert_called_with(3, 4, 5, key='value')
+</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 66px; height: auto;" data-block-id="ad45acba609bb34b33085b996605f451"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Side Effects</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 154px; height: auto;" data-block-id="1e32d12b7901a8a6e407dddb4301182d"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>You can have the mocked object create side effects</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 431px; height: 103px; left: 265px; top: 261px;" data-block-id="96225a56d6d8a944330707f66f293570"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code>from mock import Mock
+
+thing = Mock(side_effect=KeyError('bam'))
+thing()
+</code></pre></div></div></section></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="63def5736e0c23e0e0d7fe2fda548d16"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
 <h1>Meta Classes</h1>
 </div></div></section>
 			</div>
 		</div>
 
 		<script>
-			var SLConfig = {"deck": {"id":512444,"slug":"python-ii","title":"Python II","description":"Course materials for the penultimate class in the software development curriculum: Python II","visibility":"all","published_at":"2015-10-13T12:15:02.218Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/secure/770c85/decks.jpg","view_count":12,"user":{"id":105368,"username":"racku","name":"Rackspace University","description":"","thumbnail_url":"https://www.gravatar.com/avatar/4fdd35b37f5a9854774386e628b420fe?s=140\u0026d=https%3A%2F%2Fs3.amazonaws.com%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","pro":true,"enterprise":false,"enterprise_manager":false,"settings":{"id":245,"present_controls":true,"present_upsizing":true,"present_notes":true},"registered":true},"background_transition":"concave","transition":"default","theme_id":null,"theme_font":"sketch","theme_color":"black-mint","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":false,"rolling_links":false,"center":false,"should_loop":false,"share_notes":false,"slide_number":true,"rtl":false,"version":2,"notes":{}}};
+			var SLConfig = {"deck": {"id":512444,"slug":"python-ii","title":"Python II","description":"Course materials for the penultimate class in the software development curriculum: Python II","visibility":"all","published_at":"2015-10-13T12:15:02.218Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/secure/770c85/decks.jpg","view_count":28,"user":{"id":105368,"username":"racku","name":"Rackspace University","description":"","thumbnail_url":"https://www.gravatar.com/avatar/4fdd35b37f5a9854774386e628b420fe?s=140\u0026d=https%3A%2F%2Fs3.amazonaws.com%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","pro":true,"enterprise":false,"enterprise_manager":false,"settings":{"id":245,"present_controls":true,"present_upsizing":true,"present_notes":true},"registered":true},"background_transition":"concave","transition":"default","theme_id":null,"theme_font":"sketch","theme_color":"black-mint","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":false,"rolling_links":false,"center":false,"should_loop":false,"share_notes":false,"slide_number":true,"rtl":false,"version":2,"notes":{}}};
 			SLConfig.current_user = {
 				name: "Rackspace University",
 				username: "racku",
