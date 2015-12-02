@@ -10,8 +10,8 @@ a. Create a decorator that times the function it wraps.  It should start the tim
    before the function starts, and stop it after the wrapped function returns.  Print the
    elapsed time.
 
-b. Add a parameter to your decorator called debug that is a boolean that indicates whether
-   to print out the elapsed time.  Add the logic to implement it.
+b. Optional: Add a parameter to your decorator called debug that is a boolean that indicates
+   whether to print out the elapsed time.  Add the logic to implement it.
 
 An example of timing a function is as follows:
 start_time = time.time()
@@ -20,7 +20,7 @@ stop_time = time.time()
 elapsed = stop_time - start_time
 """
 
-def timeme(item):
+def time_me(item):
     """time this function for various calls"""
     def is_prime(num):
         for j in xrange(2,num):
