@@ -1,5 +1,5 @@
-#!/usr/bin/env python
-#!*-* coding:utf-8 *-*
+#!/usr/bin/env python2
+# -*- coding: utf-8 -*-
 
 """
 
@@ -24,5 +24,5 @@ d. Use a list comprehension to find all the words that start with the letter 'a'
 e. Create a function called wordcount() with a yield that takes the list of
    all words as an argument and yields a tuple of
    (letter, number_of_words_starting_with_that_letter) with each iteration.
-   
+
 """

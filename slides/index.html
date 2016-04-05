@@ -413,313 +413,6 @@ st = {x for x in range(1,4)}</code></pre></div></div></section><section><div cla
 </ul>
 
 <pre style="text-align:center">lab_pyreview.py</pre>
-</div></div></section></section><section class="stack"><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="d5cabbf27fd3a150dc2745ecfad57079"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
-<h1>REST</h1>
-</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="657d76438a9577ada30b47a8d2d17297"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
-<h2>REST Principles</h2>
-</div></div>
-<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="d4c7b45f1f784756319f8b9c29134d04"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
-<ul>
-	<li>
-	<p>Representational State Transfer</p>
-	</li>
-	<li>
-	<p>A simple, client/server web services API currently in favor</p>
-	</li>
-	<li>
-	<p>Way of locating and manipulating “resources” (usually XML or JSON documents) on a network</p>
-	</li>
-	<li>
-	<p>Commonly based HTTP protocol (GET, POST, PUT, DELETE)</p>
-	</li>
-	<li>
-	<p>Stateless (all state on client or server)</p>
-	</li>
-	<li>
-	<p>Simple, predictable resource pathing scheme based on URL</p>
-	</li>
-</ul>
-</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 103px; height: auto;" data-block-id="4108edf05663aeefa534bee0fa7982bc"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
-<h2>More RESTing</h2>
-</div></div>
-<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 199px; height: auto;" data-block-id="266e7392a124b6c37353105dbf8d8344"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
-<ul>
-	<li>
-	<p>ReSTful services generally map a CRUD interface (Create, Read, Update, Delete) by URL mappings that embed data</p>
-
-	<ul>
-		<li>
-		<p>e.g. GET v2/{tenant_id}/servers</p>
-		</li>
-		<li>
-		<p>HTTP POST -&gt; Create</p>
-		</li>
-		<li>
-		<p>GET -&gt; Read</p>
-		</li>
-		<li>
-		<p>PUT -&gt; Update</p>
-		</li>
-		<li>
-		<p>DELETE -&gt; Delete</p>
-		</li>
-	</ul>
-	</li>
-	<li>
-	<p>HTTP GET calls to a ReSTful service should not change state i.e. read only</p>
-	</li>
-</ul>
-</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 54px; height: auto;" data-block-id="0380f6313628350d0f03d0650907d4fd"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
-<h2>Accessing Web Data: urllib2</h2>
-</div></div>
-<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 149px; height: auto;" data-block-id="c4d8526eb21af6603819813131411ef7"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
-<ul>
-	<li>
-	<p>Client functions to access URL’s</p>
-	</li>
-	<li>
-	<pre>import urllib2</pre>
-	</li>
-	<li>
-	<p>urllib2.urlopen(url[,data]) is a common call signature</p>
-
-	<ul>
-		<li>
-		<p>url is the URL of the target resource</p>
-		</li>
-		<li>
-		<p>data is to be sent to the server</p>
-		</li>
-	</ul>
-	</li>
-	<li>
-	<p>Only HTTP uses data currently</p>
-	</li>
-	<li>
-	<p>If data exists</p>
-
-	<ul>
-		<li>
-		<p>it must be URL encoded</p>
-		</li>
-		<li>
-		<p>HTTP GET becomes a POST</p>
-		</li>
-	</ul>
-	</li>
-</ul>
-</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 66px; height: auto;" data-block-id="888913486f103d1e5cc2cf74aa4d0509"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
-<h2>urllib2</h2>
-</div></div>
-<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 177px; height: auto;" data-block-id="cd3149a7dd880b12bfd96a83d21533f1"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
-<ul>
-	<li>
-	<p>A “file-like object” is returned from urlopen() which can be accessed with file semantics (read, readlines, etc.)</p>
-	</li>
-	<li>
-	<pre>Raises:
-URLError (subclass of IOError)
-HTTPError (subclass of URLError)</pre>
-	</li>
-	<li>
-	<p>Also takes urllib2.Request objects, useful for including HTTP headers in a dict (or use Request add_header method)</p>
-	</li>
-	<li>
-	<p>Can handle redirections, HTTP error responses, cookies, proxies, HTTP authentication</p>
-	</li>
-</ul>
-</div></div></section></section><section class="stack"><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="62e347971a15c8502c2f2af1900fdeb2"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
-<h1>Serialization</h1>
-</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="f1c61382a232e515813b48cce34fb1ab"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
-<h2>JSON</h2>
-</div></div>
-<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="4eba138fe49fecfcf546031bbb70bd60"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
-<ul>
-	<li>
-	<p>Javascript Object Notation</p>
-	</li>
-	<li>
-	<p>Part of Javascript language definition</p>
-	</li>
-	<li>
-	<p>Easy for parse for humans and machines</p>
-	</li>
-	<li>
-	<p>Language independent</p>
-	</li>
-	<li>
-	<p>“lightweight data interchange format”</p>
-	</li>
-</ul>
-</div></div>
-<div class="sl-block" data-block-type="code" data-block-id="800931370d5d072862fc49e3df4c671d" style="min-width: 30px; min-height: 30px; width: 469px; height: 50px; left: 246px; top: 510px;"><div class="sl-block-content" style="z-index: 13;"><pre class="bash"><code>Name/value pair collection (dict in Python)
-Ordered list of values (list in Python)</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="aebd62350cbaf19e817f078f04919c58"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
-<h2>JSON Details</h2>
-</div></div>
-<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="94d04a290a62b131dbed1f61d74fecea"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
-<ul>
-	<li>
-	<p>An “object” is an unordered set of name:value pairs (called “members”) separated by commas and surrounded by curly braces</p>
-
-	<ul>
-		<li>
-		<pre>{ Name1:Value1, Name2:Value1,… }</pre>
-		</li>
-	</ul>
-	</li>
-	<li>
-	<p>An “array” is a set of “elements” surrounded by square brackets</p>
-
-	<ul>
-		<li>
-		<pre>[ element1, element2,… ]</pre>
-		</li>
-	</ul>
-	</li>
-	<li>
-	<p>Elements are strings, numbers, true, false, null, object, array</p>
-	</li>
-</ul>
-</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="c678f0328a614915951ca2407b239304"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
-<h2>More JSON</h2>
-</div></div>
-<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="293c4d15e70bf170390b1c5057d66094"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
-<ul>
-	<li>
-	<p>Strings are made of:</p>
-
-	<ul>
-		<li>
-		<p>Unicode chars (\uhhhh)</p>
-		</li>
-		<li>
-		<p>\,\\,/,\b,\f,\n,\r,\t</p>
-		</li>
-	</ul>
-	</li>
-	<li>
-	<p>Numbers are signed integer, decimal, or exponent (“e”) flavors only</p>
-	</li>
-	<li>
-	<p>Whitespace is fine</p>
-	</li>
-</ul>
-</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="c3bb888daef9d80c90500b0f1a5d6e76"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
-<h2>Python to JSON</h2>
-</div></div>
-<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="807708580a6b5c0ebc530e5cbc02abc9"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
-<ul>
-	<li>import the json module</li>
-	<li>Serialize a Python object to JSON</li>
-</ul>
-</div></div>
-<div class="sl-block" data-block-type="code" data-block-id="decd5574bb4cf0f1c303f9dfe7424d55" style="min-width: 30px; min-height: 30px; width: 427px; height: 80px; left: 267px; top: 380px;"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code>import json
-json.dump(python_obj, fo, **kwargs)
-json.dumps(python_obj, **kwargs)</code></pre></div></div>
-<div class="sl-block" data-block-type="text" data-block-id="88add78d2a2fead0efe2757e4698368c" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 181px; top: 497px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;">
-<p>Note: JSON is not a ”framed” protocol <br>
-i.e. can’t append multiple JSON objects to same file</p>
-</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="f9fa1cfb90d2de856c89be3157de2873"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
-<h2>JSON to Python</h2>
-</div></div>
-<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="5bbe142efbdfc5dba9d21a32ab8fdc51"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
-<ul>
-	<li>import the json module</li>
-	<li>Deserialize a JSON object to Python</li>
-</ul>
-</div></div>
-<div class="sl-block" data-block-type="code" style="width: 427px; height: 80px; left: 267px; top: 373px;" data-block-id="8a081ff60452964cb3fa1bf39f818fe0"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code>import json
-python_obj = json.load(fo, **kwargs)
-python_obj = json.loads(string, **kwargs)</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="9ede19392aea62a261328d879a86b97f"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
-<h2>JSON Module Caveats</h2>
-</div></div>
-<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="48c9e150199bb1754997f503691d9d94"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
-<ul>
-	<li>
-	<p>JSON keys in key/value pairs are always strings. Unlike Python.</p>
-	</li>
-	<li>
-	<p>Default json module encoder only encodes “ASCII-compatible” strings. Use u for other encodings</p>
-	</li>
-	<li>
-	<p>Same name in name:value pairs uses the last one</p>
-	</li>
-	<li>
-	<p>Out of range floats are handled correctly (nan, inf, -inf)</p>
-	</li>
-</ul>
-</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="cc1835a7d49530070be014445e1311d4"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
-<h2>Python to JSON Translations</h2>
-</div></div>
-<div class="sl-block" data-block-type="text" style="width: 346px; left: 307px; top: 280px; height: auto;" data-block-id="3c84b5f7667594174378740f10d8b80a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
-<pre><span style="font-size:0.7em">dict -&gt; object
-list, tuple -&gt; array
-str, unicode -&gt; string
-int, float -&gt; number
-True, False -&gt; true, false
-None -&gt; null</span></pre>
-</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="977e7f5c48d480797cd48b1bc346fdf4"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
-<h2>Performance</h2>
-</div></div>
-<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 144px; height: auto;" data-block-id="08330435217626112cd4465c9633ff16"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
-<ul>
-	<li>The builtin json module can be slow</li>
-	<li>Other pypi packages have C extensions to speed them up
-	<ul>
-		<li>simplejson, yajl, python-cjson, UltraJSON</li>
-	</ul>
-	</li>
-	<li>Opinion:
-	<ul>
-		<li>Don't load/save huge json objects</li>
-		<li>profile your app to make sure it is the json encode/decode</li>
-	</ul>
-	</li>
-</ul>
-</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 51px; height: auto;" data-block-id="881ec559d261971dbea03d8a56a5b69c"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
-<h2>Pickle and Shelve</h2>
-</div></div>
-<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 125px; height: auto;" data-block-id="ba4a4795c71c329ec4d1636454a2992c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
-<ul>
-	<li>
-	<p>The pickle module does a similar job to JSON, but is Python specific</p>
-
-	<ul>
-		<li>
-		<p>Not good for machine data interchange</p>
-		</li>
-		<li>
-		<p>Allows multiple pickled objects to be dumped to the same file</p>
-
-		<ul>
-			<li>
-			<p>must be loaded in same order on way back</p>
-			</li>
-		</ul>
-		</li>
-	</ul>
-	</li>
-	<li>
-	<p>The shelve module essentially provided a persistent dict for pickled objects in a database</p>
-	</li>
-	<li>
-	<p>Opinion: Only use these for interchange within your own app</p>
-	</li>
-</ul>
-</div></div></section><section class="has-dark-background" data-background-color="#274e13"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="a92b84003797bbec17e8d9c97840723d"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
-<h2>Lab JSON</h2>
-</div></div>
-<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="217cc7414054ab50d218d266cdfc50f6"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
-<ul>
-	<li>
-<span style="color:rgb(255, 255, 255); text-align:left">Follow the instructions in:</span>
-	<ul>
-		<li>
-		<pre>lab_json.py<span style="color:rgb(255, 255, 255); text-align:left">​</span></pre>
-		</li>
-	</ul>
-	</li>
-</ul>
 </div></div></section></section><section class="stack"><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="2f2668d20a783c95e34a56aa531e85c1"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
 <h1>Subprocessing</h1>
 </div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="83b30e5ca810a1f224df479286d9f19b"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
@@ -1137,6 +830,320 @@ if __name__ == "__main__":
 </ul>
 
 <pre style="text-align:center">​lab_multi.py</pre>
+</div></div></section></section><section class="stack"><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="62e347971a15c8502c2f2af1900fdeb2"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1>Serialization</h1>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="472b718359ec93c57b9a4fca46a6eebf"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Lots of Options for Serialization in Python</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 338px; height: auto;" data-block-id="ea1babb14bada15ce1631d0b0912b979"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>JSON, YAML, Pickle, Shelve, XML, etc.</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="f1c61382a232e515813b48cce34fb1ab"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>JSON</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="4eba138fe49fecfcf546031bbb70bd60"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>
+	<p>Javascript Object Notation</p>
+	</li>
+	<li>
+	<p>Part of Javascript language definition</p>
+	</li>
+	<li>
+	<p>Easy for parse for humans and machines</p>
+	</li>
+	<li>
+	<p>Language independent</p>
+	</li>
+	<li>
+	<p>“lightweight data interchange format”</p>
+	</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="800931370d5d072862fc49e3df4c671d" style="min-width: 30px; min-height: 30px; width: 469px; height: 50px; left: 246px; top: 510px;"><div class="sl-block-content" style="z-index: 13;"><pre class="bash"><code>Name/value pair collection (dict in Python)
+Ordered list of values (list in Python)</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="aebd62350cbaf19e817f078f04919c58"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>JSON Details</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="94d04a290a62b131dbed1f61d74fecea"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>
+	<p>An “object” is an unordered set of name:value pairs (called “members”) separated by commas and surrounded by curly braces</p>
+
+	<ul>
+		<li>
+		<pre>{ Name1:Value1, Name2:Value1,… }</pre>
+		</li>
+	</ul>
+	</li>
+	<li>
+	<p>An “array” is a set of “elements” surrounded by square brackets</p>
+
+	<ul>
+		<li>
+		<pre>[ element1, element2,… ]</pre>
+		</li>
+	</ul>
+	</li>
+	<li>
+	<p>Elements are strings, numbers, true, false, null, object, array</p>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="c678f0328a614915951ca2407b239304"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>More JSON</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="293c4d15e70bf170390b1c5057d66094"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>
+	<p>Strings are made of:</p>
+
+	<ul>
+		<li>
+		<p>Unicode chars (\uhhhh)</p>
+		</li>
+		<li>
+		<p>\,\\,/,\b,\f,\n,\r,\t</p>
+		</li>
+	</ul>
+	</li>
+	<li>
+	<p>Numbers are signed integer, decimal, or exponent (“e”) flavors only</p>
+	</li>
+	<li>
+	<p>Whitespace is fine</p>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="c3bb888daef9d80c90500b0f1a5d6e76"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Python to JSON</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="807708580a6b5c0ebc530e5cbc02abc9"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<ul>
+	<li>import the json module</li>
+	<li>Serialize a Python object to JSON</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="decd5574bb4cf0f1c303f9dfe7424d55" style="min-width: 30px; min-height: 30px; width: 427px; height: 80px; left: 267px; top: 380px;"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code>import json
+json.dump(python_obj, fo, **kwargs)
+json.dumps(python_obj, **kwargs)</code></pre></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="88add78d2a2fead0efe2757e4698368c" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 181px; top: 497px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;">
+<p>Note: JSON is not a ”framed” protocol <br>
+i.e. can’t append multiple JSON objects to same file</p>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="f9fa1cfb90d2de856c89be3157de2873"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>JSON to Python</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="5bbe142efbdfc5dba9d21a32ab8fdc51"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>import the json module</li>
+	<li>Deserialize a JSON object to Python</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 427px; height: 80px; left: 267px; top: 373px;" data-block-id="8a081ff60452964cb3fa1bf39f818fe0"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code>import json
+python_obj = json.load(fo, **kwargs)
+python_obj = json.loads(string, **kwargs)</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="9ede19392aea62a261328d879a86b97f"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>JSON Module Caveats</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="48c9e150199bb1754997f503691d9d94"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>
+	<p>JSON keys in key/value pairs are always strings. Unlike Python.</p>
+	</li>
+	<li>
+	<p>Default json module encoder only encodes “ASCII-compatible” strings. Use u for other encodings</p>
+	</li>
+	<li>
+	<p>Same name in name:value pairs uses the last one</p>
+	</li>
+	<li>
+	<p>Out of range floats are handled correctly (nan, inf, -inf)</p>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="cc1835a7d49530070be014445e1311d4"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Python to JSON Translations</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 346px; left: 307px; top: 280px; height: auto;" data-block-id="3c84b5f7667594174378740f10d8b80a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<pre><span style="font-size:0.7em">dict -&gt; object
+list, tuple -&gt; array
+str, unicode -&gt; string
+int, float -&gt; number
+True, False -&gt; true, false
+None -&gt; null</span></pre>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="977e7f5c48d480797cd48b1bc346fdf4"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Performance</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 144px; height: auto;" data-block-id="08330435217626112cd4465c9633ff16"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>The builtin json module can be slow</li>
+	<li>Other pypi packages have C extensions to speed them up
+	<ul>
+		<li>simplejson, yajl, python-cjson, UltraJSON</li>
+	</ul>
+	</li>
+	<li>Opinion:
+	<ul>
+		<li>Don't load/save huge json objects</li>
+		<li>profile your app to make sure it is the json encode/decode</li>
+	</ul>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 51px; height: auto;" data-block-id="881ec559d261971dbea03d8a56a5b69c"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Pickle and Shelve</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 125px; height: auto;" data-block-id="ba4a4795c71c329ec4d1636454a2992c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>
+	<p>The pickle module does a similar job to JSON, but is Python specific</p>
+
+	<ul>
+		<li>
+		<p>Not good for machine data interchange</p>
+		</li>
+		<li>
+		<p>Allows multiple pickled objects to be dumped to the same file</p>
+
+		<ul>
+			<li>
+			<p>must be loaded in same order on way back</p>
+			</li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+	<li>
+	<p>The shelve module essentially provided a persistent dict for pickled objects in a database</p>
+	</li>
+	<li>
+	<p>Opinion: Only use these for interchange within your own app</p>
+	</li>
+</ul>
+</div></div></section><section class="has-dark-background" data-background-color="#274e13"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="a92b84003797bbec17e8d9c97840723d"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Lab JSON</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="217cc7414054ab50d218d266cdfc50f6"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>
+<span style="color:rgb(255, 255, 255); text-align:left">Follow the instructions in:</span>
+	<ul>
+		<li>
+		<pre>lab_json.py<span style="color:rgb(255, 255, 255); text-align:left">​</span></pre>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div></div></section></section><section class="stack"><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="d5cabbf27fd3a150dc2745ecfad57079"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1>REST</h1>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="657d76438a9577ada30b47a8d2d17297"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>REST Principles</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="d4c7b45f1f784756319f8b9c29134d04"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>
+	<p>Representational State Transfer</p>
+	</li>
+	<li>
+	<p>A simple, client/server web services API currently in favor</p>
+	</li>
+	<li>
+	<p>Way of locating and manipulating “resources” (usually XML or JSON documents) on a network</p>
+	</li>
+	<li>
+	<p>Commonly based HTTP protocol (GET, POST, PUT, DELETE)</p>
+	</li>
+	<li>
+	<p>Stateless (all state on client or server)</p>
+	</li>
+	<li>
+	<p>Simple, predictable resource pathing scheme based on URL</p>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 103px; height: auto;" data-block-id="4108edf05663aeefa534bee0fa7982bc"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>More RESTing</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 199px; height: auto;" data-block-id="266e7392a124b6c37353105dbf8d8344"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>
+	<p>ReSTful services generally map a CRUD interface (Create, Read, Update, Delete) by URL mappings that embed data</p>
+
+	<ul>
+		<li>
+		<p>e.g. GET v2/{tenant_id}/servers</p>
+		</li>
+		<li>
+		<p>HTTP POST -&gt; Create</p>
+		</li>
+		<li>
+		<p>GET -&gt; Read</p>
+		</li>
+		<li>
+		<p>PUT -&gt; Update</p>
+		</li>
+		<li>
+		<p>DELETE -&gt; Delete</p>
+		</li>
+	</ul>
+	</li>
+	<li>
+	<p>HTTP GET calls to a ReSTful service should not change state i.e. read only</p>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 54px; height: auto;" data-block-id="0380f6313628350d0f03d0650907d4fd"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Accessing Web Data: urllib2</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 149px; height: auto;" data-block-id="c4d8526eb21af6603819813131411ef7"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>
+	<p>Client functions to access URL’s</p>
+	</li>
+	<li>
+	<pre>import urllib2</pre>
+	</li>
+	<li>
+	<p>urllib2.urlopen(url[,data]) is a common call signature</p>
+
+	<ul>
+		<li>
+		<p>url is the URL of the target resource</p>
+		</li>
+		<li>
+		<p>data is to be sent to the server</p>
+		</li>
+	</ul>
+	</li>
+	<li>
+	<p>Only HTTP uses data currently</p>
+	</li>
+	<li>
+	<p>If data exists</p>
+
+	<ul>
+		<li>
+		<p>it must be URL encoded</p>
+		</li>
+		<li>
+		<p>HTTP GET becomes a POST</p>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 66px; height: auto;" data-block-id="888913486f103d1e5cc2cf74aa4d0509"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>urllib2</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 177px; height: auto;" data-block-id="cd3149a7dd880b12bfd96a83d21533f1"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>
+	<p>A “file-like object” is returned from urlopen() which can be accessed with file semantics (read, readlines, etc.)</p>
+	</li>
+	<li>
+	<pre>Raises:
+URLError (subclass of IOError)
+HTTPError (subclass of URLError)</pre>
+	</li>
+	<li>
+	<p>Also takes urllib2.Request objects, useful for including HTTP headers in a dict (or use Request add_header method)</p>
+	</li>
+	<li>
+	<p>Can handle redirections, HTTP error responses, cookies, proxies, HTTP authentication</p>
+	</li>
+</ul>
 </div></div></section></section><section class="stack"><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="a3babbfa9413a1412d7d73b6308aa9b2"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
 <h1>Objects</h1>
 </div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="057a382ca4f801ab3b40baf9340e4415"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
@@ -1985,7 +1992,7 @@ thing()
 		</div>
 
 		<script>
-			var SLConfig = {"deck": {"id":512444,"slug":"python-iv","title":"Python IV","description":"Course materials for the penultimate class in the software development curriculum: Python IV","visibility":"all","published_at":"2015-10-13T12:15:02.218Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/770c85514148194e5d76b1c135a2859b/thumb.jpg","view_count":124,"user":{"id":105368,"username":"racku","name":"Rackspace University","description":"","thumbnail_url":"https://www.gravatar.com/avatar/4fdd35b37f5a9854774386e628b420fe?s=140\u0026d=https%3A%2F%2Fs3.amazonaws.com%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","private_thumbnail_url":"https://www.gravatar.com/avatar/4fdd35b37f5a9854774386e628b420fe?s=140\u0026d=https%3A%2F%2Fs3.amazonaws.com%2Fstatic.slid.es%2Fimages%2Falphabet%2Fv1%2Fr.png","pro":true,"enterprise":false,"enterprise_manager":false,"settings":{"id":245,"present_controls":true,"present_upsizing":true,"present_notes":true},"registered":true},"background_transition":"concave","transition":"default","theme_id":null,"theme_font":"sketch","theme_color":"black-mint","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":false,"rolling_links":false,"center":false,"should_loop":false,"share_notes":false,"slide_number":true,"rtl":false,"version":2,"notes":{}}};
+			var SLConfig = {"deck": {"id":512444,"slug":"python-iv","title":"Python IV","description":"Course materials for the penultimate class in the software development curriculum: Python IV","visibility":"all","published_at":"2015-10-13T12:15:02.218Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/770c85514148194e5d76b1c135a2859b/thumb.jpg","view_count":129,"user":{"id":105368,"username":"racku","name":"Rackspace University","description":"","thumbnail_url":"https://www.gravatar.com/avatar/4fdd35b37f5a9854774386e628b420fe?s=140\u0026d=https%3A%2F%2Fs3.amazonaws.com%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","private_thumbnail_url":"https://www.gravatar.com/avatar/4fdd35b37f5a9854774386e628b420fe?s=140\u0026d=https%3A%2F%2Fs3.amazonaws.com%2Fstatic.slid.es%2Fimages%2Falphabet%2Fv1%2Fr.png","pro":true,"enterprise":false,"enterprise_manager":false,"settings":{"id":245,"present_controls":true,"present_upsizing":true,"present_notes":true},"registered":true},"background_transition":"concave","transition":"default","theme_id":null,"theme_font":"sketch","theme_color":"black-mint","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":false,"rolling_links":false,"center":false,"should_loop":false,"share_notes":false,"slide_number":true,"rtl":false,"version":2,"notes":{}}};
 			SLConfig.current_user = {
 				name: "Rackspace University",
 				username: "racku",
