@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#!*-* coding:utf-8 *-*
+# *-* coding:utf-8 *-*
 
 """
 
@@ -26,6 +26,10 @@ e. Create a function called wordcount() with a yield that takes the list of
    (letter, number_of_words_starting_with_that_letter) with each iteration.
 
 """
+import random
+import string
+
+
 # helper functions
 def strip_newlines(list_of_words):
     return [l.strip() for l in list_of_words]
@@ -52,7 +56,6 @@ print('')
 
 # step c.
 print("step c.")
-import random
 for i in xrange(5):
     word = random.choice(dictionary_combined)
     print("Word {}: {}".format(i+1, word))
@@ -71,8 +74,8 @@ awords = [w for w in dictionary_combined if w.startswith('a')]
 print("Number of words starting with 'a': {}".format(len(awords)))
 print('')
 
+
 # step e.
-import string
 def wordcount(wordlist):
     for letter in string.ascii_lowercase:
         words = [w for w in wordlist if w.startswith(letter)]
