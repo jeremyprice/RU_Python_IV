@@ -1031,10 +1031,10 @@ None -&gt; null</span></pre>
 </ul>
 </div></div></section></section><section class="stack"><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="d5cabbf27fd3a150dc2745ecfad57079"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
 <h1>REST</h1>
-</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="657d76438a9577ada30b47a8d2d17297"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 15px; height: auto;" data-block-id="657d76438a9577ada30b47a8d2d17297"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
 <h2>REST Principles</h2>
 </div></div>
-<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="d4c7b45f1f784756319f8b9c29134d04"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 89px; height: auto;" data-block-id="d4c7b45f1f784756319f8b9c29134d04"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
 <ul>
 	<li>
 	<p>Representational State Transfer</p>
@@ -1043,10 +1043,16 @@ None -&gt; null</span></pre>
 	<p>A simple, client/server web services API currently in favor</p>
 	</li>
 	<li>
-	<p>Way of locating and manipulating “resources” (usually XML or JSON documents) on a network</p>
+	<p>Way of locating and manipulating “resources” on a network</p>
+
+	<ul>
+		<li>
+		<p><span style="color:rgb(255, 255, 255); text-align:left">usually represented by XML or JSON documents</span></p>
+		</li>
+	</ul>
 	</li>
 	<li>
-	<p>Commonly based HTTP protocol (GET, POST, PUT, DELETE)</p>
+	<p>Commonly uses HTTP protocol (GET, POST, PUT, DELETE)</p>
 	</li>
 	<li>
 	<p>Stateless (all state on client or server)</p>
@@ -1068,16 +1074,16 @@ None -&gt; null</span></pre>
 		<p>e.g. GET v2/{tenant_id}/servers</p>
 		</li>
 		<li>
-		<p>HTTP POST -&gt; Create</p>
+		<p>HTTP POST -&gt; Create a server</p>
 		</li>
 		<li>
-		<p>GET -&gt; Read</p>
+		<p>GET -&gt; Read the list of servers/specific server</p>
 		</li>
 		<li>
-		<p>PUT -&gt; Update</p>
+		<p>PUT -&gt; Update a specific server</p>
 		</li>
 		<li>
-		<p>DELETE -&gt; Delete</p>
+		<p>DELETE -&gt; Delete a specific server</p>
 		</li>
 	</ul>
 	</li>
@@ -1109,7 +1115,7 @@ None -&gt; null</span></pre>
 	</ul>
 	</li>
 	<li>
-	<p>Only HTTP uses data currently</p>
+	<p>Only HTTP url types use data currently</p>
 	</li>
 	<li>
 	<p>If data exists</p>
@@ -1142,6 +1148,85 @@ HTTPError (subclass of URLError)</pre>
 	</li>
 	<li>
 	<p>Can handle redirections, HTTP error responses, cookies, proxies, HTTP authentication</p>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 66px; height: auto;" data-block-id="b0e41b9d8dcb423f97fa29fea866e385"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>urllib2 example</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="5566f485cbf90a1374022af78c19992a" style="min-width: 30px; min-height: 30px; width: 881px; height: 220px; left: 37px; top: 200px;"><div class="sl-block-content" style="z-index: 12;"><pre class="python"><code>import urllib2
+
+response = urllib2.urlopen("http://www.google.com")
+page = response.read()
+
+post_response = urllib2.urlopen("http://test.com/post_info", data={'test1':123})
+data = post_response.read()</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="bbfa34ef2ed4e76eb7966d0e0603f126"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1>urllib2 is great</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 287px; height: auto;" data-block-id="1eab3d6aaf7263550df5085d848cafdf"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle">
+<h2>but Requests is better!</h2>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="104482fa11d85618c94356367700c17b"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Requests library</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="c5cf49d18d2ba9131b82a03b1772289b"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<ul>
+	<li>If you are going to do any real work with HTTP, Python recommends using the Requests library</li>
+	<li>It handles the HTTP intricacies more transparently, and better, than urllib2</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="e04468b59cfd0a198f1d84d95c75a068" style="min-width: 30px; min-height: 30px; width: 233px; height: 39px; left: 364px; top: 420px;"><div class="sl-block-content" style="z-index: 13;"><pre class="bash"><code>pip install requests</code></pre></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="9c6b39d4f31c4ac50130e69e521dba76" style="height: auto; min-width: 30px; min-height: 30px; width: 654px; left: 154px; top: 490px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;">
+<p>More info on requests: </p>
+
+<p><a href="http://docs.python-requests.org/en/master/" target="_blank">http://docs.python-requests.org/en/master/</a></p>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="971ddd5f145ca7567fd17d750718694b"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Requests Example - GET</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="4634755d125d7e671713903666f0de8c" style="min-width: 30px; min-height: 30px; width: 535px; height: 157px; left: 230px; top: 286px;"><div class="sl-block-content" style="z-index: 12;"><pre class="python"><code>import requests
+
+response = requests.get("https://api.github.com")
+print response.status_code
+print response.headers
+print response.text
+print response.json()</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="7222545ea0e45d0396f6679570f14255"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Requests Example - POST</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 678px; height: 93px; left: 141px; top: 280px;" data-block-id="d8896d15956446fdb9d0936ecdfca45a"><div class="sl-block-content" style="z-index: 12;"><pre class="python"><code>import requests
+
+data = {'user': 'bob', 'pass': 'password'}
+response = requests.post("https://api.myhost.com/login", data=data)
+</code></pre></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="3bc7f5478354e3836f1d24063fccc82a" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 401px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;">
+<p>Note: the default content type for a POST is <em>application/x-www-form-urlencoded</em></p>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="a9398a02ec52101cd73507999bd53c89"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Requests Example - POST JSON</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 676px; height: 104px; left: 142px; top: 280px;" data-block-id="6e11247a29051db6fb6d7c8e3b1c17cb"><div class="sl-block-content" style="z-index: 12;"><pre class="python"><code>import requests
+
+data = {'user': 'bob', 'pass': 'password'}
+response = requests.post("https://api.myhost.com/login", json=data)
+</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 412px;" data-block-id="c39308a75c9ef82fe2c8f9c6dd52e173"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;">
+<p>Note: the content type for a POST with the JSON argument is <em>application/json</em></p>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="780d6a973ea3df2814ee37182ea4bf41"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Requests Examples</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 665px; height: 132px; left: 148px; top: 280px;" data-block-id="6a27a0379ca857a334046496e281225f"><div class="sl-block-content" style="z-index: 12;"><pre class="python"><code>import requests
+
+r = requests.put('http://httpbin.org/put', data = {'key':'value'})
+r = requests.delete('http://httpbin.org/delete')
+r = requests.head('http://httpbin.org/get')
+r = requests.options('http://httpbin.org/get')</code></pre></div></div></section><section class="has-dark-background" data-background-color="#274e13"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="c71e7c5618cad23f85a4a2d57c3c6f2c"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Lab Requests</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="2b78ea08f4fa2138fc665d610ad5f7c3"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>
+<span style="color:rgb(255, 255, 255); text-align:left">Follow the instructions in:</span>
+	<ul>
+		<li>
+		<pre>lab_requests.py<span style="color:rgb(255, 255, 255); text-align:left">​</span></pre>
+		</li>
+	</ul>
 	</li>
 </ul>
 </div></div></section></section><section class="stack"><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="a3babbfa9413a1412d7d73b6308aa9b2"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
@@ -1835,6 +1920,12 @@ if __name__ == "__main__":
 <ul>
 	<li>
 	<p>If a test fixture is needed to setup/takedown the calculator for each test, we can add methods setUp() and tearDown()</p>
+
+	<ul>
+		<li>
+		<p>setUpClass() and tearDownClass() for TestCase-level setup and teardown</p>
+		</li>
+	</ul>
 	</li>
 	<li>
 	<p>The naming standard is that each test method name start with test</p>
