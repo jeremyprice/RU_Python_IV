@@ -15,7 +15,7 @@ import time
 import sys
 
 
-def function_timer_units(seconds=False):
+def function_timer_units(seconds=True):
     """ This function times another function and prints the elapsed time in
     seconds (seconds=True) or milliseconds (seconds=False)"""
     def function_timer(func):
