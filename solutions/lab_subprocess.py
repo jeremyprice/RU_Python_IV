@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#!*-* coding:utf-8 *-*
+# *-* coding:utf-8 *-*
 
 """
 
@@ -50,6 +50,8 @@ print("Output from command:\n{}".format(proc.stdout.read()))
 print('')
 
 print("step f.")
+
+
 def commander(commands):
     for cmd in commands:
         output = subprocess.check_output(cmd, shell=True)

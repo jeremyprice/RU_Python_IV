@@ -19,6 +19,7 @@ elapsed = stop_time - start_time
 import time
 import sys
 
+
 def function_timer(func):
     def inside(*args, **kwargs):
         start = time.time()
@@ -31,11 +32,12 @@ def function_timer(func):
         return retval
     return inside
 
+
 @function_timer
 def time_me(item):
     """time this function for various calls"""
     def is_prime(num):
-        for j in xrange(2,num):
+        for j in xrange(2, num):
             if (num % j) == 0:
                 return False
         return True

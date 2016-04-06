@@ -15,6 +15,8 @@ a. Create a series of unittest tests to verify the classes below.  Create the fo
 """
 
 import math
+
+
 class InvalidShape(Exception):
     pass
 
@@ -33,14 +35,14 @@ class shape(object):
 class circle(shape):
     def __init__(self):
         self.name = "circle"
-        self.center = (0.0,0.0)
+        self.center = (0.0, 0.0)
         self.radius = 1.0
 
     def area(self):
-        return math.pi * r**2
+        return math.pi * self.radius**2
 
     def circumference(self):
-        return math.pi * r * 2.0
+        return math.pi * self.radius * 2.0
 
     def perimeter(self):
         return self.circumference()
@@ -49,7 +51,7 @@ class circle(shape):
 class square(shape):
     def __init__(self):
         self.name = "square"
-        self.position = (0.0,0.0)
+        self.position = (0.0, 0.0)
         self.side = 1.0
 
     def area(self):

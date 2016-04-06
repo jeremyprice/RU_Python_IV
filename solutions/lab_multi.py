@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#!*-* coding:utf-8 *-*
+# *-* coding:utf-8 *-*
 
 """
 
@@ -40,11 +40,13 @@ import Queue
 import os
 import time
 
-### Don't change this function
+# Don't change this function
+
+
 def work_task(item):
     """This is the work to be done on each input item"""
     def is_prime(num):
-        for j in xrange(2,num):
+        for j in xrange(2, num):
             if (num % j) == 0:
                 return False
         return True
@@ -57,13 +59,16 @@ def work_task(item):
             index += 1
     return check
 
-### Don't change this function
-def generate_work(num_items):
-    import random
-    return [1000]*num_items
-    #return [random.randint(1, 2000) for x in xrange(num_items)]
+# Don't change this function
 
-### Add your code down here
+
+def generate_work(num_items):
+    # import random
+    return [300]*num_items
+    # return [random.randint(1, 2000) for x in xrange(num_items)]
+
+# Add your code down here
+
 
 def worker(work_q, done_q):
     """This is the thread/process main function that will implement c. above"""
@@ -73,8 +78,9 @@ def worker(work_q, done_q):
     while True:
         item = work_q.get()
         result = work_task(item)
-        done_q.put((my_id,result))
+        done_q.put((my_id, result))
         work_q.task_done()
+
 
 def create_workers(num_workers, use_threads, use_processes, work_q, done_q):
     """This function creates workers of the requested type and wires them into the queues,
@@ -93,10 +99,14 @@ def create_workers(num_workers, use_threads, use_processes, work_q, done_q):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     group = parser.add_mutually_exclusive_group(required=True)
-    group.add_argument("-p", "--process", help="Use multiprocessing", action="store_true", default=False)
-    group.add_argument("-t", "--thread", help="use threading", action="store_true", default=False)
-    parser.add_argument("-w", "--workers", help="number of workers to spawn", type=int, default=5)
-    parser.add_argument("-i", "--items", help="number of items to process", type=int, default=20)
+    group.add_argument("-p", "--process", help="Use multiprocessing",
+                       action="store_true", default=False)
+    group.add_argument("-t", "--thread", help="use threading",
+                       action="store_true", default=False)
+    parser.add_argument("-w", "--workers", help="number of workers to spawn",
+                        type=int, default=5)
+    parser.add_argument("-i", "--items", help="number of items to process",
+                        type=int, default=20)
     config = parser.parse_args()
 
     if config.thread:

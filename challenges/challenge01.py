@@ -4,6 +4,7 @@
 
 # What is wrong with the following function?
 
+
 def foo(bar=[]):
     bar.append('baz')
     return bar
@@ -14,7 +15,7 @@ print foo()
 print "Second run"
 print foo()
 print "Third run"
-# print foo()
+print foo()
 
 
 

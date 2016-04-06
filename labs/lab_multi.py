@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#!*-* coding:utf-8 *-*
+# *-* coding:utf-8 *-*
 
 """
 
@@ -33,11 +33,13 @@ LAB_multi Learning Objective: Learn to use the multiprocessing and multithreadin
 Note: add args as necessary to the skeleton functions below
 """
 
-### Don't change this function
+# Don't change this function
+
+
 def work_task(item):
     """This is the work to be done on each input item"""
     def is_prime(num):
-        for j in xrange(2,num):
+        for j in xrange(2, num):
             if (num % j) == 0:
                 return False
         return True
@@ -50,16 +52,19 @@ def work_task(item):
             index += 1
     return check
 
-### Don't change this function
+
+# Don't change this function
 def generate_work(num_items):
     import random
     return [random.randint(1, 2000) for x in xrange(num_items)]
 
-### Add your code down here
+# Add your code down here
+
 
 def worker():
     """This is the thread/process main function that will implement c. above"""
     pass
+
 
 def create_workers():
     """This function creates workers of the requested type and wires them into the queues,

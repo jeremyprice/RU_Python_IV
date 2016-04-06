@@ -1,6 +1,7 @@
 import multiprocessing
 import time
 
+
 def xyz():
     for i in range(10):
         print "thread"

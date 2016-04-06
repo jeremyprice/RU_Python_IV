@@ -14,6 +14,7 @@ a. Modify the decorator you created in the lab_decorators.py to accept an argume
 import time
 import sys
 
+
 def function_timer_units(seconds=False):
     """ This function times another function and prints the elapsed time in
     seconds (seconds=True) or milliseconds (seconds=False)"""
@@ -36,11 +37,12 @@ def function_timer_units(seconds=False):
         return inside
     return function_timer
 
+
 @function_timer_units()
 def time_me(item):
     """time this function for various calls"""
     def is_prime(num):
-        for j in xrange(2,num):
+        for j in xrange(2, num):
             if (num % j) == 0:
                 return False
         return True

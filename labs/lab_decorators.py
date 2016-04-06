@@ -17,10 +17,11 @@ stop_time = time.time()
 elapsed = stop_time - start_time
 """
 
+
 def time_me(item):
     """time this function for various calls"""
     def is_prime(num):
-        for j in xrange(2,num):
+        for j in xrange(2, num):
             if (num % j) == 0:
                 return False
         return True
@@ -36,4 +37,4 @@ def time_me(item):
 if __name__ == "__main__":
     for step in xrange(10):
         # run your decorated function instead
-        timeme(200)
+        time_me(200)

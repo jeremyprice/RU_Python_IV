@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#!*-* coding:utf-8 *-*
+# *-* coding:utf-8 *-*
 
 """
 
@@ -16,25 +16,30 @@ b. Write a print_object_flags function that uses the is_* functions to find the 
 
 """
 
+
 def is_callable(obj):
     """ returns True if the object is callable """
     # __call__
     pass
+
 
 def is_with(obj):
     """ returns True if the object can be used in a "with" context """
     # __enter__, __exit__
     pass
 
+
 def is_math(obj):
     """ returns True if the object supports +, -, /, and * """
     # __add__, ...
     pass
 
+
 def is_iterable(obj):
     """ returns True if the object is iterable """
     # __iter__
     pass
+
 
 def print_object_flags(obj):
     """ assess the object for various characteristics and print them """
@@ -45,5 +50,5 @@ if __name__ == "__main__":
     print_object_flags(1)
     print_object_flags("abc")
     print_object_flags(print_object_flags)
-    print_object_flags([1,2,3])
+    print_object_flags([1, 2, 3])
     print_object_flags(file)

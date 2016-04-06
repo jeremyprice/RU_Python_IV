@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#!*-* coding:utf-8 *-*
+# *-* coding:utf-8 *-*
 
 """
 
@@ -29,7 +29,8 @@ import json
 import random
 import sys
 
-token = file('github_api_key','r').read().strip()
+
+token = file('github_api_key', 'r').read().strip()
 url_token = "?access_token={}".format(token)
 
 # step a.

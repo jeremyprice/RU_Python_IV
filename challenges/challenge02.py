@@ -4,11 +4,14 @@
 
 # What do you expect in the print statements below?
 
+
 class A(object):
-    x = 1 # class variable
+    x = 1  # class variable
+
 
 class B(A):
     pass
+
 
 class C(A):
     pass
