@@ -1030,7 +1030,7 @@ None -&gt; null</span></pre>
 	</li>
 </ul>
 </div></div></section></section><section class="stack"><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="d5cabbf27fd3a150dc2745ecfad57079"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
-<h1>REST</h1>
+<h1>REST Client</h1>
 </div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 15px; height: auto;" data-block-id="657d76438a9577ada30b47a8d2d17297"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
 <h2>REST Principles</h2>
 </div></div>
@@ -1208,14 +1208,18 @@ response = requests.post("https://api.myhost.com/login", json=data)
 <div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 412px;" data-block-id="c39308a75c9ef82fe2c8f9c6dd52e173"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;">
 <p>Note: the content type for a POST with the JSON argument is <em>application/json</em></p>
 </div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="780d6a973ea3df2814ee37182ea4bf41"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
-<h2>Requests Examples</h2>
+<h2>More Requests Examples</h2>
 </div></div>
-<div class="sl-block" data-block-type="code" style="width: 665px; height: 132px; left: 148px; top: 280px;" data-block-id="6a27a0379ca857a334046496e281225f"><div class="sl-block-content" style="z-index: 12;"><pre class="python"><code>import requests
+<div class="sl-block" data-block-type="code" style="width: 665px; height: 190px; left: 147px; top: 280px;" data-block-id="6a27a0379ca857a334046496e281225f"><div class="sl-block-content" style="z-index: 12;"><pre class="python"><code>import requests
 
 r = requests.put('http://httpbin.org/put', data = {'key':'value'})
 r = requests.delete('http://httpbin.org/delete')
 r = requests.head('http://httpbin.org/get')
-r = requests.options('http://httpbin.org/get')</code></pre></div></div></section><section class="has-dark-background" data-background-color="#274e13"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="c71e7c5618cad23f85a4a2d57c3c6f2c"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+r = requests.options('http://httpbin.org/get')
+
+headers = {'X-Auth-Token': '62c0e8d7305c4fd88d3772cde0d06d38'}
+r = requests.get("https://myapi.com/resource", headers=headers}
+</code></pre></div></div></section><section class="has-dark-background" data-background-color="#274e13"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="c71e7c5618cad23f85a4a2d57c3c6f2c"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
 <h2>Lab Requests</h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="2b78ea08f4fa2138fc665d610ad5f7c3"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
@@ -1225,6 +1229,135 @@ r = requests.options('http://httpbin.org/get')</code></pre></div></div></section
 	<ul>
 		<li>
 		<pre>lab_requests.py<span style="color:rgb(255, 255, 255); text-align:left">​</span></pre>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div></div></section></section><section class="stack"><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="42f45411399b27e41f38750289f71175"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1>REST Server</h1>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="ff2de0e8605f2ae643f09d5f251ecf21"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Frameworks</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="fa9811cf5b870ca28c967fc47fb918db"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>You CAN create a RESTful API service using stock Python libraries
+	<ul>
+		<li>just like you CAN build your own rocket and fly to the moon</li>
+	</ul>
+	</li>
+	<li>However, it is easier, safer, better, and more fun to use a framework to do the heavy lifting</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="f8af85efc70672ce5b99d8caffebe00b"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Some Python Web Frameworks</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="512bcc2ab86c9253a3845385ef289cb6"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>Django, Flask, Tornado, Twisted, bottle, hug, ...</li>
+</ul>
+
+<p><a href="https://wiki.python.org/moin/WebFrameworks/" target="_blank">https://wiki.python.org/moin/WebFrameworks/</a></p>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="39b3a9ddc4f54146593a125cab8974a5"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Flask</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="be2d554f9126ce4a36a94868a5cbcc54"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>Let's focus on an easy-to-learn web microframework Flask
+	<ul>
+		<li>Flask is a microframework for Python based on Werkzeug, Jinja2 and good intentions.</li>
+		<li><a href="http://flask.pocoo.org/" target="_blank">http://flask.pocoo.org/</a></li>
+	</ul>
+	</li>
+	<li>install:</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="62ff31a1ad45705549a994b33451749f" style="min-width: 30px; min-height: 30px; width: 187px; height: 35px; left: 387px; top: 513px;"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code>pip install Flask</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="81ed7096086b5b01d1eab8a5045cb63e"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Minimal Flask Application</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="cb1b205ab398b1f445c83f3cd285369e" style="min-width: 30px; min-height: 30px; width: 294px; height: 205px; left: 333px; top: 280px;"><div class="sl-block-content" style="z-index: 12;"><pre class="python"><code>from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return 'Hello World!'
+
+if __name__ == '__main__':
+    app.run()</code></pre></div></div>
+<div class="sl-block" data-block-type="code" data-block-id="322760659621d1d28fc44da2ca5c1ecf" style="min-width: 30px; min-height: 30px; width: 397px; height: 110px; left: 282px; top: 514px;"><div class="sl-block-content" style="z-index: 13;"><pre class="bash"><code># to run the app:
+
+$ python my_app.py
+* Running on http://127.0.0.1:5000/</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="353414c001570314c9719bf692f86665"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Routes</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="1c12d47d1766c8982b8267145c166ee3"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>Requests are routed based on the decorators</li>
+	<li>You can grab variables from the route url</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="b3eafcbf03e53f17c6371d5a59751c87" style="min-width: 30px; min-height: 30px; width: 603px; height: 182px; left: 179px; top: 363px;"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code>@app.route('/user/&lt;username&gt;')
+def show_user_profile(username):
+    # show the user profile for that user
+    return 'User %s' % username
+
+@app.route('/post/&lt;int:post_id&gt;')
+def show_post(post_id):
+    # show the post with the given id, the id is an integer
+    return 'Post %d' % post_id</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="a03330c5d0be531f3f17ef92207f7a62"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Routes</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="d0f5b6d432bb44c6059d587ef707d27b"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>You can limit routes based on the HTTP verbs</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 461px; height: 146px; left: 250px; top: 361px;" data-block-id="56b8d268d75abf9bc0c5396dd9793856"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code>@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        do_the_login()
+    else:
+        show_the_login_form()</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="517ca2d54927f29cddb29ec0a2a2222d"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Templates</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="e1d81aa6dab1a9f7eeeda0517fd8895f"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<ul>
+	<li>You can run files through the Jinja2 template engine</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 520px; height: 146px; left: 220px; top: 325px;" data-block-id="463d9512a46addda28c58f9acfcc68e9"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code>from flask import render_template
+
+@app.route('/hello/')
+@app.route('/hello/&lt;name&gt;')
+def hello(name=None):
+    return render_template('hello.html', name=name)</code></pre></div></div>
+<div class="sl-block" data-block-type="code" data-block-id="1fb0409916d385a828eed05cf2794ab4" style="min-width: 30px; min-height: 30px; width: 331px; height: 168px; left: 315px; top: 490px;"><div class="sl-block-content" style="z-index: 14;"><pre class="xml"><code>&lt;!doctype html&gt;
+&lt;title&gt;Hello from Flask&lt;/title&gt;
+{% if name %}
+  &lt;h1&gt;Hello {{ name }}!&lt;/h1&gt;
+{% else %}
+  &lt;h1&gt;Hello World!&lt;/h1&gt;
+{% endif %}</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="ae12b08a6690b91ad2cc036768122e75"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Debug mode</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="fc0c32d40ac057304e361884079234fa"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<ul>
+	<li>Turn it on for dev, but make sure it is off for production</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 207px; height: 133px; left: 377px; top: 331px;" data-block-id="209786c97c841bb51c1a9296c2630145"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code>app.debug = True
+app.run()
+
+# or
+
+app.run(debug=True)</code></pre></div></div></section><section class="has-dark-background" data-background-color="#274e13"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="8e9f8aede7a5ee5b4512b5c56f76705f"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Lab Flask</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="d567888a605bc54df00b8f3b5edda62d"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>
+<span style="color:rgb(255, 255, 255); text-align:left">Follow the instructions in:</span>
+	<ul>
+		<li>
+		<pre>lab_flask.py<span style="color:rgb(255, 255, 255); text-align:left">​</span></pre>
 		</li>
 	</ul>
 	</li>
@@ -2083,7 +2216,7 @@ thing()
 		</div>
 
 		<script>
-			var SLConfig = {"deck": {"id":512444,"slug":"python-iv","title":"Python IV","description":"Course materials for the penultimate class in the software development curriculum: Python IV","visibility":"all","published_at":"2015-10-13T12:15:02.218Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/770c85514148194e5d76b1c135a2859b/thumb.jpg","view_count":129,"user":{"id":105368,"username":"racku","name":"Rackspace University","description":"","thumbnail_url":"https://www.gravatar.com/avatar/4fdd35b37f5a9854774386e628b420fe?s=140\u0026d=https%3A%2F%2Fs3.amazonaws.com%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","private_thumbnail_url":"https://www.gravatar.com/avatar/4fdd35b37f5a9854774386e628b420fe?s=140\u0026d=https%3A%2F%2Fs3.amazonaws.com%2Fstatic.slid.es%2Fimages%2Falphabet%2Fv1%2Fr.png","pro":true,"enterprise":false,"enterprise_manager":false,"settings":{"id":245,"present_controls":true,"present_upsizing":true,"present_notes":true},"registered":true},"background_transition":"concave","transition":"default","theme_id":null,"theme_font":"sketch","theme_color":"black-mint","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":false,"rolling_links":false,"center":false,"should_loop":false,"share_notes":false,"slide_number":true,"rtl":false,"version":2,"notes":{}}};
+			var SLConfig = {"deck": {"id":512444,"slug":"python-iv","title":"Python IV","description":"Course materials for the penultimate class in the software development curriculum: Python IV","visibility":"all","published_at":"2015-10-13T12:15:02.218Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/770c85514148194e5d76b1c135a2859b/thumb.jpg","view_count":130,"user":{"id":105368,"username":"racku","name":"Rackspace University","description":"","thumbnail_url":"https://www.gravatar.com/avatar/4fdd35b37f5a9854774386e628b420fe?s=140\u0026d=https%3A%2F%2Fs3.amazonaws.com%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","private_thumbnail_url":"https://www.gravatar.com/avatar/4fdd35b37f5a9854774386e628b420fe?s=140\u0026d=https%3A%2F%2Fs3.amazonaws.com%2Fstatic.slid.es%2Fimages%2Falphabet%2Fv1%2Fr.png","pro":true,"enterprise":false,"enterprise_manager":false,"settings":{"id":245,"present_controls":true,"present_upsizing":true,"present_notes":true},"registered":true},"background_transition":"concave","transition":"default","theme_id":null,"theme_font":"sketch","theme_color":"black-mint","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":false,"rolling_links":false,"center":false,"should_loop":false,"share_notes":false,"slide_number":true,"rtl":false,"version":2,"notes":{}}};
 			SLConfig.current_user = {
 				name: "Rackspace University",
 				username: "racku",
