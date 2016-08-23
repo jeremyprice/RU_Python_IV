@@ -1782,7 +1782,7 @@ add_two_numbers(-10, 10)
 	<li>The @ symbol can be used as "syntactic sugar" to apply a decorator to a function</li>
 </ul>
 </div></div>
-<div class="sl-block" data-block-type="code" style="width: 366px; height: 223px; left: 253px; top: 210px;" data-block-id="7dee83bbe0a7268a01a06fac245d42d4"><div class="sl-block-content" style="z-index: 13;"><pre><code>def ensure_positivity(func):
+<div class="sl-block" data-block-type="code" style="width: 443px; height: 266px; left: 259px; top: 210px;" data-block-id="7dee83bbe0a7268a01a06fac245d42d4"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>def ensure_positivity(func):
     def inner(x, y):
         return func(abs(x), abs(y))
     return inner
@@ -1800,7 +1800,7 @@ add_two_numbers(-10, 10)
 	<li>We can catch all the args to a function in the special * variable (usually called *args)</li>
 </ul>
 </div></div>
-<div class="sl-block" data-block-type="code" style="width: 366px; height: 242px; left: 297px; top: 229px;" data-block-id="e5e50806334d398fc2af842c54f2b3c2"><div class="sl-block-content" style="z-index: 13;"><pre><code>def argless(*args):
+<div class="sl-block" data-block-type="code" style="width: 343px; height: 281px; left: 309px; top: 228px;" data-block-id="e5e50806334d398fc2af842c54f2b3c2"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>def argless(*args):
     print args
 
 argless()
@@ -1818,7 +1818,7 @@ twoargs('a', 'b')</code></pre></div></div></section><section data-id="38028b161e
 	<li>We can also apply a list to an argument list</li>
 </ul>
 </div></div>
-<div class="sl-block" data-block-type="code" style="width: 215px; height: 171px; left: 374px; top: 231px;" data-block-id="89575c81e2a2ce8b62e7412ac555af25"><div class="sl-block-content" style="z-index: 13;"><pre><code>def subtract(x, y):
+<div class="sl-block" data-block-type="code" style="width: 256px; height: 189px; left: 352px; top: 231px;" data-block-id="89575c81e2a2ce8b62e7412ac555af25"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>def subtract(x, y):
     return x - y
 
 
@@ -1832,7 +1832,7 @@ subtract(*lst)</code></pre></div></div></section><section data-id="bcbd20ba4c590
 	<li>Kwargs can be handled the same way - but with ** (usually used as **kwargs)</li>
 </ul>
 </div></div>
-<div class="sl-block" data-block-type="code" style="width: 305px; height: 280px; left: 329px; top: 216px;" data-block-id="7fdcbcf863c8e991fefa47ffbbec5974"><div class="sl-block-content" style="z-index: 13;"><pre><code>def kwargless(**kwargs):
+<div class="sl-block" data-block-type="code" style="width: 351px; height: 327px; left: 306px; top: 216px;" data-block-id="7fdcbcf863c8e991fefa47ffbbec5974"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>def kwargless(**kwargs):
     print kwargs
 
 
@@ -1852,7 +1852,7 @@ subtract(**values)</code></pre></div></div></section><section data-id="a5fb4cb89
 	<li>We can pass along any args or kwargs we have from the decorator to the wrapped function</li>
 </ul>
 </div></div>
-<div class="sl-block" data-block-type="code" style="width: 801px; height: 273px; left: 80px; top: 200px;" data-block-id="faacb641d8b8a49d0ee0165f4dddcb52"><div class="sl-block-content" style="z-index: 13;"><pre><code>def debug_call(func):
+<div class="sl-block" data-block-type="code" style="width: 880px; height: 318px; left: 41px; top: 200px;" data-block-id="faacb641d8b8a49d0ee0165f4dddcb52"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>def debug_call(func):
     def inner(*args, **kwargs):
         print "{} called with {} {}".format(func.func_name, args, kwargs)
         return func(*args, **kwargs)
@@ -1864,8 +1864,8 @@ def add(x, y=0):
 
 print add(1, 2)
 print add(y=3, x=5)
-print add(5)</code></pre></div></div></section><section class="has-dark-background" data-background-color="#274e13" data-id="f6d75fda817d9d330c36ff551a4d0596"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="c7963f8367f479937571a8ab895bffe4"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
-<h2>Lab decorators</h2>
+print add(5)</code></pre></div></div></section><section class="has-light-background" data-background-color="#93c47d" data-id="f6d75fda817d9d330c36ff551a4d0596"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="c7963f8367f479937571a8ab895bffe4"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Lab Decorators</h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="36573126f8e71698d8a93cd7f2a9ac40"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
 <ul>
@@ -1880,7 +1880,7 @@ print add(5)</code></pre></div></div></section><section class="has-dark-backgrou
 </div></div></section><section data-id="a57670221b6a1193a6f2537178850985"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="7ca3fea116a94160270ba80958fc2f21"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
 <h2>Decorator without parameters</h2>
 </div></div>
-<div class="sl-block" data-block-type="code" data-block-id="67d0cd5d7544f656bed6a093e33a098d" style="min-width: 30px; min-height: 30px; width: 736px; height: 300px; left: 112px; top: 200px;"><div class="sl-block-content" style="z-index: 12;"><pre class="python"><code>def debug_call(func):
+<div class="sl-block" data-block-type="code" data-block-id="67d0cd5d7544f656bed6a093e33a098d" style="min-width: 30px; min-height: 30px; width: 873px; height: 327px; left: 44px; top: 144px;"><div class="sl-block-content" style="z-index: 12; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>def debug_call(func):
     def inner(*args, **kwargs):
         print "{} called with {} {}".format(func.func_name, args, kwargs)
         return func(*args, **kwargs)
@@ -1909,13 +1909,13 @@ print add(5)</code></pre></div></div>
 </div></div></section><section data-id="b27b41bf7a1633716e617d86b798bfe8"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="5595ba7fda169b1a84eb5ed24dfe26b2"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
 <h2>Decorators return functions</h2>
 </div></div>
-<div class="sl-block" data-block-type="code" style="width: 257px; height: 142px; left: 352px; top: 210px;" data-block-id="164f0875665cf647679070b0504f4d16"><div class="sl-block-content" style="z-index: 12;"><pre class="python"><code>@debug_call
+<div class="sl-block" data-block-type="code" style="width: 278px; height: 159px; left: 341px; top: 210px;" data-block-id="164f0875665cf647679070b0504f4d16"><div class="sl-block-content" style="z-index: 12; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>@debug_call
 def add(x, y=0):
     return x + y
 
 # translates into:
 add = debug_call(add)</code></pre></div></div></section><section data-id="2a3d791e2503fc8219238ce43c4c2f05"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="5a1ae51363fdcc0603c6975e956ac17c"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
-<h2 style="color:rgb(255, 255, 255)">Decorators with Parameters return ???</h2>
+<h2 style="color:rgb(255, 255, 255)"><span style="color:#000000">Decorators with Parameters return ???</span></h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="width: 800px; left: 81px; top: 362px; height: auto;" data-block-id="4fa3eddbb6ac53e23cacf2a13f2478f0"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
 <ul>
@@ -1935,20 +1935,22 @@ add = debug_call(add)</code></pre></div></div></section><section data-id="2a3d79
 	</li>
 </ul>
 </div></div>
-<div class="sl-block" data-block-type="code" data-block-id="1f560a580099bac5d4aa848d0d90955d" style="min-width: 30px; min-height: 30px; width: 403px; height: 133.5px; left: 279px; top: 218px;"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code>@decorator_with_args(arg)
+<div class="sl-block" data-block-type="code" data-block-id="1f560a580099bac5d4aa848d0d90955d" style="min-width: 30px; min-height: 30px; width: 441px; height: 150px; left: 260px; top: 212px;"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>@decorator_with_args(arg)
 def foo(*args, **kwargs):
     pass
 
 # translates into:
 foo = decorator_with_args(arg)(foo)
 </code></pre></div></div></section><section data-id="ab1b038e0684a1087f03ce9d1fb9489a"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="91a89214fd6e97d3c18cbaff3381302f"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
-<h2 style="color:rgb(255, 255, 255)">Decorator with Parameter</h2>
+<h2 style="color:rgb(255, 255, 255)"><span style="color:#000000">Decorator with Parameter</span></h2>
 </div></div>
-<div class="sl-block" data-block-type="code" style="width: 817px; height: 398px; left: 72px; top: 162px;" data-block-id="cb69aafbbad1720d05ee4daf161f0670"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code>def debug_call(enabled=True):
+<div class="sl-block" data-block-type="code" style="width: 808px; height: 398px; left: 76px; top: 162px;" data-block-id="cb69aafbbad1720d05ee4daf161f0670"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>def debug_call(enabled=True):
     def real_debug_call(func):
         def inner(*args, **kwargs):
             if enabled:
-                print "{} called with {} {}".format(func.func_name, args, kwargs)
+                print "{} called with {} {}".format(func.func_name,
+                                                    args,
+                                                    kwargs)
             return func(*args, **kwargs)
         return inner
     return real_debug_call
@@ -1962,8 +1964,8 @@ def sub(x, y):
     return x - y
 
 print add(1, 2)
-print sub(3, 4)</code></pre></div></div></section><section class="has-dark-background" data-background-color="#274e13" data-id="ba6f12cd6a9fc4703ca54c6508f119b8"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="9a2f81a417cd14085f189fc87beda993"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
-<h2>Lab decorators with parameters</h2>
+print sub(3, 4)</code></pre></div></div></section><section class="has-light-background" data-background-color="#93c47d" data-id="ba6f12cd6a9fc4703ca54c6508f119b8"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="9a2f81a417cd14085f189fc87beda993"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Lab Decorators with Parameters</h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="08842290b1ab12a9dbe112d7c9c39bee"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" dir="ui">
 <ul><li>Follow the instructions in:</li></ul>
@@ -2034,7 +2036,7 @@ print sub(3, 4)</code></pre></div></div></section><section class="has-dark-backg
 	</li>
 </ul>
 </div></div>
-<div class="sl-block" data-block-type="code" data-block-id="749ce9476336ee1f9be472548e20399d" style="min-width: 30px; min-height: 30px; width: 500px; height: 239px; left: 230px; top: 441px;"><div class="sl-block-content" style="z-index: 13;"><pre><code>import calculator.operations.arithmetic as arith
+<div class="sl-block" data-block-type="code" data-block-id="749ce9476336ee1f9be472548e20399d" style="min-width: 30px; min-height: 30px; width: 595px; height: 267px; left: 270px; top: 398px;"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>import calculator.operations.arithmetic as arith
 import unittest
 
 class TestCalculations(unittest.TestCase):
@@ -2105,19 +2107,15 @@ if __name__ == "__main__":
 	</ul>
 	</li>
 </ul>
-</div></div></section><section class="has-dark-background" data-background-color="#274e13" data-id="94a3aa388edf1cf7d73b011156d87b0d"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="b299d4e3707dbabf3eee648cab585c1d"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
-<h2>Lab</h2>
+</div></div></section><section class="has-light-background" data-background-color="#93c47d" data-id="94a3aa388edf1cf7d73b011156d87b0d"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="b299d4e3707dbabf3eee648cab585c1d"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Lab UnitTest</h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="5ad5b87684cd4e7b3eb392964420a825"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
 <ul>
 	<li>Follow the instructions in:</li>
 </ul>
 
-<pre style="text-align: center;">lab_unittest.py</pre>
-
-<ul>
-	<li>Register your completion in Socrative</li>
-</ul>
+<pre style="text-align:center">lab_unittest.py</pre>
 </div></div></section></section><section class="stack" data-id="83cc27ab7abcaa560225760a67605aa6"><section data-id="93da72fbe5d35592fc31b139c8df8851"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="b3437ed936e39a539119d947b777f8bb"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
 <h1>Mock</h1>
 </div></div></section><section data-id="cb7902f4d7aa5d0a75471a773ff27187"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="ee827ae8eaa215921b264b33fa434a58"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
@@ -2186,7 +2184,7 @@ if __name__ == "__main__":
 </div></div></section><section data-id="a655ab8e869b4796482d5fc3514aea62"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 66px; height: auto;" data-block-id="3ded5643e523d118097f6f2d52a4b5ac"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
 <h2>Mock Example</h2>
 </div></div>
-<div class="sl-block" data-block-type="code" style="width: 545px; height: 204px; left: 208px; top: 178px;" data-block-id="bdde9d5e3ee7d706b95b3bfcdf459816"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code># in Python 2
+<div class="sl-block" data-block-type="code" style="width: 648px; height: 236px; left: 156px; top: 184px;" data-block-id="bdde9d5e3ee7d706b95b3bfcdf459816"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code># in Python 2
 from mock import MagicMock
 # in Python 3
 # from unittest.mock import MagicMock
@@ -2203,7 +2201,7 @@ thing.method.assert_called_with(3, 4, 5, key='value')
 	<li>You can have the mocked object create side effects</li>
 </ul>
 </div></div>
-<div class="sl-block" data-block-type="code" style="width: 431px; height: 103px; left: 265px; top: 261px;" data-block-id="96225a56d6d8a944330707f66f293570"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code>from mock import Mock
+<div class="sl-block" data-block-type="code" style="width: 499px; height: 104px; left: 231px; top: 262px;" data-block-id="96225a56d6d8a944330707f66f293570"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>from mock import Mock
 
 thing = Mock(side_effect=KeyError('bam'))
 thing()
@@ -2228,7 +2226,7 @@ thing()
 		</div>
 
 		<script>
-			var SLConfig = {"deck": {"id":512444,"slug":"python-iv","title":"Python IV","description":"Course materials for the penultimate class in the software development curriculum: Python IV","visibility":"all","published_at":"2015-10-13T12:15:02.218Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/770c85514148194e5d76b1c135a2859b/thumb.jpg","view_count":150,"user":{"id":105368,"username":"racku","name":"Rackspace University","description":"","thumbnail_url":"https://www.gravatar.com/avatar/4fdd35b37f5a9854774386e628b420fe?s=140\u0026d=https%3A%2F%2Fs3.amazonaws.com%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","pro":true,"team_id":null,"settings":{"id":245,"present_controls":true,"present_upsizing":true,"present_notes":true}},"background_transition":"concave","transition":"default","theme_id":null,"theme_font":"sketch","theme_color":"silver-green","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":false,"rolling_links":false,"center":false,"should_loop":false,"share_notes":false,"slide_number":true,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":1,"data_updated_at":1471974835437,"notes":{}}};
+			var SLConfig = {"deck": {"id":512444,"slug":"python-iv","title":"Python IV","description":"Course materials for the penultimate class in the software development curriculum: Python IV","visibility":"all","published_at":"2015-10-13T12:15:02.218Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/770c85514148194e5d76b1c135a2859b/thumb.jpg","view_count":150,"user":{"id":105368,"username":"racku","name":"Rackspace University","description":"","thumbnail_url":"https://www.gravatar.com/avatar/4fdd35b37f5a9854774386e628b420fe?s=140\u0026d=https%3A%2F%2Fs3.amazonaws.com%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","pro":true,"team_id":null,"settings":{"id":245,"present_controls":true,"present_upsizing":true,"present_notes":true}},"background_transition":"concave","transition":"default","theme_id":null,"theme_font":"sketch","theme_color":"silver-green","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":false,"rolling_links":false,"center":false,"should_loop":false,"share_notes":false,"slide_number":true,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":1,"data_updated_at":1471980988049,"notes":{}}};
 			SLConfig.current_user = {
 				name: "Rackspace University",
 				username: "racku",
