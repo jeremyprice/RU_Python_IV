@@ -19,6 +19,8 @@ LAB_REQUESTS Learning Objective: Learn to interact with RESTful APIs using reque
     where <some_key> will change for each access and <your_token> will be the same token you
     sent to the server.
 
+    Your post JSON should be only one element: {'token': <your_token> }
+
  c. Continue the pattern from step b until you get a JSON response that contains the element
     called `answer`.  Print out the final object you recieved from the server.
 
