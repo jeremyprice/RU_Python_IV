@@ -16,14 +16,10 @@ LAB subprocess Learning Objective: Familiarization with subprocess
 
  c. Do the same as a), but run the command "/bogus/command". What happens?
 
- d. Use the platform module to determine what OS you are using, then execute a
-    command unique to that OS i.e. "yum search gcc" if Red Hat or Cent OS, or apt-get
-    if Debian or Ubuntu.
-
- e. Use subprocess Popen to run "du -h" and output stdout to a pipe. Read the pipe
+ d. Use subprocess Popen to run "du -h" and output stdout to a pipe. Read the pipe
     and print the output.
 
- f. Create a new function commander() which takes any number of commands to execute
+ e. Create a new function commander() which takes any number of commands to execute
     (as strings) on the arg list, then runs them sequentially printing stdout.
 
 """
@@ -43,13 +39,13 @@ except OSError as e:
     print(e)
 print('')
 
-print("step e.")
+print("step d.")
 proc = subprocess.Popen(["du", "-h"], stdout=subprocess.PIPE)
 proc.wait()
 print("Output from command:\n{}".format(proc.stdout.read()))
 print('')
 
-print("step f.")
+print("step e.")
 
 
 def commander(commands):

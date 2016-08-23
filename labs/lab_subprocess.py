@@ -16,12 +16,10 @@ LAB subprocess Learning Objective: Familiarization with subprocess
 
  c. Do the same as a), but run the command "/bogus/command". What happens?
 
-
-
- e. Use subprocess Popen to run "du -h" and output stdout to a pipe. Read the pipe
+ d. Use subprocess Popen to run "du -h" and output stdout to a pipe. Read the pipe
     and print the output.
 
- f. Create a new function commander() which takes any number of commands to execute
+ e. Create a new function commander() which takes any number of commands to execute
     (as strings) on the arg list, then runs them sequentially printing stdout.
 
 """
