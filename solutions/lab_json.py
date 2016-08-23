@@ -30,21 +30,21 @@ import random
 import sys
 
 
-token = file('github_api_key', 'r').read().strip()
+token = open('github_api_key', 'r').read().strip()
 url_token = "?access_token={}".format(token)
 
 # step a.
 url = "https://api.github.com/" + url_token
 data = urllib2.urlopen(url)
 initial_page = json.load(data)
-json.dump(initial_page, file('initial.json', 'w'), sort_keys=True, indent=4)
+json.dump(initial_page, open('initial.json', 'w'), sort_keys=True, indent=4)
 print("wrote initial page to initial.json")
 
 # step b.
 url = initial_page['emojis_url'] + url_token
 data = urllib2.urlopen(url)
 emojis = json.load(data)
-json.dump(emojis, file('emojis.json', 'w'), sort_keys=True, indent=4)
+json.dump(emojis, open('emojis.json', 'w'), sort_keys=True, indent=4)
 print("wrote emojis page to emojies.json")
 rand_emoji = random.choice(emojis.keys())
 print("A random emoji for you:\n{} - {}".format(rand_emoji, emojis[rand_emoji]))
@@ -55,11 +55,9 @@ username = sys.argv[1]
 url = initial_page["user_url"].replace("{user}", username) + url_token
 data = urllib2.urlopen(url)
 user_info = json.load(data)
-json.dump(user_info, file('{}.json'.format(username), 'w'), sort_keys=True, indent=4)
+json.dump(user_info, open('{}.json'.format(username), 'w'), sort_keys=True, indent=4)
 print("wrote {0} user info page to {0}.json".format(username))
-print("{} has {} public repos and {} private repos".format(username,
-                                                           user_info["public_repos"],
-                                                           user_info["total_private_repos"]))
+print("{} has {} public repos".format(username, user_info["public_repos"]))
 url = user_info["organizations_url"] + url_token
 data = urllib2.urlopen(url)
 org_info = json.load(data)
