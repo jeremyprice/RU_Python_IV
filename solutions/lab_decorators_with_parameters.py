@@ -11,8 +11,8 @@ a. Modify the decorator you created in the lab_decorators.py to accept an argume
    default units seconds.
 
 """
-import time
 import sys
+import time
 
 
 def function_timer_units(seconds=True):

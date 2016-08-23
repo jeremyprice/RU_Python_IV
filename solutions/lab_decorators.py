@@ -16,8 +16,8 @@ do_something()
 stop_time = time.time()
 elapsed = stop_time - start_time
 """
-import time
 import sys
+import time
 
 
 def function_timer(func):

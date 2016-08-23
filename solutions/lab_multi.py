@@ -33,12 +33,13 @@ LAB_multi Learning Objective: Learn to use the multiprocessing and multithreadin
 Note: add args as necessary to the skeleton functions below
 """
 
+import Queue
 import argparse
 import multiprocessing
-import threading
-import Queue
 import os
+import threading
 import time
+
 
 # Don't change this function
 

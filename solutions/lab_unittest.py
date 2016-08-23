@@ -13,8 +13,8 @@ a. Create a series of unittest tests to verify the classes below.  Create the fo
   4. test all the things!
 
 """
-import unittest
 import math
+import unittest
 
 
 class InvalidShape(Exception):

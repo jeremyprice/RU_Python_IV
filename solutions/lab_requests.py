@@ -29,8 +29,9 @@ LAB_REQUESTS Learning Objective: Learn to interact with RESTful APIs using reque
 
 """
 
-import requests
 import sys
+
+import requests
 
 
 def debug_mode():
