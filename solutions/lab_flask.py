@@ -22,8 +22,9 @@ LAB_FLASK Learning Objective: Learn to serve RESTful APIs using the Flask librar
 
 """
 
-from flask import Flask
 import datetime
+
+from flask import Flask
 
 
 def f_to_c(f):
