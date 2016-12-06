@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 
 import argparse
 
@@ -14,5 +14,5 @@ parser.add_argument("-i", "--items", help="number of items to process",
                     type=int, default=20)
 config = parser.parse_args()
 
-print config
-print config.process, config.thread, config.workers, config.items
+print(config)
+print(config.process, config.thread, config.workers, config.items)

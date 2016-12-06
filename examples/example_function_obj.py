@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+
+
 import dis
 
 
@@ -7,9 +10,10 @@ def myFunc():
     z = 'abc'  # noqa
     return x + y
 
-print myFunc.func_name
-print myFunc.func_code.co_varnames
-print myFunc.func_code.co_consts
-print myFunc.func_code.co_code
 
-dis.disassemble(myFunc.func_code)
+print(myFunc.__name__)
+print(myFunc.__code__.co_varnames)
+print(myFunc.__code__.co_consts)
+print(myFunc.__code__.co_code)
+
+dis.disassemble(myFunc.__code__)

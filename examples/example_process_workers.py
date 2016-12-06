@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+
+
 import multiprocessing
 import os
 
@@ -6,8 +9,9 @@ def worker(q):
     process_id = os.getpid()
     while True:
         item = q.get()
-        print "Worker %s:" % process_id, item
+        print("Worker %s:" % process_id, item)
         q.task_done()
+
 
 if __name__ == "__main__":
     num_worker_processes = 5
@@ -18,9 +22,9 @@ if __name__ == "__main__":
         p.daemon = True
         p.start()
 
-    work_items = xrange(num_work_items)
+    work_items = range(num_work_items)
     for item in work_items:
         q.put(item)
 
     q.join()       # block until all tasks are done
-    print "All done"
+    print("All done")

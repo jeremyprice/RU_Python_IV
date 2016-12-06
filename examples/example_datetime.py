@@ -1,4 +1,4 @@
-from __future__ import print_function
+#!/usr/bin/env python3
 
 import datetime
 import imp
@@ -22,6 +22,7 @@ class PartyTime():
             value = getattr(datetime.datetime, value)
             datetime.datetime = self
             return value
+
 
 datetime.datetime = PartyTime()
 print(datetime.datetime.now())
