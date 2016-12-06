@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # *-* coding:utf-8 *-*
 
 """
@@ -34,15 +34,16 @@ import string
 def strip_newlines(list_of_words):
     return [l.strip() for l in list_of_words]
 
+
 # step a.
 print("step a.")
-raw_dictionary1 = file("../data/dictionary1.txt", "r").readlines()
+raw_dictionary1 = open("../data/dictionary1.txt", "r").readlines()
 dictionary1 = strip_newlines(raw_dictionary1)
-print('Number of entries in dictionary1: {}'.format(len(dictionary1)))
+print(('Number of entries in dictionary1: {}'.format(len(dictionary1))))
 
-raw_dictionary2 = file("../data/dictionary2.txt", "r").readlines()
+raw_dictionary2 = open("../data/dictionary2.txt", "r").readlines()
 dictionary2 = strip_newlines(raw_dictionary2)
-print('Number of entries in dictionary2: {}'.format(len(dictionary2)))
+print(('Number of entries in dictionary2: {}'.format(len(dictionary2))))
 print('')
 
 # step b.
@@ -51,27 +52,27 @@ sd1 = set(dictionary1)
 sd2 = set(dictionary2)
 scombined = sd1.union(sd2)
 dictionary_combined = list(scombined)
-print('Number of entries in combined dictionaries: {}'.format(len(dictionary_combined)))
+print(('Number of entries in combined dictionaries: {}'.format(len(dictionary_combined))))
 print('')
 
 # step c.
 print("step c.")
-for i in xrange(5):
+for i in range(5):
     word = random.choice(dictionary_combined)
-    print("Word {}: {}".format(i+1, word))
+    print(("Word {}: {}".format(i+1, word)))
 print('')
 
 # alternate step c.:
 print("alternate step c.")
 words = random.sample(dictionary_combined, 5)
 for (i, word) in enumerate(words):
-    print("Word {}: {}".format(i+1, word))
+    print(("Word {}: {}".format(i+1, word)))
 print('')
 
 # step d.
 print('step d.')
 awords = [w for w in dictionary_combined if w.startswith('a')]
-print("Number of words starting with 'a': {}".format(len(awords)))
+print(("Number of words starting with 'a': {}".format(len(awords))))
 print('')
 
 
@@ -80,7 +81,9 @@ def wordcount(wordlist):
     for letter in string.ascii_lowercase:
         words = [w for w in wordlist if w.startswith(letter)]
         yield (letter, len(words))
+
+
 print('step e.')
 for wc in wordcount(dictionary_combined):
-    print("Number of words starting with {}: {}".format(wc[0], wc[1]))
+    print(("Number of words starting with {}: {}".format(wc[0], wc[1])))
 print('')

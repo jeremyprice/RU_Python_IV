@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 # *-* coding:utf-8 *-*
 
 """
@@ -28,15 +28,16 @@ def print_args(*args, **kwargs):
     if len(args) > 0:
         print("Positional arguments")
         for (i, arg) in enumerate(args):
-            print("{}: {}".format(i, arg))
+            print(("{}: {}".format(i, arg)))
     else:
         print("No Positional arguments")
     if len(kwargs) > 0:
         print("Keyword arguments")
-        for (key, val) in kwargs.iteritems():
-            print("{}: {}".format(key, val))
+        for (key, val) in kwargs.items():
+            print(("{}: {}".format(key, val)))
     else:
         print("No Keyword arguments")
+
 
 print("Part a.")
 print_args(1, 2, 3)
@@ -48,6 +49,7 @@ def args_to_kwargs(*args):
     for (i, arg) in enumerate(args):
         kwargs["arg{}".format(i)] = arg
     print_args(**kwargs)
+
 
 print("Part b.")
 args_to_kwargs(1, "a", 3, "xyz")
@@ -61,6 +63,7 @@ def validate(*args):
         if arg <= 0:
             raise ValueError("All arguments must be > 0")
     print_args(*args)
+
 
 print("Part c.")
 validate(1, 2, 3)

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # *-* coding:utf-8 *-*
 
 """
@@ -44,18 +44,19 @@ def is_iterable(obj):
 def print_object_flags(obj):
     """ assess the object for various characteristics and print them """
     if is_iterable(obj):
-        print 'ITERABLE',
+        print('ITERABLE', end=' ')
     if is_math(obj):
-        print 'MATH',
+        print('MATH', end=' ')
     if is_with(obj):
-        print 'WITH',
+        print('WITH', end=' ')
     if is_callable(obj):
-        print 'CALLABLE',
-    print
+        print('CALLABLE', end=' ')
+    print()
+
 
 if __name__ == "__main__":
     print_object_flags(1)
     print_object_flags("abc")
     print_object_flags(print_object_flags)
     print_object_flags([1, 2, 3])
-    print_object_flags(file)
+    print_object_flags(open('test.file.deleteme', 'w'))

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # *-* coding:utf-8 *-*
 
 """
@@ -33,7 +33,7 @@ LAB_multi Learning Objective: Learn to use the multiprocessing and multithreadin
 Note: add args as necessary to the skeleton functions below
 """
 
-import Queue
+import queue
 import argparse
 import multiprocessing
 import os
@@ -47,7 +47,7 @@ import time
 def work_task(item):
     """This is the work to be done on each input item"""
     def is_prime(num):
-        for j in xrange(2, num):
+        for j in range(2, num):
             if (num % j) == 0:
                 return False
         return True
@@ -91,11 +91,12 @@ def create_workers(num_workers, use_threads, use_processes, work_q, done_q):
     if use_processes:
         object_create = multiprocessing.Process
     workers = []
-    for i in xrange(num_workers):
+    for i in range(num_workers):
         processor = object_create(target=worker, args=[work_q, done_q])
         processor.daemon = True
         workers.append(processor)
     return workers
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -111,8 +112,8 @@ if __name__ == "__main__":
     config = parser.parse_args()
 
     if config.thread:
-        work_q = Queue.Queue()
-        done_q = Queue.Queue()
+        work_q = queue.Queue()
+        done_q = queue.Queue()
     if config.process:
         work_q = multiprocessing.JoinableQueue(config.items+1)
         done_q = multiprocessing.JoinableQueue(config.items+1)
@@ -124,10 +125,10 @@ if __name__ == "__main__":
     returned_items = 0
     while returned_items < config.items:
         result = done_q.get()
-        print("Result from {}: {}".format(result[0], result[1]))
+        print(("Result from {}: {}".format(result[0], result[1])))
         returned_items += 1
     stop = time.time()
     elapsed = stop-start
-    print("Elapsed {} ({} msec)".format(elapsed, elapsed*1000.0))
+    print(("Elapsed {} ({} msec)".format(elapsed, elapsed*1000.0)))
     avg = elapsed / config.items
-    print "Avg. time per work item: {} ({} msec)".format(avg, avg*1000.0)
+    print("Avg. time per work item: {} ({} msec)".format(avg, avg*1000.0))

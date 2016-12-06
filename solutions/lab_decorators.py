@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 """
@@ -26,9 +26,9 @@ def function_timer(func):
         retval = func(*args, **kwargs)
         stop = time.time()
         elapsed = stop - start
-        print "Function {} took {} sec ({} msec)".format(func.func_name,
+        print("Function {} took {} sec ({} msec)".format(func.__name__,
                                                          elapsed,
-                                                         elapsed*1000.0)
+                                                         elapsed*1000.0))
         return retval
     return inside
 
@@ -37,7 +37,7 @@ def function_timer(func):
 def time_me(item):
     """time this function for various calls"""
     def is_prime(num):
-        for j in xrange(2, num):
+        for j in range(2, num):
             if (num % j) == 0:
                 return False
         return True
@@ -50,13 +50,14 @@ def time_me(item):
             index += 1
     return check
 
+
 if __name__ == "__main__":
     if len(sys.argv) > 1:
         nth = int(sys.argv[1])
     else:
         nth = 1000
-    for step in xrange(10):
+    for step in range(10):
         # run your decorated function instead
         time_me(nth)
-    print time_me.func_closure
-    print time_me.func_code.co_freevars
+    print(time_me.__closure__)
+    print(time_me.__code__.co_freevars)

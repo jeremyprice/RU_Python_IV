@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 """
@@ -30,9 +30,9 @@ def function_timer_units(seconds=True):
             else:
                 label = "msec"
                 value = elapsed * 1000.0
-            print "Function {} took {} {}".format(func.func_name,
+            print("Function {} took {} {}".format(func.__name__,
                                                   value,
-                                                  label)
+                                                  label))
             return retval
         return inside
     return function_timer
@@ -42,7 +42,7 @@ def function_timer_units(seconds=True):
 def time_me(item):
     """time this function for various calls"""
     def is_prime(num):
-        for j in xrange(2, num):
+        for j in range(2, num):
             if (num % j) == 0:
                 return False
         return True
@@ -55,13 +55,14 @@ def time_me(item):
             index += 1
     return check
 
+
 if __name__ == "__main__":
     if len(sys.argv) > 1:
         nth = int(sys.argv[1])
     else:
         nth = 1000
-    for step in xrange(10):
+    for step in range(10):
         # run your decorated function instead
         time_me(nth)
-    print time_me.func_closure
-    print time_me.func_code.co_freevars
+    print(time_me.__closure__)
+    print(time_me.__code__.co_freevars)

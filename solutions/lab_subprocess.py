@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # *-* coding:utf-8 *-*
 
 """
@@ -42,7 +42,7 @@ print('')
 print("step d.")
 proc = subprocess.Popen(["du", "-h"], stdout=subprocess.PIPE)
 proc.wait()
-print("Output from command:\n{}".format(proc.stdout.read()))
+print(("Output from command:\n{}".format(proc.stdout.read())))
 print('')
 
 print("step e.")
@@ -51,7 +51,9 @@ print("step e.")
 def commander(commands):
     for cmd in commands:
         output = subprocess.check_output(cmd, shell=True)
-        print "Output from {} :\n{}".format(cmd, output)
+        print("Output from {} :\n{}".format(cmd, output))
+
+
 commands = ["ls -al",
             "df -h",
             "mount",

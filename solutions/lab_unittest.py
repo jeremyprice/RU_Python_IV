@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 """
@@ -123,6 +123,7 @@ class TestAllThingsShape(unittest.TestCase):
         sh = shape()
         with self.assertRaises(InvalidShape):
             sh.area()
+
 
 if __name__ == "__main__":
     unittest.main()

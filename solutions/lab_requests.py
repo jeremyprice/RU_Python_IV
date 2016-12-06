@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 # *-* coding:utf-8 *-*
 
 """
@@ -36,10 +36,7 @@ import requests
 
 def debug_mode():
     import logging
-    try:  # for Python 3
-        from http.client import HTTPConnection
-    except ImportError:
-        from httplib import HTTPConnection
+    from http.client import HTTPConnection
     HTTPConnection.debuglevel = 1
 
     logging.basicConfig()
@@ -57,18 +54,18 @@ first_hit = requests.get(url)
 first_json = first_hit.json()
 token = first_json.pop('token')
 title, next_url = first_json.popitem()
-print("My ID is {}".format(token))
+print(("My ID is {}".format(token)))
 
 # subsequent requests
 done = False
 link_titles = [title]
 while not done:
-    print("Accessing {}".format(next_url))
+    print(("Accessing {}".format(next_url)))
     hit = requests.post(next_url, json={'token': token})
     response = hit.json()
     if 'answer' in response:
-        print response
-        print 'Link titles: {}'.format(', '.join(link_titles))
+        print(response)
+        print('Link titles: {}'.format(', '.join(link_titles)))
         done = True
     else:
         token = response.pop('token')
