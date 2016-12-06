@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-	<html class="sl-root base export loaded">
+	<html class="sl-root decks export offline loaded">
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 		<meta charset="utf-8">
@@ -413,6 +413,13 @@ st = {x for x in range(1,4)}</code></pre></div></div></section><section data-id=
 </ul>
 
 <pre style="text-align:center">lab_pyreview.py</pre>
+</div></div></section></section><section class="stack" data-id="3434d9523f36e6c1e84c8f4f63b622da"><section data-id="bc565f61315d0fa5beba341d2262bee6"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="6752d09608f68c8c3bfb68f90b5e72f4"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1>Python 2to3</h1>
+</div></div></section><section data-id="3ebdb238f9e673c79878817cd59b004b"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="fbc02c7b06686784cdc16cbe7f7cc48b"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>See the other PDF slides</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 960px; left: 0px; top: 264px; height: auto;" data-block-id="5c56d1b0e42a0596b508d9ae0e4784f9"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<p><span style="font-size:0.7em"><a href="https://github.com/jeremyprice/RU_Python_IV/blob/master/slides/PythonV3Changes.pdf" target="_blank">https://github.com/jeremyprice/RU_Python_IV/blob/master/slides/PythonV3Changes.pdf</a></span></p>
 </div></div></section></section><section class="stack" data-id="096b3ffefbec26abc32c18c9a870a7d9"><section data-id="c51963051c318072981fe5522acdefad"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="2f2668d20a783c95e34a56aa531e85c1"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
 <h1>Subprocessing</h1>
 </div></div></section><section data-id="ecb5fc2b7cdaa0c8f21ef0d73ed50a86"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="83b30e5ca810a1f224df479286d9f19b"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
@@ -2283,16 +2290,21 @@ thing()
 		</div>
 
 		<script>
-			var SLConfig = {"deck": {"id":512444,"slug":"python-iv","title":"Python IV","description":"Course materials for the penultimate class in the software development curriculum: Python IV","visibility":"all","published_at":"2015-10-13T12:15:02.218Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/770c85514148194e5d76b1c135a2859b/thumb.jpg","view_count":150,"user":{"id":105368,"username":"racku","name":"Rackspace University","description":"","thumbnail_url":"https://www.gravatar.com/avatar/4fdd35b37f5a9854774386e628b420fe?s=140\u0026d=https%3A%2F%2Fs3.amazonaws.com%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","pro":true,"team_id":null,"settings":{"id":245,"present_controls":true,"present_upsizing":true,"present_notes":true}},"background_transition":"concave","transition":"default","theme_id":null,"theme_font":"sketch","theme_color":"silver-green","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":false,"rolling_links":false,"center":false,"should_loop":false,"share_notes":false,"slide_number":true,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":1,"data_updated_at":1472043582921,"notes":{}}};
+			var SLConfig = {"deck": {"id":512444,"slug":"python-iv","title":"Python IV","description":"Course materials for the penultimate class in the software development curriculum: Python IV","visibility":"all","published_at":"2015-10-13T12:15:02.218Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/770c85514148194e5d76b1c135a2859b/thumb.jpg","view_count":157,"user":{"id":105368,"username":"racku","name":"Rackspace University","description":"","thumbnail_url":"https://www.gravatar.com/avatar/4fdd35b37f5a9854774386e628b420fe?s=140\u0026d=https%3A%2F%2Fs3.amazonaws.com%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","paid":true,"pro":true,"lite":false,"team_id":null,"settings":{"id":245,"present_controls":true,"present_upsizing":true,"present_notes":true}},"background_transition":"concave","transition":"default","theme_id":null,"theme_font":"sketch","theme_color":"silver-green","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":false,"rolling_links":false,"center":false,"should_loop":false,"share_notes":false,"slide_number":true,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":1,"data_updated_at":1481032192375,"font_typekit":null,"font_google":null,"notes":{}}};
 			SLConfig.current_user = {
 				name: "Rackspace University",
 				username: "racku",
 				pro: true
 			};
+
+
+			// Use the local font path
+			SLConfig.fonts_url = 'lib/fonts/';
 		</script>
 
 		<script src="lib/head.min.js"></script>
 		<script src="lib/reveal.min.js"></script>
+		<script src="lib/offline.js"></script>
 		<script>
 			// Make Slides speaker notes available in the reveal.js speaker view
 			if( SLConfig.deck.notes ) {
