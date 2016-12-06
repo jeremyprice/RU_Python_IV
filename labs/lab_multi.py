@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # *-* coding:utf-8 *-*
 
 """
@@ -39,7 +39,7 @@ Note: add args as necessary to the skeleton functions below
 def work_task(item):
     """This is the work to be done on each input item"""
     def is_prime(num):
-        for j in xrange(2, num):
+        for j in range(2, num):
             if (num % j) == 0:
                 return False
         return True
@@ -56,7 +56,7 @@ def work_task(item):
 # Don't change this function
 def generate_work(num_items):
     import random
-    return [random.randint(1, 2000) for x in xrange(num_items)]
+    return [random.randint(1, 2000) for x in range(num_items)]
 
 # Add your code down here
 
@@ -70,6 +70,7 @@ def create_workers():
     """This function creates workers of the requested type and wires them into the queues,
     per step d. above"""
     pass
+
 
 if __name__ == "__main__":
     pass

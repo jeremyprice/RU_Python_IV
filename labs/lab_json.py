@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # *-* coding:utf-8 *-*
 
 """
@@ -24,6 +24,9 @@ LAB_JSON Learning Objective: Learn to navigate a JSON file and convert to a
 
 # see https://docs.python.org/2/library/urllib2.html for more info on urllib2
 # example use of urllib2 to get a web resource:
-import urllib2
-data = urllib2.urlopen("https://api.github.com/")
-print("{}".format(data.read()))
+import urllib.request
+import urllib.error
+import urllib.parse
+
+data = urllib.request.urlopen("https://api.github.com/")
+print(("{}".format(data.read())))

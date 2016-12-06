@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # *-* coding:utf-8 *-*
 
 """
@@ -51,4 +51,4 @@ if __name__ == "__main__":
     print_object_flags("abc")
     print_object_flags(print_object_flags)
     print_object_flags([1, 2, 3])
-    print_object_flags(file)
+    print_object_flags(open('test.file.deleteme', 'w'))

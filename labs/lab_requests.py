@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 # *-* coding:utf-8 *-*
 
 """
@@ -44,10 +44,7 @@ import requests  # noqa
 
 def debug_mode():
     import logging
-    try:  # for Python 3
-        from http.client import HTTPConnection
-    except ImportError:
-        from httplib import HTTPConnection
+    from http.client import HTTPConnection
     HTTPConnection.debuglevel = 1
 
     logging.basicConfig()
