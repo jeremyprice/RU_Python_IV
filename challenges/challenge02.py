@@ -16,21 +16,27 @@ class B(A):
 class C(A):
     pass
 
-print A.x, B.x, C.x
+
+print(A.x, B.x, C.x)
 
 B.x = 2
-print A.x, B.x, C.x
+print(A.x, B.x, C.x)
 
 A.x = 3
-print A.x, B.x, C.x
+print(A.x, B.x, C.x)
 
-
-
-
-
-
-
-
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
 # answer:
 # The class variable x is looked up by Python in the dictionary of the
 # subclass, and each superclass, until it is found.  In the case of the last
