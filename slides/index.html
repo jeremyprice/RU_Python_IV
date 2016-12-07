@@ -86,10 +86,10 @@ git clone https://github.com/jeremyprice/RU_Python_IV</code></pre></div></div></
 <ul>
 	<li>Make sure Python is installed
 	<ul>
-		<li>Python 2 for this course</li>
+		<li>Python 3 for this course</li>
 	</ul>
 	</li>
-	<li>Lab machines have CentOS 7 with Python 2 already installed </li>
+	<li>Lab machines have CentOS 7 with Python 3 already installed </li>
 </ul>
 </div></div>
 <div class="sl-block" data-block-type="code" data-block-id="f5829f0feae9e1427b5658c5df4b155f" style="min-width: 30px; min-height: 30px; width: 500px; height: 36px; left: 230px; top: 444px;"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="bash"><code>python --version</code></pre></div></div></section><section data-id="bdd2330b02b93434f126bdcc63e59042"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="3ba29c67a710fd0946b8e82fb84e8fe0"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
@@ -191,7 +191,7 @@ pip install ipython</code></pre></div></div></section><section class="has-light-
 </div></div></section><section data-id="72c95c9d51c920511670aceb1268b235"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="b66f37fe21f8fdf4d4e30998e10d1027"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
 <h2>Anatomy of a Module</h2>
 </div></div>
-<div class="sl-block" data-block-type="code" data-block-id="c4df4c3e1e48fe4a70561ab78742437a" style="min-width: 30px; min-height: 30px; width: 499px; height: 286px; left: 230px; top: 274px;"><div class="sl-block-content" style="z-index: 12; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>#!/usr/bin/env python2
+<div class="sl-block" data-block-type="code" data-block-id="c4df4c3e1e48fe4a70561ab78742437a" style="min-width: 30px; min-height: 30px; width: 499px; height: 286px; left: 230px; top: 274px;"><div class="sl-block-content" style="z-index: 12; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # Line #1 = shebang
 # Line #2 = encoding declaration
@@ -351,7 +351,7 @@ st = {x for x in range(1,4)}</code></pre></div></div></section><section data-id=
 	</li>
 </ul>
 </div></div>
-<div class="sl-block" data-block-type="code" style="width: 442px; height: 70px; left: 259px; top: 455px;" data-block-id="6479886d43802d800630c69b42ef8d09"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>with file("foo.txt", "r") as infile:
+<div class="sl-block" data-block-type="code" style="width: 442px; height: 70px; left: 259px; top: 455px;" data-block-id="6479886d43802d800630c69b42ef8d09"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>with open("foo.txt", "r") as infile:
     all_txt = infile.read()
 </code></pre></div></div></section><section data-id="f424594775073984dc5737028defbd5a"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="c0edc73c719b6cd3bdc61f7e77156c2e"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
 <h2>Import and From Statements</h2>
@@ -386,11 +386,11 @@ st = {x for x in range(1,4)}</code></pre></div></div></section><section data-id=
 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 144px; height: auto;" data-block-id="b84748fdfbaeb91d7414d600f9e61df4"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" dir="ui">
 <ul>
 	<li>
-	<p>All the docs for version 2:</p>
+	<p>All the docs for version 3:</p>
 
 	<ul>
 		<li>
-		<p><a href="https://docs.python.org/2/" target="_blank">https://docs.python.org/2/</a></p>
+		<p><a href="https://docs.python.org/3/" target="_blank">https://docs.python.org/3/</a></p>
 		</li>
 	</ul>
 	</li>
@@ -399,7 +399,7 @@ st = {x for x in range(1,4)}</code></pre></div></div></section><section data-id=
 
 	<ul>
 		<li>
-		<p><a href="https://docs.python.org/2/library/index.html" target="_blank">https://docs.python.org/2/library/index.html</a></p>
+		<p><a href="https://docs.python.org/3/library/index.html" target="_blank">https://docs.python.org/3/library/index.html</a></p>
 		</li>
 	</ul>
 	</li>
@@ -488,7 +488,7 @@ st = {x for x in range(1,4)}</code></pre></div></div></section><section data-id=
 # examples
 exit_code = subprocess.call(['ls', '-al'])
 exit_code = subprocess.check_call('false')
-exit_code = subprocess.check_output(['ls', '-al'])</code></pre></div></div></section><section data-id="162e50363282fe2ea8e9a695a2110657"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 10px; height: auto;" data-block-id="c0e0668d069f14af92b3017986ba896c"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+proc_output = subprocess.check_output(['ls', '-al'])</code></pre></div></div></section><section data-id="162e50363282fe2ea8e9a695a2110657"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 10px; height: auto;" data-block-id="c0e0668d069f14af92b3017986ba896c"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
 <h2>Subprocess - Popen</h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="width: 918px; left: 23px; top: 99px; height: auto;" data-block-id="2f01a525fbe5b76aae3277da1009231e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
@@ -507,7 +507,7 @@ exit_code = subprocess.check_output(['ls', '-al'])</code></pre></div></div></sec
 
 	<ul>
 		<li>
-		<p><span style="font-size:0.7em"><a href="https://docs.python.org/2/library/subprocess.html#subprocess.Popen" target="_blank">https://docs.python.org/2/library/subprocess.html#subprocess.Popen</a></span></p>
+		<p><span style="font-size:0.7em"><a href="https://docs.python.org/3/library/subprocess.html#subprocess.Popen" target="_blank">https://docs.python.org/3/library/subprocess.html#subprocess.Popen</a></span></p>
 		</li>
 		<li>
 		<pre><span style="font-size:0.7em">​​​- poll() sees if child is terminated
@@ -675,19 +675,22 @@ subproc = subprocess.Popen(['ls', '-al'])
 </div></div></section><section data-id="05f533f5a3f3d330f409a05f8338ab28"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="72ed16714824769011f877886ba083cf"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
 <h2>Running a Thread</h2>
 </div></div>
-<div class="sl-block" data-block-type="code" data-block-id="b89ce3fe6e8ea2b7ebcb83ff916bcc65" style="min-width: 30px; min-height: 30px; width: 436px; height: 321px; left: 262px; top: 280px;"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>import threading
+<div class="sl-block" data-block-type="code" data-block-id="b89ce3fe6e8ea2b7ebcb83ff916bcc65" style="min-width: 30px; min-height: 30px; width: 571px; height: 424px; left: 195px; top: 264px;"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>import threading
 import time
+
 
 def xyz():
     for i in range(10):
-        print "thread"
-        time.sleep(1)
+        print("thread")
+        time.sleep(1.5)
 
-th = threading.Thread(target=xyz)
-th.start()
-for i in range():
-    print "main"
-    time.sleep(1)
+
+if __name__ == "__main__":
+    th = threading.Thread(target=xyz)
+    th.start()
+    for i in range(10):
+        print("main")
+        time.sleep(1)
 </code></pre></div></div></section><section data-id="140801887bc9cf47bc35f62ed2570d90"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="081310e2600c0d32a08ca28ed87f56ae"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
 <h2>Threading Module</h2>
 </div></div>
@@ -738,29 +741,33 @@ for i in range():
 </div></div></section><section data-id="6d7ea63441b0075d99f7af7d40133d0e"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 20px; height: auto;" data-block-id="cb7a06b9f4cb1305ee1594057cb7adf1"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
 <h2>Threading Worker Example</h2>
 </div></div>
-<div class="sl-block" data-block-type="code" data-block-id="8c388e5d469800442bde615fc567931d" style="min-width: 30px; min-height: 30px; width: 593px; height: 546px; left: 184px; top: 103px;"><div class="sl-block-content" style="z-index: 12; font-size: 120%;" data-highlight-theme="tomorrow"><pre><code>import Queue
+<div class="sl-block" data-block-type="code" data-block-id="8c388e5d469800442bde615fc567931d" style="min-width: 30px; min-height: 30px; width: 727px; height: 599px; left: 37px; top: 94px;"><div class="sl-block-content" style="z-index: 12; font-size: 120%;" data-highlight-theme="tomorrow"><pre><code>import queue
 import threading
 
 num_worker_threads = 5
+num_work_items = 20
+
 
 def worker():
     thread_id = threading.current_thread().name
     while True:
         item = q.get()
-        print "Worker %s:" % thread_id, item
+        print("Worker %s:" % thread_id, item)
         q.task_done()
 
-q = Queue.Queue()
-for i in range(num_worker_threads):
-     t = threading.Thread(target=worker)
-     t.daemon = True
-     t.start()
 
-work_items = xrange(20)
-for item in work_items:
-    q.put(item)
+if __name__ == '__main__':
+    q = queue.Queue()
+    for i in range(num_worker_threads):
+        t = threading.Thread(target=worker)
+        t.daemon = True
+        t.start()
 
-q.join()       # block until all tasks are done
+    work_items = range(num_work_items)
+    for item in work_items:
+        q.put(item)
+
+    q.join()       # block until all tasks are done
 </code></pre></div></div></section><section data-id="0417d91cc88183d279e284cbaa73c0b5"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="37f8d3c6ed85cd1913806f55f7d053bf"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
 <h2>Multiprocessing</h2>
 </div></div>
@@ -783,19 +790,22 @@ q.join()       # block until all tasks are done
 </div></div></section><section data-id="1912a1a17682376503ebef0f9cceb97d"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="768acec7e44db576ad91e92fe16836d4"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
 <h2>Running a Process</h2>
 </div></div>
-<div class="sl-block" data-block-type="code" style="width: 521px; height: 322px; left: 220px; top: 264px;" data-block-id="bc03343da107d35cf1a6f63c610d4789"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>import multiprocessing
+<div class="sl-block" data-block-type="code" style="width: 641px; height: 400px; left: 159px; top: 264px;" data-block-id="bc03343da107d35cf1a6f63c610d4789"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>import multiprocessing
 import time
+
 
 def xyz():
     for i in range(10):
-        print "thread"
+        print("thread")
         time.sleep(1)
 
-proc = multiprocessing.Process(target=xyz)
-proc.start()
-for i in range(10):
-    print "main"
-    time.sleep(1)
+
+if __name__ == '__main__':
+    proc = multiprocessing.Process(target=xyz)
+    proc.start()
+    for i in range(10):
+        print("main")
+        time.sleep(1)
 </code></pre></div></div></section><section data-id="d2363fa5e47d607a9198f0387fdfc8ba"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 33px; height: auto;" data-block-id="3372d92f76ddb98f2357db329d3330fe"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
 <h2>Process Worker Example</h2>
 </div></div>
@@ -806,7 +816,7 @@ def worker(q):
     process_id = os.getpid()
     while True:
         item = q.get()
-        print "Worker %s:" % process_id, item
+        print("Worker %s:" % process_id, item)
         q.task_done()
 
 if __name__ == "__main__":
@@ -818,13 +828,12 @@ if __name__ == "__main__":
         p.daemon = True
         p.start()
 
-    work_items = xrange(num_work_items)
+    work_items = range(num_work_items)
     for item in work_items:
         q.put(item)
 
     q.join()       # block until all tasks are done
-    print "All done"
-</code></pre></div></div></section><section class="has-light-background" data-background-color="#93c47d" data-id="42814dad4e9c7a46e57c706369bfb7bd"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="1e1348c32a62a2607b555945a7f723b3"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+    print("All done")</code></pre></div></div></section><section class="has-light-background" data-background-color="#93c47d" data-id="42814dad4e9c7a46e57c706369bfb7bd"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="1e1348c32a62a2607b555945a7f723b3"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
 <h2>Lab multiprocessing / multithreading</h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 338px; height: auto;" data-block-id="2abec1a809c674c724fbd1fece3ebd7b"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
@@ -1097,7 +1106,7 @@ None -&gt; null</span></pre>
 </div></div></section><section data-id="0082b182da7635585479938558a40e31"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="d5cabbf27fd3a150dc2745ecfad57079"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
 <h1>REST Client</h1>
 </div></div></section><section data-id="ffdc83a864a88df0a877b7d78e2e2b3f"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 54px; height: auto;" data-block-id="0380f6313628350d0f03d0650907d4fd"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
-<h2>Accessing Web Data: urllib2</h2>
+<h2>Accessing Web Data: urllib</h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 149px; height: auto;" data-block-id="c4d8526eb21af6603819813131411ef7"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
 <ul>
@@ -1105,10 +1114,10 @@ None -&gt; null</span></pre>
 	<p>Client functions to access URL’s</p>
 	</li>
 	<li>
-	<pre>import urllib2</pre>
+	<pre>import urllib.request</pre>
 	</li>
 	<li>
-	<p>urllib2.urlopen(url[,data]) is a common call signature</p>
+	<pre>urllib.request.urlopen(url[,data])</pre>
 
 	<ul>
 		<li>
@@ -1120,7 +1129,7 @@ None -&gt; null</span></pre>
 	</ul>
 	</li>
 	<li>
-	<p>Only HTTP url types use data currently</p>
+	<p>Only HTTP url types use data currently</p>
 	</li>
 	<li>
 	<p>If data exists</p>
@@ -1136,7 +1145,7 @@ None -&gt; null</span></pre>
 	</li>
 </ul>
 </div></div></section><section data-id="d8dcbdb68640865b122c861dc2f9249d"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 66px; height: auto;" data-block-id="888913486f103d1e5cc2cf74aa4d0509"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
-<h2>urllib2</h2>
+<h2>urllib</h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 177px; height: auto;" data-block-id="cd3149a7dd880b12bfd96a83d21533f1"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
 <ul>
@@ -1155,17 +1164,21 @@ HTTPError (subclass of URLError)</pre>
 	<p>Can handle redirections, HTTP error responses, cookies, proxies, HTTP authentication</p>
 	</li>
 </ul>
-</div></div></section><section data-id="78ae38b9be8c292fc83fe234f8a5fd23"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 66px; height: auto;" data-block-id="b0e41b9d8dcb423f97fa29fea866e385"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
-<h2>urllib2 example</h2>
+</div></div></section><section data-id="78ae38b9be8c292fc83fe234f8a5fd23"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 66px; height: auto;" data-block-id="b0e41b9d8dcb423f97fa29fea866e385"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>urllib example</h2>
 </div></div>
-<div class="sl-block" data-block-type="code" data-block-id="5566f485cbf90a1374022af78c19992a" style="min-width: 30px; min-height: 30px; width: 960px; height: 220px; left: 0px; top: 200px;"><div class="sl-block-content" style="z-index: 12; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>import urllib2
+<div class="sl-block" data-block-type="code" data-block-id="5566f485cbf90a1374022af78c19992a" style="min-width: 30px; min-height: 30px; width: 960px; height: 220px; left: 0px; top: 200px;"><div class="sl-block-content" style="z-index: 12; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>import urllib.request
 
-response = urllib2.urlopen("http://www.google.com")
+response = urllib.request.urlopen("http://www.google.com")
 page = response.read()
 
-post_response = urllib2.urlopen("http://test.com/post_info", data={'test1':123})
-data = post_response.read()</code></pre></div></div></section><section data-id="93c6c8e86b58e62859c5a529d3a85e27"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="bbfa34ef2ed4e76eb7966d0e0603f126"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
-<h1>urllib2 is great</h1>
+post_response = urllib.request.urlopen("http://test.com/post_info",
+                                       data={'test1':123})
+data = post_response.read()</code></pre></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="ac2791dfb95759bc53f4ae9baeac81c2" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 490px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;">
+<p>You got to work with urllib in lab_json.py</p>
+</div></div></section><section data-id="93c6c8e86b58e62859c5a529d3a85e27"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="bbfa34ef2ed4e76eb7966d0e0603f126"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1>urllib is great</h1>
 </div></div>
 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 287px; height: auto;" data-block-id="1eab3d6aaf7263550df5085d848cafdf"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle">
 <h2>but Requests is better!</h2>
@@ -1178,7 +1191,7 @@ data = post_response.read()</code></pre></div></div></section><section data-id="
 	<li>It handles the HTTP intricacies more transparently, and better, than urllib2</li>
 </ul>
 </div></div>
-<div class="sl-block" data-block-type="code" data-block-id="e04468b59cfd0a198f1d84d95c75a068" style="min-width: 30px; min-height: 30px; width: 233px; height: 39px; left: 364px; top: 420px;"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="bash"><code>pip install requests</code></pre></div></div>
+<div class="sl-block" data-block-type="code" data-block-id="e04468b59cfd0a198f1d84d95c75a068" style="min-width: 30px; min-height: 30px; width: 276px; height: 39px; left: 342px; top: 420px;"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="bash"><code>pip install requests</code></pre></div></div>
 <div class="sl-block" data-block-type="text" data-block-id="9c6b39d4f31c4ac50130e69e521dba76" style="height: auto; min-width: 30px; min-height: 30px; width: 654px; left: 154px; top: 490px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;">
 <p>More info on requests: </p>
 
@@ -1186,7 +1199,7 @@ data = post_response.read()</code></pre></div></div></section><section data-id="
 </div></div></section><section data-id="0bec57e418abb083747580db50bae6cb"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="971ddd5f145ca7567fd17d750718694b"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
 <h2>Requests Example - GET</h2>
 </div></div>
-<div class="sl-block" data-block-type="code" data-block-id="4634755d125d7e671713903666f0de8c" style="min-width: 30px; min-height: 30px; width: 595px; height: 183px; left: 183px; top: 286px;"><div class="sl-block-content" style="z-index: 12; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>import requests
+<div class="sl-block" data-block-type="code" data-block-id="4634755d125d7e671713903666f0de8c" style="min-width: 30px; min-height: 30px; width: 617px; height: 183px; left: 172px; top: 286px;"><div class="sl-block-content" style="z-index: 12; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>import requests
 
 response = requests.get("https://api.github.com")
 print response.status_code
@@ -1200,7 +1213,7 @@ print response.json()</code></pre></div></div></section><section data-id="c482a2
 data = {'user': 'bob', 'pass': 'password'}
 response = requests.post("https://api.myhost.com/login", data=data)
 </code></pre></div></div>
-<div class="sl-block" data-block-type="text" data-block-id="3bc7f5478354e3836f1d24063fccc82a" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 401px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;">
+<div class="sl-block" data-block-type="text" data-block-id="3bc7f5478354e3836f1d24063fccc82a" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 420px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;">
 <p>Note: the default content type for a POST is <em>application/x-www-form-urlencoded</em></p>
 </div></div></section><section data-id="9e0863f59791238ad9c93d3b2d41b4d9"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="a9398a02ec52101cd73507999bd53c89"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
 <h2>Requests Example - POST JSON</h2>
@@ -1278,7 +1291,7 @@ r = requests.get("https://myapi.com/resource", headers=headers)
 <div class="sl-block" data-block-type="code" data-block-id="62ff31a1ad45705549a994b33451749f" style="min-width: 30px; min-height: 30px; width: 219px; height: 35px; left: 371px; top: 513px;"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>pip install Flask</code></pre></div></div></section><section data-id="2074be81224883856f4df74424deb3b7"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="81ed7096086b5b01d1eab8a5045cb63e"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
 <h2>Minimal Flask Application</h2>
 </div></div>
-<div class="sl-block" data-block-type="code" data-block-id="cb1b205ab398b1f445c83f3cd285369e" style="min-width: 30px; min-height: 30px; width: 321px; height: 229px; left: 319px; top: 280px;"><div class="sl-block-content" style="z-index: 12; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>from flask import Flask
+<div class="sl-block" data-block-type="code" data-block-id="cb1b205ab398b1f445c83f3cd285369e" style="min-width: 30px; min-height: 30px; width: 390px; height: 248px; left: 285px; top: 264px;"><div class="sl-block-content" style="z-index: 12; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>from flask import Flask
 app = Flask(__name__)
 
 @app.route('/')
@@ -1287,7 +1300,7 @@ def hello_world():
 
 if __name__ == '__main__':
     app.run()</code></pre></div></div>
-<div class="sl-block" data-block-type="code" data-block-id="322760659621d1d28fc44da2ca5c1ecf" style="min-width: 30px; min-height: 30px; width: 438px; height: 103px; left: 261px; top: 560px;"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="bash"><code># to run the app:
+<div class="sl-block" data-block-type="code" data-block-id="322760659621d1d28fc44da2ca5c1ecf" style="min-width: 30px; min-height: 30px; width: 459px; height: 126px; left: 251px; top: 532px;"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="bash"><code># to run the app:
 
 $ python my_app.py
 * Running on http://127.0.0.1:5000/</code></pre></div></div></section><section data-id="b696af3182b01b97d6cd7b300a55f497"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="353414c001570314c9719bf692f86665"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
@@ -1299,7 +1312,7 @@ $ python my_app.py
 	<li>You can grab variables from the route url</li>
 </ul>
 </div></div>
-<div class="sl-block" data-block-type="code" data-block-id="b3eafcbf03e53f17c6371d5a59751c87" style="min-width: 30px; min-height: 30px; width: 726px; height: 227px; left: 117px; top: 356px;"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>@app.route('/user/&lt;username&gt;')
+<div class="sl-block" data-block-type="code" data-block-id="b3eafcbf03e53f17c6371d5a59751c87" style="min-width: 30px; min-height: 30px; width: 754px; height: 284px; left: 103px; top: 350px;"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>@app.route('/user/&lt;username&gt;')
 def show_user_profile(username):
     # show the user profile for that user
     return 'User %s' % username
@@ -1334,7 +1347,7 @@ def login():
 @app.route('/hello/&lt;name&gt;')
 def hello(name=None):
     return render_template('hello.html', name=name)</code></pre></div></div>
-<div class="sl-block" data-block-type="code" data-block-id="1fb0409916d385a828eed05cf2794ab4" style="min-width: 30px; min-height: 30px; width: 399px; height: 182px; left: 281px; top: 490px;"><div class="sl-block-content" style="z-index: 14; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="xml"><code>&lt;!doctype html&gt;
+<div class="sl-block" data-block-type="code" data-block-id="1fb0409916d385a828eed05cf2794ab4" style="min-width: 30px; min-height: 30px; width: 484px; height: 184px; left: 240px; top: 490px;"><div class="sl-block-content" style="z-index: 14; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="xml"><code>&lt;!doctype html&gt;
 &lt;title&gt;Hello from Flask&lt;/title&gt;
 {% if name %}
   &lt;h1&gt;Hello {{ name }}!&lt;/h1&gt;
@@ -1419,13 +1432,13 @@ app.run(debug=True)</code></pre></div></div></section><section class="has-light-
 </ul>
 </div></div>
 <div class="sl-block" data-block-type="code" style="width: 418px; height: 338px; left: 271px; top: 210px;" data-block-id="e5e50806334d398fc2af842c54f2b3c2"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>def argless(*args):
-    print args
+    print(args)
 
 argless()
 argless(1,2,3)
 
 def twoargs(x, y, *args):
-    print x, y, args
+    print(x, y, args)
 
 twoargs(1, 2, 3)
 twoargs('a', 'b')</code></pre></div></div></section><section data-id="38028b161eb261588ed438786ea7cb00"><div class="sl-block" data-block-type="text" style="width: 800px; left: 81px; top: 23px; height: auto;" data-block-id="56fc7458a8c62add0b2bb8c0e551b945"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
@@ -1451,7 +1464,7 @@ subtract(*lst)</code></pre></div></div></section><section data-id="bcbd20ba4c590
 </ul>
 </div></div>
 <div class="sl-block" data-block-type="code" style="width: 440px; height: 381px; left: 260px; top: 210px;" data-block-id="7fdcbcf863c8e991fefa47ffbbec5974"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>def kwargless(**kwargs):
-    print kwargs
+    print(kwargs)
 
 
 kwargless()
@@ -1493,7 +1506,7 @@ subtract(**values)</code></pre></div></div></section><section class="has-light-b
 a = 1
 b = 'hello'
 c = FakeClass()
-print a, b, c</code></pre></div></div></section><section data-id="bc71febae2d4735f68d331c54c1074b9"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="5bd0951cc0f6a2b8c5914103af852ddb"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+print(a, b, c)</code></pre></div></div></section><section data-id="bc71febae2d4735f68d331c54c1074b9"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="5bd0951cc0f6a2b8c5914103af852ddb"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
 <h2>"Variables" in Python</h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="a93adb2c334247785bf8900421df3dca"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
@@ -1524,21 +1537,21 @@ print a, b, c</code></pre></div></div></section><section data-id="bc71febae2d473
 a = FakeClass()
 b = a
 
-print b.hello
+print(b.hello)
 
 a.hello = 'world'
 
-print b.hello</code></pre></div></div></section><section data-id="56ffae79b0242f1d20c070eade70229b"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="aefeaec658906ee67ba065bdffaee44b"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+print(b.hello)</code></pre></div></div></section><section data-id="56ffae79b0242f1d20c070eade70229b"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="aefeaec658906ee67ba065bdffaee44b"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
 <h2>Everything is an Object<br>
 (Including integers)</h2>
 </div></div>
 <div class="sl-block" data-block-type="code" data-block-id="9c0792d2a42c0e1c7559fd831847bdc8" style="min-width: 30px; min-height: 30px; width: 288px; height: 129px; left: 336px; top: 350px;"><div class="sl-block-content" style="z-index: 12; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>x = 123
-print x.__add__
-print dir(x)</code></pre></div></div></section><section data-id="8fdb5f74fa3d7cad5112adf827f3c9ee"><div class="sl-block" data-block-type="text" style="width: 960px; left: 0px; top: 1px; height: auto;" data-block-id="c2e851113e0738308888a32505f9956f"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+print(x.__add__)
+print(x.__add__(321))
+print(dir(x))</code></pre></div></div></section><section data-id="8fdb5f74fa3d7cad5112adf827f3c9ee"><div class="sl-block" data-block-type="text" style="width: 960px; left: 0px; top: 1px; height: auto;" data-block-id="c2e851113e0738308888a32505f9956f"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
 <h3>Since everything is just names bound to objects...</h3>
 </div></div>
-<div class="sl-block" data-block-type="code" style="width: 736px; height: 634px; left: 126px; top: 51px;" data-block-id="4fce6facc1c0fdbd1ef88f9eb6971c1b"><div class="sl-block-content" style="z-index: 12; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>from __future__ import print_function
-import datetime
+<div class="sl-block" data-block-type="code" style="width: 754px; height: 634px; left: 103px; top: 51px;" data-block-id="4fce6facc1c0fdbd1ef88f9eb6971c1b"><div class="sl-block-content" style="z-index: 12; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>import datetime
 import imp
 
 print(datetime.datetime.now())
@@ -1562,82 +1575,86 @@ class PartyTime():
 
 datetime.datetime = PartyTime()
 print(datetime.datetime.now())
-print(datetime.datetime.max, datetime.datetime.min)
-</code></pre></div></div></section><section data-id="ea4666be31220d0be5b8a6dc1a1dcd64"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="3636060b6e6d2dc4da1597b6000db67d"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+print(datetime.datetime.max, datetime.datetime.min)</code></pre></div></div></section><section data-id="ea4666be31220d0be5b8a6dc1a1dcd64"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="3636060b6e6d2dc4da1597b6000db67d"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
 <h2>Mutable vs. Immutable</h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 263px; height: auto;" data-block-id="4adad857df6286489ab5c31ff8e202fe"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
 <ul>
 	<li>mutable objects <span style="color:#EE82EE"><strong>can</strong></span> be changed after they are created
 	<ul>
-		<li>lists, dictionaries</li>
+		<li>lists, dictionaries, sets</li>
 	</ul>
 	</li>
 	<li>immutable objects <span style="color:#EE82EE"><strong>cannot</strong></span> be changed after they are created
 	<ul>
-		<li>strings, tuples</li>
+		<li>strings, tuples, integers, floats</li>
 	</ul>
 	</li>
 </ul>
 </div></div></section><section data-id="9f0b4cc449a446f6f2fff95dd027d513"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="3d517d09e14a37a67e314eafe406e772"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
 <h2>Immutable Strings?</h2>
 </div></div>
-<div class="sl-block" data-block-type="code" data-block-id="79a3783e9b3cdb7b3ce1159aeb35220e" style="min-width: 30px; min-height: 30px; width: 192px; height: 165px; left: 384px; top: 280px;"><div class="sl-block-content" style="z-index: 12; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>x = 'abc'
-print id(x)
+<div class="sl-block" data-block-type="code" data-block-id="79a3783e9b3cdb7b3ce1159aeb35220e" style="min-width: 30px; min-height: 30px; width: 228px; height: 196px; left: 366px; top: 280px;"><div class="sl-block-content" style="z-index: 12; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>x = 'abc'
+print(id(x))
+print(hex(id(x))
 
 x += 'def'
-print id(x)</code></pre></div></div></section><section data-id="fca6cfd7c32d888d6ac60a57babc8537"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="8cedd067dcd5bd80c341ad287b417826"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+print(id(x))
+print(hex(id(x))</code></pre></div></div></section><section data-id="fca6cfd7c32d888d6ac60a57babc8537"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="8cedd067dcd5bd80c341ad287b417826"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
 <h2>Immutable Tuples?</h2>
 </div></div>
-<div class="sl-block" data-block-type="code" style="width: 581px; height: 527px; left: 190px; top: 144px;" data-block-id="52457d7bbb0a5ec7c413fb17599de3af"><div class="sl-block-content" style="z-index: 12; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>class myInt():
+<div class="sl-block" data-block-type="code" style="width: 610px; height: 516px; left: 175px; top: 144px;" data-block-id="52457d7bbb0a5ec7c413fb17599de3af"><div class="sl-block-content" style="z-index: 12; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>class myInt():
     def __init__(self):
         self.value = 0
+
     def __str__(self):
         return str(self.value)
+
     def __repr__(self):
         return str(self.value)
 
 x = myInt()
-print x, id(x)
+print(x, id(x))
 
 x_t = (x, x)
-print x_t, id(x_t), id(x_t[0]), id(x_t[1])
+print(x_t, id(x_t), id(x_t[0]), id(x_t[1]))
 
-x_t[0] = 999 # exception!
+x_t[0] = 999  # exception!
 
 x.value = 999
-print x, id(x)
-print x_t, id(x_t), id(x_t[0]), id(x_t[1])
+print(x, id(x))
+print(x_t, id(x_t), id(x_t[0]), id(x_t[1]))
 </code></pre></div></div></section><section data-id="8a03b18cdf997e83730ebe585934f9f9"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="9a216cd161ef1fc0360b4aa994406075"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
 <h2>More Names and Binding</h2>
 </div></div>
 <div class="sl-block" data-block-type="code" style="width: 410px; height: 346px; left: 275px; top: 162px;" data-block-id="248c211ac4139db0edfc02aa4df87acc"><div class="sl-block-content" style="z-index: 12; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>def list_widget(in_list):
     in_list[0] = 10
 
-    in_list = range(1, 10)
-    print in_list
+    in_list = list(range(1, 10))
+    print(in_list)
     in_list[0] = 10
-    print in_list
+    print(in_list)
 
 my_list = [9, 9, 9, 9]
 list_widget(my_list)
-print my_list
+print(my_list)
 </code></pre></div></div></section><section data-id="d2f2aeb295eba3063b0870243aa1cb34"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="8db8c032018182356d71a8a4c848e389"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
 <h2>Even Functions are Objects</h2>
 </div></div>
-<div class="sl-block" data-block-type="code" style="width: 545px; height: 392px; left: 208px; top: 144px;" data-block-id="033085eaccf6c8355d3529ca6bca8ae7"><div class="sl-block-content" style="z-index: 12; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>def myFunc():
+<div class="sl-block" data-block-type="code" style="width: 545px; height: 392px; left: 208px; top: 144px;" data-block-id="033085eaccf6c8355d3529ca6bca8ae7"><div class="sl-block-content" style="z-index: 12; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>import dis
+
+def myFunc():
     x = 1
     y = 2
     z = 'abc'
     return x + y
 
-print myFunc.func_name
-print myFunc.func_code.co_varnames
-print myFunc.func_code.co_consts
-print myFunc.func_code.co_code
+print(myFunc.__name__)
+print(myFunc.__code__.co_varnames)
+print(myFunc.__code__.co_consts)
+print(myFunc.__code__.co_code)
 
-import dis
-dis.disassemble(myFunc.func_code)</code></pre></div></div></section><section data-id="c3b8a9d302b28f392db5c70a5ad3c586"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 33px; height: auto;" data-block-id="fe0e6405fc96eba14fe4479bf7c036c0"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+dis.disassemble(myFunc.__code__)</code></pre></div></div></section><section data-id="c3b8a9d302b28f392db5c70a5ad3c586"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 33px; height: auto;" data-block-id="fe0e6405fc96eba14fe4479bf7c036c0"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
 <h2>Let's Explore Objects</h2>
 </div></div>
 <div class="sl-block" data-block-type="code" data-block-id="d598b56c45c1056730ba9f002335609b" style="min-width: 30px; min-height: 30px; width: 647px; height: 302px; left: 157px; top: 140px;"><div class="sl-block-content" style="z-index: 12; font-size: 120%;" data-highlight-theme="tomorrow"><pre><code># get all the attributes of an object
@@ -1672,8 +1689,7 @@ hasattr(obj, 'y')
 <div class="sl-block" data-block-type="code" data-block-id="7ec3879df1c563828b0fdd6891a78e73" style="min-width: 30px; min-height: 30px; width: 253px; height: 140px; left: 354px; top: 210px;"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>def func():
     return "hi"
 
-print func()
-</code></pre></div></div></section><section data-id="520fc567d6012f38feec112b272278fa"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="57e063c2da71aecb4462521875ac2a9b"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+print(func())</code></pre></div></div></section><section data-id="520fc567d6012f38feec112b272278fa"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="57e063c2da71aecb4462521875ac2a9b"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
 <h2>Scope (namespace)</h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="2c6f04263b5b5d1341be01d15f277f22"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
@@ -1686,9 +1702,9 @@ print func()
 <div class="sl-block" data-block-type="code" data-block-id="01ba34fce3f6df436eb89548c5bd8e80" style="min-width: 30px; min-height: 30px; width: 340px; height: 228px; left: 310px; top: 409px;"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>info = "hello world"
 
 def localonly():
-    print locals()
+    print(locals())
 
-print globals()
+print(globals())
 localonly()</code></pre></div></div></section><section data-id="1f22e8449b8612b9c886a7a850224b8e"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="193787186b0002a0969019df49291637"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
 <h2>Scope (globals)</h2>
 </div></div>
@@ -1700,7 +1716,7 @@ localonly()</code></pre></div></div></section><section data-id="1f22e8449b8612b9
 <div class="sl-block" data-block-type="code" style="width: 346px; height: 207px; left: 307px; top: 361px;" data-block-id="eee4d4388db9fbb2bb46cdb26380d6fe"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>info = "hello world"
 
 def localonly():
-    print info
+    print(info)
 
 localonly()</code></pre></div></div></section><section data-id="afacb2644dd308d694c698634c03af03"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="603317f81eb77185f73f460d8b8d58f8"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
 <h2>Scope (global shadowing)</h2>
@@ -1714,10 +1730,10 @@ localonly()</code></pre></div></div></section><section data-id="afacb2644dd308d6
 
 def localonly():
    info = "inside localonly"
-   print info
+   print(info)
 
 localonly()
-print info</code></pre></div></div></section><section data-id="1bcb372a985edc4c70fc7e6d34c0aa8f"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="84eeacca5cc6b8fd87a78902b8a76ae4"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+print(info)</code></pre></div></div></section><section data-id="1bcb372a985edc4c70fc7e6d34c0aa8f"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="84eeacca5cc6b8fd87a78902b8a76ae4"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
 <h2>Variable lifetime</h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="6345f2c69b844b13234d3245aeb08215"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
@@ -1727,10 +1743,10 @@ print info</code></pre></div></div></section><section data-id="1bcb372a985edc4c7
 </div></div>
 <div class="sl-block" data-block-type="code" style="width: 415px; height: 238px; left: 273px; top: 350px;" data-block-id="87c51c7220f93dc352664108b9a626c6"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>def localonly():
    info = "inside localonly"
-   print info
+   print(info)
 
 localonly()
-print info</code></pre></div></div></section><section data-id="70ab329a4adeceea3257d4ca16f029b7"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="4e83e54fbe10da345e37f06131ad26bf"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+print(info)</code></pre></div></div></section><section data-id="70ab329a4adeceea3257d4ca16f029b7"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="4e83e54fbe10da345e37f06131ad26bf"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
 <h2>Function parameters and args</h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="6d2a7ad9cf6dbcbbbc15113a61548722"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
@@ -1739,7 +1755,7 @@ print info</code></pre></div></div></section><section data-id="70ab329a4adeceea3
 </ul>
 </div></div>
 <div class="sl-block" data-block-type="code" style="width: 311px; height: 193px; left: 325px; top: 350px;" data-block-id="4ba1d2e6b6c2fd0fcc41ef37c8acef30"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>def hello(arg1):
-   print locals()
+   print(locals())
 
 hello(1)</code></pre></div></div></section><section data-id="3190f27b298ea377ef9e6b95bbbdb8b0"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="e818255a5b56207669ec6c3f706d9bf8"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
 <h2>Function parameters and args</h2>
@@ -1750,7 +1766,7 @@ hello(1)</code></pre></div></div></section><section data-id="3190f27b298ea377ef9
 </ul>
 </div></div>
 <div class="sl-block" data-block-type="code" style="width: 417px; height: 264px; left: 272px; top: 350px;" data-block-id="b50ad790f72870086f15993915c12e93"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>def hello(arg1, arg2=0):
-   print locals()
+   print(locals())
 
 hello(1)
 hello(1, 3)
@@ -1765,13 +1781,13 @@ hello(arg2=99)</code></pre></div></div></section><section data-id="8c7134671ec6d
 	<li>Variable lifetime and scoping rules still apply</li>
 </ul>
 </div></div>
-<div class="sl-block" data-block-type="code" style="width: 360px; height: 238px; left: 300px; top: 350px;" data-block-id="243cc787a4e2008a1f5a59bf5d5517fa"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>def outside():
+<div class="sl-block" data-block-type="code" style="width: 360px; height: 238px; left: 300px; top: 350px;" data-block-id="243cc787a4e2008a1f5a59bf5d5517fa"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>def outer():
     info = 1
-    def inside():
-        print info
-    inside()
+    def inner():
+        print(info)
+    inner()
 
-outside()</code></pre></div></div></section><section data-id="e59dab7da8e7f5bc416d6183f1236cc5"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="50def78bdb37f07d7c0244da59d2cab7"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+outer()</code></pre></div></div></section><section data-id="e59dab7da8e7f5bc416d6183f1236cc5"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="50def78bdb37f07d7c0244da59d2cab7"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
 <h2>Functions are 1st class objects</h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="e75757af139975ff8c56d8ea6b3af0fa"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
@@ -1779,12 +1795,12 @@ outside()</code></pre></div></div></section><section data-id="e59dab7da8e7f5bc41
 	<li>(nearly) Everything in Python is an object</li>
 </ul>
 </div></div>
-<div class="sl-block" data-block-type="code" style="width: 476px; height: 213px; left: 244px; top: 331px;" data-block-id="79d496e0253835dd85dfce2c4f206c71"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>def func():
+<div class="sl-block" data-block-type="code" style="width: 521px; height: 215px; left: 220px; top: 329px;" data-block-id="79d496e0253835dd85dfce2c4f206c71"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>def func():
     pass
 
-type(func)
-func.__class__
-issubclass(func.__class__, object)</code></pre></div></div></section><section data-id="49beae51a38f4b63089c69554ef35179"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="5c66895dd1a458b74273917c584d5d6a"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+print(type(func))
+print(func.__class__)
+print(issubclass(func.__class__, object))</code></pre></div></div></section><section data-id="49beae51a38f4b63089c69554ef35179"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="5c66895dd1a458b74273917c584d5d6a"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
 <h2>Treating functions as objects</h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="b2f52066ca83ebe36351550b73a5d772"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;" dir="ui">
@@ -1796,13 +1812,13 @@ issubclass(func.__class__, object)</code></pre></div></div></section><section da
     return x + y
 
 def sub(x, y):
-    return x + y
+    return x - y
 
 def do_math(operation, x, y):
     return operation(x, y)
 
-do_math(sub, 10, 5)
-do_math(add, 2, 2)</code></pre></div></div></section><section data-id="5c6a978d9c33f75a2659a204cf9bffb4"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="2b7dd4e303a9b25dc971e671f6760405"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+print(do_math(sub, 10, 5))
+print(do_math(add, 2, 2))</code></pre></div></div></section><section data-id="5c6a978d9c33f75a2659a204cf9bffb4"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="2b7dd4e303a9b25dc971e671f6760405"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
 <h2>What about inner functions?</h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="439c2ebe020ba654285e130db47d0b97"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;" dir="ui">
@@ -1810,14 +1826,14 @@ do_math(add, 2, 2)</code></pre></div></div></section><section data-id="5c6a978d9
 	<li>Functions defined in other functions are still just objects</li>
 </ul>
 </div></div>
-<div class="sl-block" data-block-type="code" style="width: 590px; height: 301px; left: 185px; top: 340px;" data-block-id="1285161787b743c696074f09f9f71cf9"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>def outside():
-    def inside():
+<div class="sl-block" data-block-type="code" style="width: 590px; height: 301px; left: 185px; top: 340px;" data-block-id="1285161787b743c696074f09f9f71cf9"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>def outer():
+    def inner():
         print "inside the inner function"
-    return inside
+    return inner
 
-my_func = outside()
-my_func
-my_func()</code></pre></div></div></section><section data-id="41075acd2cfdfbedb23773e3a583fd77"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="df49b8aba533bc4eeef7e9b6ffa0c5ff"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+my_func = outer()
+print(my_func)
+print(my_func())</code></pre></div></div></section><section data-id="41075acd2cfdfbedb23773e3a583fd77"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="df49b8aba533bc4eeef7e9b6ffa0c5ff"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
 <h2>Closures</h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="d7a7500c6bd22598245cf0f91ac4b6b3"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;" dir="ui">
@@ -2244,14 +2260,12 @@ if __name__ == "__main__":
 	<li>Mock is available in Python 3 (&gt; 3.3) and has backports available for Python 2</li>
 </ul>
 
-<pre>pip install mock</pre>
+<pre> </pre>
 </div></div></section><section data-id="a655ab8e869b4796482d5fc3514aea62"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 66px; height: auto;" data-block-id="3ded5643e523d118097f6f2d52a4b5ac"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
 <h2>Mock Example</h2>
 </div></div>
-<div class="sl-block" data-block-type="code" style="width: 693px; height: 274px; left: 134px; top: 181px;" data-block-id="bdde9d5e3ee7d706b95b3bfcdf459816"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code># in Python 2
-from mock import MagicMock
-# in Python 3
-# from unittest.mock import MagicMock
+<div class="sl-block" data-block-type="code" style="width: 693px; height: 274px; left: 134px; top: 181px;" data-block-id="bdde9d5e3ee7d706b95b3bfcdf459816"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code># in Python 3
+from unittest.mock import MagicMock
 thing = ProductionClass()
 thing.method = MagicMock(return_value=3)
 thing.method(3, 4, 5, key='value')
@@ -2290,7 +2304,7 @@ thing()
 		</div>
 
 		<script>
-			var SLConfig = {"deck": {"id":512444,"slug":"python-iv","title":"Python IV","description":"Course materials for the penultimate class in the software development curriculum: Python IV","visibility":"all","published_at":"2015-10-13T12:15:02.218Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/770c85514148194e5d76b1c135a2859b/thumb.jpg","view_count":157,"user":{"id":105368,"username":"racku","name":"Rackspace University","description":"","thumbnail_url":"https://www.gravatar.com/avatar/4fdd35b37f5a9854774386e628b420fe?s=140\u0026d=https%3A%2F%2Fs3.amazonaws.com%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","paid":true,"pro":true,"lite":false,"team_id":null,"settings":{"id":245,"present_controls":true,"present_upsizing":true,"present_notes":true}},"background_transition":"concave","transition":"default","theme_id":null,"theme_font":"sketch","theme_color":"silver-green","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":false,"rolling_links":false,"center":false,"should_loop":false,"share_notes":false,"slide_number":true,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":1,"data_updated_at":1481032192375,"font_typekit":null,"font_google":null,"notes":{}}};
+			var SLConfig = {"deck": {"id":512444,"slug":"python-iv","title":"Python IV","description":"Course materials for the penultimate class in the software development curriculum: Python IV","visibility":"all","published_at":"2015-10-13T12:15:02.218Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/770c85514148194e5d76b1c135a2859b/thumb.jpg","view_count":157,"user":{"id":105368,"username":"racku","name":"Rackspace University","description":"","thumbnail_url":"https://www.gravatar.com/avatar/4fdd35b37f5a9854774386e628b420fe?s=140\u0026d=https%3A%2F%2Fs3.amazonaws.com%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","paid":true,"pro":true,"lite":false,"team_id":null,"settings":{"id":245,"present_controls":true,"present_upsizing":true,"present_notes":true}},"background_transition":"concave","transition":"default","theme_id":null,"theme_font":"sketch","theme_color":"silver-green","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":false,"rolling_links":false,"center":false,"should_loop":false,"share_notes":false,"slide_number":true,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":1,"data_updated_at":1481119603916,"font_typekit":null,"font_google":null,"notes":{}}};
 			SLConfig.current_user = {
 				name: "Rackspace University",
 				username: "racku",
