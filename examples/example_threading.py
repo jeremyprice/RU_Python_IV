@@ -11,8 +11,9 @@ def xyz():
         time.sleep(1.5)
 
 
-th = threading.Thread(target=xyz)
-th.start()
-for i in range(10):
-    print("main")
-    time.sleep(1)
+if __name__ == "__main__":
+    th = threading.Thread(target=xyz)
+    th.start()
+    for i in range(10):
+        print("main")
+        time.sleep(1)
