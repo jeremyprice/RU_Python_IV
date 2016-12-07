@@ -125,7 +125,7 @@ if __name__ == "__main__":
     returned_items = 0
     while returned_items < config.items:
         result = done_q.get()
-        print(("Result from {}: {}".format(result[0], result[1])))
+        # print(("Result from {}: {}".format(result[0], result[1])))
         returned_items += 1
     stop = time.time()
     elapsed = stop-start

@@ -37,7 +37,8 @@ def strip_newlines(list_of_words):
 
 # step a.
 print("step a.")
-raw_dictionary1 = open("../data/dictionary1.txt", "r").readlines()
+with open("../data/dictionary1.txt", "r") as d1:
+    raw_dictionary1 = d1.readlines()
 dictionary1 = strip_newlines(raw_dictionary1)
 print(('Number of entries in dictionary1: {}'.format(len(dictionary1))))
 

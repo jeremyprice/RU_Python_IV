@@ -29,7 +29,7 @@ subprocess.call(["ls", "-l"])
 print('')
 
 print("step b.")
-subprocess.call(["ls", "-l"], stdout=subprocess.PIPE)
+subprocess.call(["ls", "-l"], stdout=subprocess.DEVNULL)
 print('')
 
 print("step c.")
