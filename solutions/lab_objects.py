@@ -31,7 +31,7 @@ def is_math(obj):
     """ returns True if the object supports +, -, /, and * """
     # __add__, ...
     retval = hasattr(obj, '__add__') and hasattr(obj, '__mul__') and \
-        hasattr(obj, '__sub__') and hasattr(obj, '__div__')
+        hasattr(obj, '__sub__') and hasattr(obj, '__truediv__')
     return retval
 
 

@@ -71,21 +71,21 @@ class TestAllThingsCircle(unittest.TestCase):
 
     def test_circumference(self):
         c = circle()
-        r = 5.0
-        c.radius = 5.0
-        self.assertAlmostEqual(c.circumference(), math.pi * 2.0 * r)
+        c.radius = 1.0
+        expected = 6.28318530  # Pi * 2 * 1
+        self.assertAlmostEqual(c.circumference(), expected)
 
     def test_perimeter(self):
         c = circle()
-        r = 5.0
-        c.radius = 5.0
-        self.assertAlmostEqual(c.perimeter(), math.pi * 2.0 * r)
+        c.radius = 1.0
+        expected = 6.28318530  # Pi * 2 * 1
+        self.assertAlmostEqual(c.perimeter(), expected)
 
     def test_area(self):
         c = circle()
-        r = 5.0
-        c.radius = 5.0
-        self.assertAlmostEqual(c.area(), math.pi * r * r)
+        c.radius = 1.0
+        expected = 3.14159265358  # Pi * 1 * 1
+        self.assertAlmostEqual(c.area(), expected)
 
 
 class TestAllThingsSquare(unittest.TestCase):
@@ -98,15 +98,15 @@ class TestAllThingsSquare(unittest.TestCase):
 
     def test_perimeter(self):
         s = square()
-        side = 5.0
         s.side = 5.0
-        self.assertAlmostEqual(s.perimeter(), 4.0 * side)
+        expected = 20.0
+        self.assertAlmostEqual(s.perimeter(), expected)
 
     def test_area(self):
         s = square()
-        side = 5.0
         s.side = 5.0
-        self.assertAlmostEqual(s.area(), side * side)
+        expected = 25.0
+        self.assertAlmostEqual(s.area(), expected)
 
 
 class TestAllThingsShape(unittest.TestCase):

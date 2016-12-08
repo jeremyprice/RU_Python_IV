@@ -28,13 +28,13 @@ def print_args(*args, **kwargs):
     if len(args) > 0:
         print("Positional arguments")
         for (i, arg) in enumerate(args):
-            print(("{}: {}".format(i, arg)))
+            print("{}: {}".format(i, arg))
     else:
         print("No Positional arguments")
     if len(kwargs) > 0:
         print("Keyword arguments")
         for (key, val) in kwargs.items():
-            print(("{}: {}".format(key, val)))
+            print("{}: {}".format(key, val))
     else:
         print("No Keyword arguments")
 
@@ -58,7 +58,7 @@ args_to_kwargs("bob")
 
 def validate(*args):
     for arg in args:
-        if not isinstance(arg, int):
+        if not issubclass(arg, int):
             raise ValueError("All arguments must be Integers")
         if arg <= 0:
             raise ValueError("All arguments must be > 0")

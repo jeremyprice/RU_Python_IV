@@ -23,7 +23,6 @@ LAB_FLASK Learning Objective: Learn to serve RESTful APIs using the Flask librar
 """
 
 import datetime
-
 from flask import Flask
 
 

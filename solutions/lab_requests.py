@@ -30,7 +30,6 @@ LAB_REQUESTS Learning Objective: Learn to interact with RESTful APIs using reque
 """
 
 import sys
-
 import requests
 
 
