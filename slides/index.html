@@ -119,11 +119,11 @@ git clone https://github.com/jeremyprice/RU_Python_IV</code></pre></div></div></
 
 <p> </p>
 </div></div>
-<div class="sl-block" data-block-type="code" data-block-id="2d6f41ead025e714270875e950bb5737" style="min-width: 30px; min-height: 30px; width: 470px; height: 288px; left: 245px; top: 401px;"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="bash"><code>#install on CentOS 7
+<div class="sl-block" data-block-type="code" data-block-id="2d6f41ead025e714270875e950bb5737" style="min-width: 30px; min-height: 30px; width: 569px; height: 288px; left: 231px; top: 402px;"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="bash"><code>#install on CentOS 7
 sudo yum install -y python-virtualenv
 
 # create a new virtual env
-virtualenv &lt;directory_name&gt;
+virtualenv -p python3 &lt;directory_name&gt;
 
 # work in the new virtual env
 cd &lt;directory_name&gt;
@@ -452,7 +452,7 @@ st = {x for x in range(1,4)}</code></pre></div></div></section><section data-id=
 	<p>subprocess.Popen class is the most full-featured interface</p>
 	</li>
 	<li>
-	<p>subprocess.call() is the simplest interface</p>
+	<p>subprocess.run() is the simplest interface</p>
 	</li>
 </ul>
 </div></div></section><section data-id="b0f72ac95127e249b781f579d7bd9318"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 10px; height: auto;" data-block-id="ad788fb002b807e1169a303879541273"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
@@ -461,20 +461,21 @@ st = {x for x in range(1,4)}</code></pre></div></div></section><section data-id=
 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 99px; height: auto;" data-block-id="b0812f19601d7950fe4aa03f63445cb4"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
 <ul>
 	<li>
-	<p><span style="color:#FFA07A">call()</span> - spawn a subprocess, wait for completion, return exit code</p>
-	</li>
-	<li>
-	<p><span style="color:#FFA07A">check_call()</span> - same as call(), but <span style="color:#B22222"><span style="text-align:left">raises CalledProcessError exception if exit code isn't 0</span></span></p>
-	</li>
-	<li>
-	<p><span style="color:rgb(255, 160, 122); text-align:left">check_output()</span><span style="color:rgb(255, 255, 255); text-align:left"> </span><span style="text-align:left">- same as call(), but </span><span style="text-align:left">returns process output as a byte string</span></p>
+	<p><span style="color:#FFA07A">run()</span> - spawn a subprocess, wait for completion, return an object representing the process</p>
+
+	<ul>
+		<li>args, returncode, stdout, stderr</li>
+		<li>
+		<p><span style="color:#B22222"><span style="text-align:left">raises CalledProcessError exception if exit code isn't 0</span></span></p>
+		</li>
+	</ul>
 	</li>
 	<li>
 	<p>Caveats:</p>
 
 	<ul>
 		<li>
-		<p>Don’t use pipes for stdout or stderr</p>
+		<p>Be careful using pipes for stdout or stderr</p>
 		</li>
 		<li>
 		<p>Only use shell=True if need shell features</p>
@@ -483,12 +484,10 @@ st = {x for x in range(1,4)}</code></pre></div></div></section><section data-id=
 	</li>
 </ul>
 </div></div>
-<div class="sl-block" data-block-type="code" data-block-id="f26ccae3598c6eda2b4aa5fd42fd039f" style="min-width: 30px; min-height: 30px; width: 907px; height: 155px; left: 27px; top: 495px;"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>subprocess.call(args, *, stdin=None, stdout=None, stderr=None, shell=False)
-
-# examples
-exit_code = subprocess.call(['ls', '-al'])
-exit_code = subprocess.check_call('false')
-proc_output = subprocess.check_output(['ls', '-al'])</code></pre></div></div></section><section data-id="162e50363282fe2ea8e9a695a2110657"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 10px; height: auto;" data-block-id="c0e0668d069f14af92b3017986ba896c"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<div class="sl-block" data-block-type="code" data-block-id="f26ccae3598c6eda2b4aa5fd42fd039f" style="min-width: 30px; min-height: 30px; width: 552px; height: 119px; left: 204px; top: 468px;"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code># examples
+proc = subprocess.run(['ls', '-al'])
+proc = subprocess.run('false')
+</code></pre></div></div></section><section data-id="162e50363282fe2ea8e9a695a2110657"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 10px; height: auto;" data-block-id="c0e0668d069f14af92b3017986ba896c"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
 <h2>Subprocess - Popen</h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="width: 918px; left: 23px; top: 99px; height: auto;" data-block-id="2f01a525fbe5b76aae3277da1009231e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
@@ -2304,7 +2303,7 @@ thing()
 		</div>
 
 		<script>
-			var SLConfig = {"deck": {"id":512444,"slug":"python-iv","title":"Python IV","description":"Course materials for the penultimate class in the software development curriculum: Python IV","visibility":"all","published_at":"2015-10-13T12:15:02.218Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/770c85514148194e5d76b1c135a2859b/thumb.jpg","view_count":157,"user":{"id":105368,"username":"racku","name":"Rackspace University","description":"","thumbnail_url":"https://www.gravatar.com/avatar/4fdd35b37f5a9854774386e628b420fe?s=140\u0026d=https%3A%2F%2Fs3.amazonaws.com%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","paid":true,"pro":true,"lite":false,"team_id":null,"settings":{"id":245,"present_controls":true,"present_upsizing":true,"present_notes":true}},"background_transition":"concave","transition":"default","theme_id":null,"theme_font":"sketch","theme_color":"silver-green","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":false,"rolling_links":false,"center":false,"should_loop":false,"share_notes":false,"slide_number":true,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":1,"data_updated_at":1481119603916,"font_typekit":null,"font_google":null,"notes":{}}};
+			var SLConfig = {"deck": {"id":512444,"slug":"python-iv","title":"Python IV","description":"Course materials for the penultimate class in the software development curriculum: Python IV","visibility":"all","published_at":"2015-10-13T12:15:02.218Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/770c85514148194e5d76b1c135a2859b/thumb.jpg","view_count":163,"user":{"id":105368,"username":"racku","name":"Rackspace University","description":"","thumbnail_url":"https://www.gravatar.com/avatar/4fdd35b37f5a9854774386e628b420fe?s=140\u0026d=https%3A%2F%2Fs3.amazonaws.com%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","paid":true,"pro":true,"lite":false,"team_id":null,"settings":{"id":245,"present_controls":true,"present_upsizing":true,"present_notes":true}},"background_transition":"concave","transition":"default","theme_id":null,"theme_font":"sketch","theme_color":"silver-green","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":false,"rolling_links":false,"center":false,"should_loop":false,"share_notes":false,"slide_number":true,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":1,"data_updated_at":1484058812178,"font_typekit":null,"font_google":null,"notes":{}}};
 			SLConfig.current_user = {
 				name: "Rackspace University",
 				username: "racku",
@@ -2333,6 +2332,7 @@ thing()
 			}
 
 			Reveal.initialize({
+				margin: 0.05,
 				controls: true,
 				progress: true,
 				history: true,

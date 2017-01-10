@@ -10,9 +10,9 @@ LAB subprocess Learning Objective: Familiarization with subprocess
 
 ::
 
- a. Use the subprocess call function to run "ls -l" and print the output.
+ a. Use the subprocess run function to run "ls -l" and print the output.
 
- b. Do the same as a), but suppress stdout.
+ b. Do the same as a), but don't print anything to the screen.
 
  c. Do the same as a), but run the command "/bogus/command". What happens?
 
@@ -25,16 +25,16 @@ LAB subprocess Learning Objective: Familiarization with subprocess
 """
 import subprocess
 print("step a.")
-subprocess.call(["ls", "-l"])
+subprocess.run(["ls", "-l"])
 print('')
 
 print("step b.")
-subprocess.call(["ls", "-l"], stdout=subprocess.DEVNULL)
+subprocess.run(["ls", "-l"], stdout=subprocess.DEVNULL)
 print('')
 
 print("step c.")
 try:
-    subprocess.call(["bogus", "command"])
+    subprocess.run(["bogus", "command"])
 except OSError as e:
     print(e)
 print('')
@@ -50,8 +50,8 @@ print("step e.")
 
 def commander(commands):
     for cmd in commands:
-        output = subprocess.check_output(cmd, shell=True)
-        print("Output from {} :\n{}".format(cmd, output))
+        proc = subprocess.run(cmd, shell=True)
+        print("Output from {} :\n{}".format(cmd, proc.stdout))
 
 
 commands = ["ls -al",

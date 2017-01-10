@@ -10,9 +10,9 @@ LAB subprocess Learning Objective: Familiarization with subprocess
 
 ::
 
- a. Use the subprocess call function to run "ls -l" and print the output.
+ a. Use the subprocess run function to run "ls -l" and print the output.
 
- b. Do the same as a), but suppress stdout.
+ b. Do the same as a), but don't print anything to the screen.
 
  c. Do the same as a), but run the command "/bogus/command". What happens?
 
