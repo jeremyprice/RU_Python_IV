@@ -1,0 +1,12 @@
+---
+  doc1: value1
+  also: value2
+...
+---
+- item1: valuexyz
+- item2: valueforme
+---
+- hybrid: 123
+  second: 99.99
+- other: Hello world
+  mine: Theirs
