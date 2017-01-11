@@ -851,9 +851,218 @@ if __name__ == "__main__":
 	<li>JSON, YAML, Pickle, Shelve, XML, etc.</li>
 </ul>
 </div></div></section><section data-id="8222fe87d9d22da93d33f9717e0edf0b"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="f1c61382a232e515813b48cce34fb1ab"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
-<h2>JSON</h2>
+<h2>YAML</h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="4eba138fe49fecfcf546031bbb70bd60"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>
+	<p>YAML Ain't Markup Language</p>
+	</li>
+	<li>
+	<p>YAML is a human friendly data serialization<br>
+	  standard for all programming languages.</p>
+	</li>
+	<li>
+	<p>Easy for parse for humans and machines</p>
+	</li>
+	<li>
+	<p>Language independent</p>
+	</li>
+</ul>
+</div></div>
+</section><section data-id="f7828ff7ffd3f4556934f39abe00ce46"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="c66a63e3169cdbaa66afc73fad05c903"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>YAML</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="bc6c36029cd314b723e4bc3d9b6a8684"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>
+	<p>YAML, like Python, highly values whitespace</p>
+
+	<ul>
+		<li>
+		<p>Spaces only, no tabs</p>
+		</li>
+	</ul>
+	</li>
+	<li>
+	<p>It aims to capture sequences, scalars, and map data structures</p>
+	</li>
+	<li>
+	<p>Used a lot for config files</p>
+	</li>
+	<li>
+	<p>Native simple data types: integer, float, strings</p>
+	</li>
+</ul>
+</div></div>
+</section><section data-id="d0afc4020f8c2dc1c5a35fbfce84874a"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 6px; height: auto;" data-block-id="3ee18929a848c16c01f312746c56e470"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>YAML Constructs</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 80px; height: auto;" data-block-id="a24d8ff94d94c4be6550da0fb523abce"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<ul>
+	<li>
+	<p>Scalars, maps, sequences</p>
+	</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="e65e0082574fb23ed0750837d6671358" style="min-width: 30px; min-height: 30px; width: 240px; height: 105px; left: 80px; top: 140px;"><div class="sl-block-content" data-highlight-theme="tomorrow" style="z-index: 13;"><pre class="yaml"><code># Sequence of Scalars
+- Mark McGwire
+- Sammy Sosa
+- Ken Griffey</code></pre></div></div>
+<div class="sl-block" data-block-type="code" data-block-id="dce1080ae2c093b4a56ff0e601447a43" style="min-width: 30px; min-height: 30px; width: 361px; height: 207px; left: 519px; top: 140px;"><div class="sl-block-content" data-highlight-theme="tomorrow" style="z-index: 14;"><pre class="yaml"><code># Mapping Scalars to Sequences
+american:
+  - Boston Red Sox
+  - Detroit Tigers
+  - New York Yankees
+national:
+  - New York Mets
+  - Chicago Cubs
+  - Atlanta Braves</code></pre></div></div>
+<div class="sl-block" data-block-type="code" data-block-id="810470e269761895c9984cc1d2984410" style="min-width: 30px; min-height: 30px; width: 371px; height: 150px; left: 80px; top: 280px;"><div class="sl-block-content" data-highlight-theme="tomorrow" style="z-index: 15;"><pre class="yaml"><code># Mapping Scalars to Scalars
+hr:  65    # Home runs
+avg: 0.278 # Batting average
+rbi: 147   # Runs Batted In</code></pre></div></div>
+<div class="sl-block" data-block-type="code" data-block-id="0c1466f59ee8c020c061c27b020baadc" style="min-width: 30px; min-height: 30px; width: 301px; height: 230px; left: 526px; top: 383px;"><div class="sl-block-content" data-highlight-theme="tomorrow" style="z-index: 16;"><pre class="yaml"><code># Sequence of Mappings
+
+-
+  name: Mark McGwire
+  hr:   65
+  avg:  0.278
+-
+  name: Sammy Sosa
+  hr:   63
+  avg:  0.288</code></pre></div></div></section><section data-id="2f9433b1436d05cf19aeb24bef8f8a2a"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="97788f799407a93114db5c09fd32cd83"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>YAML in Python</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="adaff2ee5dde92e24701452531afb0d8"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>Not a stock Python library
+	<ul>
+		<li>
+		<pre>pip install pyyaml</pre>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="41768c24a51cac5386f81f922739f0fd" style="min-width: 30px; min-height: 30px; width: 423px; height: 98px; left: 269px; top: 371px;"><div class="sl-block-content" data-highlight-theme="tomorrow" style="z-index: 12;"><pre class="python"><code># create a python object from yaml txt
+yml_txt = file('myfile.yml', 'r').read()
+py_obj = yaml.load(yml_txt)</code></pre></div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 423px; height: 98px; left: 269px; top: 500px;" data-block-id="825b24a8fb9b2b2d4875e9075ee3492b"><div class="sl-block-content" data-highlight-theme="tomorrow" style="z-index: 14;"><pre class="python"><code># serialize a python object to yaml txt
+yml_txt = yaml.dump(py_obj)
+file('myfile.yml', 'w').write(yml_txt)</code></pre></div></div></section><section data-id="e965cdc807290f58a00044885fe98c39"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 44px; height: auto;" data-block-id="46cbb3dcd8093108fdf8d1da5eb61806"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>YAML to Python</h2>
+</div></div>
+
+<div class="sl-block" data-block-type="code" data-block-id="fdcdea16791abafc75bde97b38b19c4c" style="min-width: 30px; min-height: 30px; width: 229px; height: 86px; left: 48px; top: 167px;"><div class="sl-block-content" data-highlight-theme="tomorrow" style="z-index: 12;"><pre class="yaml"><code>---
+name: Jeremy
+age: unknown
+height: 75
+</code></pre></div></div>
+<div class="sl-block" data-block-type="code" data-block-id="89c1913aac3182760650864cf77d2415" style="min-width: 30px; min-height: 30px; width: 525px; height: 86px; left: 304px; top: 167px;"><div class="sl-block-content" data-highlight-theme="tomorrow" style="z-index: 13;"><pre class="python"><code>{'name': 'Jeremy', 'age', 'unknown', 'height': 75}</code></pre></div></div>
+<div class="sl-block" data-block-type="code" data-block-id="d396fceb89f89adcd706d5a0f79f575a" style="min-width: 30px; min-height: 30px; width: 229px; height: 94px; left: 48px; top: 303px;"><div class="sl-block-content" data-highlight-theme="tomorrow" style="z-index: 14;"><pre class="yaml"><code>---
+- item1
+- item2
+- 999</code></pre></div></div>
+<div class="sl-block" data-block-type="code" data-block-id="c349bcc36a220c36274aae143f68fe2c" style="min-width: 30px; min-height: 30px; width: 525px; height: 94px; left: 304px; top: 303px;"><div class="sl-block-content" data-highlight-theme="tomorrow" style="z-index: 15;"><pre class="yaml"><code>['item1', 'item2', 999]</code></pre></div></div>
+<div class="sl-block" data-block-type="code" data-block-id="b8a315a89a45af408c96ea01da5aa90b" style="min-width: 30px; min-height: 30px; width: 229px; height: 157px; left: 48px; top: 429px;"><div class="sl-block-content" data-highlight-theme="tomorrow" style="z-index: 16;"><pre class="yaml"><code>---
+- id: 111
+  name: bob
+  shell: "/bin/bash"
+- id: 222
+  name: mary
+  shell: "/bin/zsh"</code></pre></div></div>
+<div class="sl-block" data-block-type="code" data-block-id="2be9b789520b5e76401ebf08bd397fd3" style="min-width: 30px; min-height: 30px; width: 517px; height: 157px; left: 312px; top: 429px;"><div class="sl-block-content" data-highlight-theme="tomorrow" style="z-index: 17;"><pre class="yaml"><code>[{'id': 111, 'name': 'bob', 'shell': '/bin/bash'},
+ {'id': 222, 'name': 'mary', 'shell': '/bin/zsh'}]</code></pre></div></div></section><section data-id="6887f4e03ad79be81a11413b9ef6bbc2"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="5fd25a2294974028e3b59094b687fce0"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>YAML Framing</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="3a4212bd30793b8cc54bd9aef355feca"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<ul>
+	<li>--- signifies the start of a YAML document</li>
+	<li>... signifies the end of the YAML document</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="1d7a3086f1bbdabcd05eda18d9320ac7" style="min-width: 30px; min-height: 30px; width: 221px; height: 232px; left: 370px; top: 350px;"><div class="sl-block-content" data-highlight-theme="tomorrow" style="z-index: 13;"><pre class="yaml"><code>---
+- item1
+- item2
+- item3
+...
+---
+another:
+ - 1
+ - 2
+ - 3
+...</code></pre></div></div></section><section data-id="4665a466d42631c367752e21f2523cb4"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="d838b05156be221e31dfffd84d7671c3"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>There is a lot more to YAML</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="6ab5c3506eacfdf8536bc454584439cf"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li><a href="http://www.yaml.org/spec/current.html" target="_blank">http://www.yaml.org/spec/current.html</a></li>
+</ul>
+</div></div></section><section class="has-light-background" data-background-color="#93c47d" data-id="926a44416383bb26d3d3b9d4b70e2db9"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="a92b84003797bbec17e8d9c97840723d"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Lab YAML</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="217cc7414054ab50d218d266cdfc50f6"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>
+<span style="text-align:left">Follow the instructions in:</span>
+	<ul>
+		<li>
+		<pre>lab_yaml.py<span style="color:rgb(255, 255, 255); text-align:left">​</span></pre>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div></div></section><section data-id="719315a56d662b453e3efb417e59430f"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 6px; height: auto;" data-block-id="3700686a66c2c9f7e4aba87fc58d75a6"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>YAML vs. JSON</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="aafa8997b130b907119ddf4ba4dd9110"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>
+	<p>JSON is trivial to generate and parse</p>
+
+	<ul>
+		<li>
+		<p>at the cost of reduced human readability</p>
+		</li>
+	</ul>
+	</li>
+	<li>
+	<p>JSON uses lowest common denominator information model</p>
+
+	<ul>
+		<li>
+		<p>any JSON data can be easily processed by every modern programming environment</p>
+		</li>
+	</ul>
+	</li>
+	<li>
+	<p>YAML designed for human readability and support for serializing arbitrary native data structures.</p>
+	</li>
+	<li>
+	<p>YAML allows for extremely readable files</p>
+
+	<ul>
+		<li>
+		<p>more complex to generate and parse</p>
+		</li>
+	</ul>
+	</li>
+	<li>
+	<p>Uses more than the lowest common denominator data types</p>
+
+	<ul>
+		<li>
+		<p>requires more complex processing when crossing between different programming environments.</p>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div></div>
+</section><section data-id="1ea2682d4e5b3ea1f90d3fa72f7ebe9a"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="f7024c5fd333d1543907b9f86eeceec6"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>JSON</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="256e8b2b0485e64cb7dfe945f1b41cd3"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
 <ul>
 	<li>
 	<p>Javascript Object Notation</p>
@@ -872,7 +1081,7 @@ if __name__ == "__main__":
 	</li>
 </ul>
 </div></div>
-<div class="sl-block" data-block-type="code" data-block-id="800931370d5d072862fc49e3df4c671d" style="min-width: 30px; min-height: 30px; width: 519px; height: 56px; left: 221px; top: 510px;"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="bash"><code>Name/value pair collection (dict in Python)
+<div class="sl-block" data-block-type="code" style="width: 519px; height: 56px; left: 221px; top: 510px;" data-block-id="a9c0c3c7020766b223f97fd4282d23a9"><div class="sl-block-content" style="z-index: 12; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="bash"><code>Name/value pair collection (dict in Python)
 Ordered list of values (list in Python)</code></pre></div></div></section><section data-id="e083069c7d9c03b8877e02c838e7bcf9"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="aebd62350cbaf19e817f078f04919c58"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
 <h2>JSON Details</h2>
 </div></div>
@@ -996,6 +1205,20 @@ None -&gt; null</span></pre>
 	</ul>
 	</li>
 </ul>
+</div></div></section><section class="has-light-background" data-background-color="#93c47d" data-id="21d7a3107872d136b7a884b9b9894137"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="61b0599b8ed04cbb860a9a07831f6e97"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Lab JSON</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="6845e65441a627b7c213006d59a97d18"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>
+<span style="text-align:left">Follow the instructions in:</span>
+	<ul>
+		<li>
+		<pre>lab_json.py<span style="color:rgb(255, 255, 255); text-align:left">​</span></pre>
+		</li>
+	</ul>
+	</li>
+</ul>
 </div></div></section><section data-id="1edbcaf847d5d69f75667adfdeb5fdea"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 51px; height: auto;" data-block-id="881ec559d261971dbea03d8a56a5b69c"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
 <h2>Pickle and Shelve</h2>
 </div></div>
@@ -1024,20 +1247,6 @@ None -&gt; null</span></pre>
 	</li>
 	<li>
 	<p>Opinion: Only use these for interchange within your own app</p>
-	</li>
-</ul>
-</div></div></section><section class="has-light-background" data-background-color="#93c47d" data-id="926a44416383bb26d3d3b9d4b70e2db9"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="a92b84003797bbec17e8d9c97840723d"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
-<h2>Lab JSON</h2>
-</div></div>
-<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="217cc7414054ab50d218d266cdfc50f6"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
-<ul>
-	<li>
-<span style="text-align:left">Follow the instructions in:</span>
-	<ul>
-		<li>
-		<pre>lab_json.py<span style="color:rgb(255, 255, 255); text-align:left">​</span></pre>
-		</li>
-	</ul>
 	</li>
 </ul>
 </div></div></section></section><section class="stack" data-id="94eda4e592232f590e304f54e4781389"><section data-id="1502bb0894f62992e1601c235069b754"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="6000262a20eafb073f737e238b06805d"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
@@ -2303,7 +2512,7 @@ thing()
 		</div>
 
 		<script>
-			var SLConfig = {"deck": {"id":512444,"slug":"python-iv","title":"Python IV","description":"Course materials for the penultimate class in the software development curriculum: Python IV","visibility":"all","published_at":"2015-10-13T12:15:02.218Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/770c85514148194e5d76b1c135a2859b/thumb.jpg","view_count":163,"user":{"id":105368,"username":"racku","name":"Rackspace University","description":"","thumbnail_url":"https://www.gravatar.com/avatar/4fdd35b37f5a9854774386e628b420fe?s=140\u0026d=https%3A%2F%2Fs3.amazonaws.com%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","paid":true,"pro":true,"lite":false,"team_id":null,"settings":{"id":245,"present_controls":true,"present_upsizing":true,"present_notes":true}},"background_transition":"concave","transition":"default","theme_id":null,"theme_font":"sketch","theme_color":"silver-green","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":false,"rolling_links":false,"center":false,"should_loop":false,"share_notes":false,"slide_number":true,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":1,"data_updated_at":1484058812178,"font_typekit":null,"font_google":null,"notes":{}}};
+			var SLConfig = {"deck": {"id":512444,"slug":"python-iv","title":"Python IV","description":"Course materials for the penultimate class in the software development curriculum: Python IV","visibility":"all","published_at":"2015-10-13T12:15:02.218Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/770c85514148194e5d76b1c135a2859b/thumb.jpg","view_count":163,"user":{"id":105368,"username":"racku","name":"Rackspace University","description":"","thumbnail_url":"https://www.gravatar.com/avatar/4fdd35b37f5a9854774386e628b420fe?s=140\u0026d=https%3A%2F%2Fs3.amazonaws.com%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","paid":true,"pro":true,"lite":false,"team_id":null,"settings":{"id":245,"present_controls":true,"present_upsizing":true,"present_notes":true}},"background_transition":"concave","transition":"default","theme_id":null,"theme_font":"sketch","theme_color":"silver-green","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":false,"rolling_links":false,"center":false,"should_loop":false,"share_notes":false,"slide_number":true,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":1,"data_updated_at":1484072119506,"font_typekit":null,"font_google":null,"notes":{}}};
 			SLConfig.current_user = {
 				name: "Rackspace University",
 				username: "racku",
