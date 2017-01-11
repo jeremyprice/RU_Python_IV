@@ -1,0 +1,5 @@
+---
+  thread: false
+  process: true
+  items: 100
+  workers: 5
