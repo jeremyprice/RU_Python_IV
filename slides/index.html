@@ -1557,11 +1557,14 @@ def hello(name=None):
     return render_template('hello.html', name=name)</code></pre></div></div>
 <div class="sl-block" data-block-type="code" data-block-id="1fb0409916d385a828eed05cf2794ab4" style="min-width: 30px; min-height: 30px; width: 484px; height: 184px; left: 240px; top: 490px;"><div class="sl-block-content" style="z-index: 14; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="xml"><code>&lt;!doctype html&gt;
 &lt;title&gt;Hello from Flask&lt;/title&gt;
+&lt;body&gt;
 {% if name %}
   &lt;h1&gt;Hello {{ name }}!&lt;/h1&gt;
 {% else %}
   &lt;h1&gt;Hello World!&lt;/h1&gt;
-{% endif %}</code></pre></div></div></section><section data-id="276f2011f64c190fc961ea91f3ad5287"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="ae12b08a6690b91ad2cc036768122e75"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+{% endif %}
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div></div></section><section data-id="276f2011f64c190fc961ea91f3ad5287"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="ae12b08a6690b91ad2cc036768122e75"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
 <h2>Debug mode</h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="fc0c32d40ac057304e361884079234fa"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
