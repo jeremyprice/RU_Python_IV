@@ -253,7 +253,7 @@ gen = (x**2 for x in range(1,4)) # Not a tuple!</code></pre></div></div></sectio
 </div></div>
 <div class="sl-block" data-block-type="code" data-block-id="82208a2140c376065e7483a87d10a1ac" style="min-width: 30px; min-height: 30px; width: 364px; height: 93px; left: 298px; top: 369px;"><div class="sl-block-content" style="z-index: 13; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="python"><code>lst = [1, "a", 3]
 lst = list()
-lst = [x for x in xrange(5)]</code></pre></div></div></section><section data-id="f6f6722772a9f69eb4352515b9fe6129"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="d40195872fda290df1f1f1f3b76feeb4"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+lst = [x for x in range(5)]</code></pre></div></div></section><section data-id="f6f6722772a9f69eb4352515b9fe6129"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="d40195872fda290df1f1f1f3b76feeb4"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
 <h2>Dictionary Type</h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 144px; height: auto;" data-block-id="40169bf3489037768a8faed168c6f42c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
@@ -891,7 +891,7 @@ if __name__ == "__main__":
 	<p>Used a lot for config files</p>
 	</li>
 	<li>
-	<p>Native simple data types: integer, float, strings</p>
+	<p>Native simple data types: integer, float, strings, booleans</p>
 	</li>
 </ul>
 </div></div>
@@ -959,7 +959,7 @@ name: Jeremy
 age: unknown
 height: 75
 </code></pre></div></div>
-<div class="sl-block" data-block-type="code" data-block-id="89c1913aac3182760650864cf77d2415" style="min-width: 30px; min-height: 30px; width: 525px; height: 86px; left: 304px; top: 167px;"><div class="sl-block-content" data-highlight-theme="tomorrow" style="z-index: 13;"><pre class="python"><code>{'name': 'Jeremy', 'age', 'unknown', 'height': 75}</code></pre></div></div>
+<div class="sl-block" data-block-type="code" data-block-id="89c1913aac3182760650864cf77d2415" style="min-width: 30px; min-height: 30px; width: 525px; height: 86px; left: 304px; top: 167px;"><div class="sl-block-content" data-highlight-theme="tomorrow" style="z-index: 13;"><pre class="python"><code>{'name': 'Jeremy', 'age': 'unknown', 'height': 75}</code></pre></div></div>
 <div class="sl-block" data-block-type="code" data-block-id="d396fceb89f89adcd706d5a0f79f575a" style="min-width: 30px; min-height: 30px; width: 229px; height: 94px; left: 48px; top: 303px;"><div class="sl-block-content" data-highlight-theme="tomorrow" style="z-index: 14;"><pre class="yaml"><code>---
 - item1
 - item2
@@ -1366,7 +1366,7 @@ URLError (subclass of IOError)
 HTTPError (subclass of URLError)</pre>
 	</li>
 	<li>
-	<p>Also takes urllib2.Request objects, useful for including HTTP headers in a dict (or use Request add_header method)</p>
+	<p>Also takes urllib.Request objects, useful for including HTTP headers in a dict (or use Request add_header method)</p>
 	</li>
 	<li>
 	<p>Can handle redirections, HTTP error responses, cookies, proxies, HTTP authentication</p>
@@ -1557,11 +1557,14 @@ def hello(name=None):
     return render_template('hello.html', name=name)</code></pre></div></div>
 <div class="sl-block" data-block-type="code" data-block-id="1fb0409916d385a828eed05cf2794ab4" style="min-width: 30px; min-height: 30px; width: 484px; height: 184px; left: 240px; top: 490px;"><div class="sl-block-content" style="z-index: 14; font-size: 120%;" data-highlight-theme="tomorrow"><pre class="xml"><code>&lt;!doctype html&gt;
 &lt;title&gt;Hello from Flask&lt;/title&gt;
+&lt;body&gt;
 {% if name %}
   &lt;h1&gt;Hello {{ name }}!&lt;/h1&gt;
 {% else %}
   &lt;h1&gt;Hello World!&lt;/h1&gt;
-{% endif %}</code></pre></div></div></section><section data-id="276f2011f64c190fc961ea91f3ad5287"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="ae12b08a6690b91ad2cc036768122e75"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+{% endif %}
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div></div></section><section data-id="276f2011f64c190fc961ea91f3ad5287"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 190px; height: auto;" data-block-id="ae12b08a6690b91ad2cc036768122e75"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
 <h2>Debug mode</h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 264px; height: auto;" data-block-id="fc0c32d40ac057304e361884079234fa"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
