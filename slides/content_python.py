@@ -17,7 +17,8 @@
 import module
 import library
 
-actual_code_here
+if __name__ == '__main__':
+    main()
 
 
 # Objects and methods
@@ -139,3 +140,75 @@ for fname in fnames:
     proc.stdin.write(fname)
     proc.stdin.write(b'\n')
 (stdout, stderr) = proc.communicate()
+
+
+# Threading module example
+import threading
+
+def xyz():
+    for i in range(10):
+        print("thread")
+
+if __name__ == "__main__":
+    th = threading.Thread(target=xyz)
+    th.start()
+    for i in range(10):
+        print("main")
+
+# Threading module more interesting example
+import threading
+import time
+
+def xyz():
+    for i in range(10):
+        print("thread")
+        time.sleep(1.5)
+
+if __name__ == "__main__":
+    th = threading.Thread(target=xyz)
+    th.start()
+    for i in range(10):
+        print("main")
+        time.sleep(1)
+
+
+# Threading module
+import threading
+
+def xyz(to_print=None):
+    for i in range(10):
+        print('Thread {}:{}'.format(i, to_print))
+
+if __name__ == "__main__":
+    th = threading.Thread(target=xyz, args=('printme',))
+    th.start()
+    for i in range(10):
+        print('Main {}'.format(i))
+
+
+# Threading module locks
+import threading
+mylock = threading.Lock()
+with mylock:
+    do_protected_stuff()
+
+mylock.acquire()
+do_protected_stuff()
+mylock.release()
+
+
+# multiprocessing example
+import multiprocessing
+import time
+
+def xyz():
+    for i in range(10):
+        print("process")
+        time.sleep(1.5)
+
+if __name__ == '__main__':
+    proc = multiprocessing.Process(target=xyz)
+    proc.start()
+    for i in range(10):
+        print("main")
+        time.sleep(1)

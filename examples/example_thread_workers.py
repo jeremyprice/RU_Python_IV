@@ -12,7 +12,7 @@ def worker():
     thread_id = threading.current_thread().name
     while True:
         item = q.get()
-        print("Worker %s:" % thread_id, item)
+        print("Worker {}: {}".format(thread_id, item))
         q.task_done()
 
 
@@ -28,3 +28,4 @@ if __name__ == '__main__':
         q.put(item)
 
     q.join()       # block until all tasks are done
+    print("All done")
