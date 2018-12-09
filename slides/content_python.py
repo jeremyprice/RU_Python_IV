@@ -240,3 +240,122 @@ MStSc = {'hr': 65, 'avg': 0.278, 'rbi': 147}
 
 SoM = [{'name': 'Mark McGwire', 'hr': 65, 'avg': 0.278},
        {'name': 'Sammy Sosa', 'hr': 63, 'avg':0.288}]
+
+
+# Python JSON
+import json
+obj = {'a':1, 'b':2}
+j_str = json.dumps(obj)
+
+with open('output.json', 'w') as outfile:
+    json.dump(obj, outfile)
+
+import json
+j_str = '{"a": 1, "b": 2}'
+obj = json.loads(j_str)
+
+with open('output.json', 'r') as infile:
+    obj = json.load(infile)
+
+
+# Pickle and Shelve
+import pickle
+obj = {'a':1, 'b':2}
+p_str = pickle.dumps(obj)
+
+with open('output.pickle', 'wb') as outfile:
+    pickle.dump(obj, outfile)
+
+import pickle
+p_str = b'\x80\x03}q\x00(X\x01\x00\x00\x00aq\x01K\x01X\x01\x00\x00\x00bq\x02K\x02u.'
+obj = pickle.loads(p_str)
+
+with open('output.pickle', 'rb') as infile:
+    obj = pickle.load(infile)
+
+
+# Shelve example
+import shelve
+
+obj1 = {'a':1, 'b':2}
+obj2 = ['a', 1, 100]
+with shelve.open('mydb') as db:
+    db['mydict'] = obj1
+    db['mylist'] = obj2
+
+db = shelve.open('mydb')
+mydict = db['mydict']
+mylist = db['mylist']
+db.close()
+
+
+# urllib GET example
+from urllib import request
+import json
+response = request.urlopen('https://httpbin.org/get')
+txt = response.read().decode()
+j_obj = json.loads(txt)
+hdrs = response.getheaders()
+
+
+# urllib POST example
+from urllib import request, parse
+import json
+data = parse.urlencode({'param1': 1, 'param2': 'value', 'param3': 10000})
+data = data.encode('ascii')
+response = request.urlopen('https://httpbin.org/post', data=data)
+txt = response.read().decode()
+j_obj = json.loads(txt)
+
+
+# urllib PUT example
+from urllib import request, parse
+import json
+data = parse.urlencode({'param1': 1, 'param2': 'value', 'param3': 10000})
+data = data.encode('ascii')
+req = request.Request('https://httpbin.org/put', data=data, method='PUT')
+response = request.urlopen(req)
+txt = response.read().decode()
+j_obj = json.loads(txt)
+
+
+# urllib DELETE example
+from urllib import request, parse
+import json
+data = parse.urlencode({'param1': 1, 'param2': 'value', 'param3': 10000})
+data = data.encode('ascii')
+req = request.Request('https://httpbin.org/delete', data=data, method='DELETE')
+response = request.urlopen(req)
+txt = response.read().decode()
+j_obj = json.loads(txt)
+
+
+# Requests examples
+import requests
+response = requests.get("https://httpbin.org/get")
+stat = response.status_code
+hdrs = response.headers
+txt = response.text
+j_obj = response.json()
+
+import requests
+data = {'user': 'bob', 'pass': 'password'}
+response = requests.post("https://httpbin.org/post", data=data)
+j_obj = response.json()
+
+import requests
+data = {'user': 'bob', 'pass': 'password'}
+response = requests.post("https://httpbin.org/post", json=data)
+j_obj = response.json()
+
+
+# more requests examples
+import requests
+
+r = requests.put('https://httpbin.org/put', data = {'key':'value'})
+r = requests.delete('https://httpbin.org/delete')
+r = requests.head('https://httpbin.org/get')
+r = requests.options('https://httpbin.org/get')
+
+headers = {'X-Auth-Token': '62c0e8d7305c4fd88d3772cde0d06d38'}
+r = requests.get("https://httpbin.org/get", headers=headers)
