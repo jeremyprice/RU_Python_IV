@@ -16,8 +16,8 @@ LAB subprocess Learning Objective: Familiarization with subprocess
 
  c. Do the same as a), but run the command "/bogus/command". What happens?
 
- d. Use subprocess Popen to run "du -h" and output stdout to a pipe. Read the pipe
-    and print the output.
+ d. Use subprocess run function to run "du -h" and output stdout to a file called
+    output.txt
 
  e. Create a new function commander() which takes in a list of commands to execute
     (as strings) on the arg list, then runs them sequentially printing stdout.
@@ -40,8 +40,8 @@ except OSError as e:
 print('')
 
 print("step d.")
-proc = subprocess.run(["du", "-h"], stdout=subprocess.PIPE)
-print(("Output from command:\n{}".format(proc.stdout.decode())))
+with open('output.txt', 'w') as outfile:
+    proc = subprocess.run(["du", "-h"], stdout=outfile)
 print('')
 
 print("step e.")

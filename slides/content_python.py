@@ -76,12 +76,66 @@ import sys
 from random import randint, randrange
 
 
-# Subprocess -  using it
+# Subprocess - overview
+# Python 3.7 version of run()
+subprocess.run(args, *, stdin=None, input=None, stdout=None, stderr=None,
+               capture_output=False, shell=False, cwd=None, timeout=None,
+               check=False, encoding=None, errors=None, text=None, env=None,
+               universal_newlines=None)
+
+
+# Subprocess examples
 import subprocess
 subprocess.run(['ls', '-l'])
+
 subprocess.run(['ls', '-l'], stdout=subprocess.DEVNULL)
+
 proc = subprocess.run(['ls', '-l'], stdout=subprocess.PIPE)
 print(proc.stdout.decode())
 print(proc.returncode)
+
 proc = subprocess.run('ls -l', shell=True, stdout=subprocess.PIPE)
 print(proc.stdout.decode())
+
+# Subprocess - interacting
+import subprocess
+f = open('file_to_less.txt', 'r')
+subprocess.run(['less'], stdin=f)
+
+with open('file_to_less.txt', 'r') as f2:
+    data = f2.read()
+subprocess.run(['less'], input=data.encode())
+
+with open('output.txt', 'w') as f:
+    subprocess.run(['ls', '-l'], stdout=f, stderr=subprocess.STDOUT)
+
+
+# Subprocess Popen - overview
+class subprocess.Popen(args, bufsize=-1, executable=None, stdin=None,
+                       stdout=None, stderr=None, preexec_fn=None,
+                       close_fds=True, shell=False, cwd=None, env=None,
+                       universal_newlines=None, startupinfo=None,
+                       creationflags=0, restore_signals=True,
+                       start_new_session=False, pass_fds=(), *, encoding=None,
+                       errors=None, text=None)
+
+
+# Subprocess Popen - examples
+import subprocess
+outfile = open('zip_results.txt', 'w')
+fnames = b'file1.txt\nfile2.jpg\nfile3.html'
+proc = subprocess.Popen(['zip', '--names-stdin', 'myzip'],
+                        stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+                        stderr=subprocess.PIPE)
+(stdout, stderr) = proc.communicate(input=fnames)
+
+import subprocess
+outfile = open('zip_results.txt', 'w')
+fnames = [b'file1.txt', b'file2.jpg', b'file3.html']
+proc = subprocess.Popen(['zip', '--names-stdin', 'myzip'],
+                        stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+                        stderr=subprocess.PIPE)
+for fname in fnames:
+    proc.stdin.write(fname)
+    proc.stdin.write(b'\n')
+(stdout, stderr) = proc.communicate()
