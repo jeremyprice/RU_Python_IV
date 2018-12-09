@@ -1,0 +1,41 @@
+---
+# simple yaml config file
+verbose: true
+processes: 10
+workers: 100
+items: 55
+...
+---
+# Sequence of Scalars
+- Mark McGwire
+- Sammy Sosa
+- Ken Griffey
+...
+---
+# Mapping Scalars to Scalars
+hr:  65    # Home runs
+avg: 0.278 # Batting average
+rbi: 147   # Runs Batted In
+...
+---
+# Mapping Scalars to Sequences
+american:
+  - Boston Red Sox
+  - Detroit Tigers
+  - New York Yankees
+national:
+  - New York Mets
+  - Chicago Cubs
+  - Atlanta Braves
+...
+---
+# Sequence of Mappings
+-
+  name: Mark McGwire
+  hr:   65
+  avg:  0.278
+-
+  name: Sammy Sosa
+  hr:   63
+  avg:  0.288
+...

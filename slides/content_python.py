@@ -212,3 +212,31 @@ if __name__ == '__main__':
     for i in range(10):
         print("main")
         time.sleep(1)
+
+
+# command line arguments
+import sys
+for idx, arg in enumerate(sys.argv):
+    print('arg {}: {}'.format(idx,arg)
+
+
+# YAML in python
+# create a python object from yaml txt
+yml_txt = open('myfile.yml', 'r').read()
+py_obj = yaml.load(yml_txt)
+
+# serialize a python object to yaml txt
+yml_txt = yaml.dump(py_obj)
+open('myfile.yml', 'w').write(yml_txt)
+
+
+# YAML Constructs in python
+SoS = ['Mark McGwire', 'Sammy Sosa', 'Ken Griffey']
+
+MStSq = {'american': ['Boston Red Sox', 'Detroit Tigers', 'New York Yankees'],
+         'national': ['New York Mets', 'Chicago Cubs', 'Atlanta Braves']}
+
+MStSc = {'hr': 65, 'avg': 0.278, 'rbi': 147}
+
+SoM = [{'name': 'Mark McGwire', 'hr': 65, 'avg': 0.278},
+       {'name': 'Sammy Sosa', 'hr': 63, 'avg':0.288}]
