@@ -27,6 +27,13 @@ a.denominator
 a.bit_length()
 
 
+# Text, bytes, and Unicode in Python 3
+s = 'abc123'
+b = b'abc123'
+b2 = s.encode() # encode string to bytes with default
+s2 = b.decode() # decode bytes to string with default
+
+
 # Tuple type
 tup = (1, "a", 3)
 tup = tuple()
@@ -67,3 +74,14 @@ with open("foo.txt", "r") as infile:
 # Import statement
 import sys
 from random import randint, randrange
+
+
+# Subprocess -  using it
+import subprocess
+subprocess.run(['ls', '-l'])
+subprocess.run(['ls', '-l'], stdout=subprocess.DEVNULL)
+proc = subprocess.run(['ls', '-l'], stdout=subprocess.PIPE)
+print(proc.stdout.decode())
+print(proc.returncode)
+proc = subprocess.run('ls -l', shell=True, stdout=subprocess.PIPE)
+print(proc.stdout.decode())

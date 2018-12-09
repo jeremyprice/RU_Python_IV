@@ -19,7 +19,7 @@ LAB subprocess Learning Objective: Familiarization with subprocess
  d. Use subprocess Popen to run "du -h" and output stdout to a pipe. Read the pipe
     and print the output.
 
- e. Create a new function commander() which takes any number of commands to execute
+ e. Create a new function commander() which takes in a list of commands to execute
     (as strings) on the arg list, then runs them sequentially printing stdout.
 
 """
