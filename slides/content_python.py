@@ -20,6 +20,13 @@ import library
 actual_code_here
 
 
+# Objects and methods
+i = 123
+a.numerator
+a.denominator
+a.bit_length()
+
+
 # Tuple type
 tup = (1, "a", 3)
 tup = tuple()
@@ -43,3 +50,20 @@ dic = {x: chr(x) for x in range(97, 107)}
 st = {1,2,2,3}
 st = set([1,2,2,3])
 st = {x for x in range(1,4)}
+
+
+# Yield statement
+def foo(bar=10):
+    i = 1
+    while i < bar:
+        yield i
+        i = i + 1
+
+# With statement
+with open("foo.txt", "r") as infile:
+    all_txt = infile.read()
+
+
+# Import statement
+import sys
+from random import randint, randrange

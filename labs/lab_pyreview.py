@@ -10,7 +10,7 @@ LAB PyReview Learning Objective: Review the topics from the previous courses
 
 a. Load the data from the two dictionary files in the data directory into two
    list objects.  data/dictionary1.txt data/dictionary2.txt
-   Print the number of entries in each list of words.
+   Print the number of entries in each list of words from the dictionary files.
 
 b. Use sets in Python to merge the two lists of words with no duplications (union).
    Print the number of words in the combined list.
