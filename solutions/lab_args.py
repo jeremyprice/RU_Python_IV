@@ -58,7 +58,7 @@ args_to_kwargs("bob")
 
 def validate(*args):
     for arg in args:
-        if not issubclass(arg, int):
+        if type(arg) != int:
             raise ValueError("All arguments must be Integers")
         if arg <= 0:
             raise ValueError("All arguments must be > 0")

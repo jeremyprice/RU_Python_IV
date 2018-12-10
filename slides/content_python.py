@@ -429,3 +429,43 @@ if __name__ == '__main__':
     app.run()
     # or
     app.run(debug=True)
+
+
+# Function arguments
+def func(arg1, arg2, arg3='abc', arg4=123):
+    pass
+
+
+# Args
+def argless(*args):
+    print(args)
+
+argless()
+argless(1,2,3)
+
+def twoargs(x, y, *args):
+    print(x, y, args)
+
+twoargs(1, 2, 3)
+twoargs('a', 'b')
+
+
+# Args unrolling
+def subtract(x, y):
+    return x - y
+
+subtract(10, 5)
+lst = [10, 5]
+subtract(*lst)
+
+
+# Kwargs
+def kwargless(**kwargs):
+    print(kwargs)
+kwargless()
+kwargless(x=1, y=2)
+
+def subtract(x, y):
+    return x - y
+values = {'x': 10, 'y': 5}
+subtract(**values)
