@@ -10,33 +10,28 @@ LAB_multi Learning Objective: Learn to use the multiprocessing and multithreadin
                               to perform parallel tasks.
 ::
 
- a. Write a command line parser that accepts the following args:
-    -p --process : use multiprocessing
-    -t --thread  : use threading
-    -w --workers : number of workers to spawn
-    -i --items   : number of work items to process
+ a. Create set of three functions that perform the following tasks:
+    1. Capitalize all strings that come through and pass them along
+    2. Count the number of characters in the string and pass along the string and the count as a
+       a tuple (string, count).
+    3. Check to see if the count is the largest seen so far.  If so, send along a tuple with
+       (string, count, True), else send (string, count, False)
 
- b. In the main process, create a Queue for all the workers to use for their input work items,
-    and a Queue for the workers to use to send their processed items back.  Make sure to share
-    the Queue with the workers when they are created.
+ b. Spawn each of those functions into processes (multiprocessing) and wire them together
+    with interprocess communications (queues).
 
- c. Write a worker function.  The workers should take items from the Queue, process them,
-    and put the results in the output queue.
+ c. Run the entire data/dictionary2.txt file through your processing engine, one word at a time.
 
- d. Write a function called create_workers() that creates the workers based on the
-    multiprocessing or threading module as requested by the command line arguments.
+ d. In the main process, monitor the results coming from the last stage in the processing engine.
+    After all the words have been processed, print the longest word that went through the engine.
 
- e. Write the main loop to process command line args, create the Queues, build the workers,
-    start the workers, generate the work tasks, feed the work tasks to the workers, and print the
-    results coming back in the results Queue.
+ e. If you complete the above tasks, go back and do the same tasks using threads (threading).  Don't
+    delete your multiprocessing code, just add the threading code.
 
-Note: add args as necessary to the skeleton functions below
 """
 
 import queue
-import argparse
 import multiprocessing
-import os
 import threading
 import time
 
@@ -44,91 +39,84 @@ import time
 # Don't change this function
 
 
-def work_task(item):
-    """This is the work to be done on each input item"""
-    def is_prime(num):
-        for j in range(2, num):
-            if (num % j) == 0:
-                return False
-        return True
-
-    index = 0
-    check = 0
-    while index < item:
-        check += 1
-        if is_prime(check):
-            index += 1
-    return check
-
-# Don't change this function
-
-
-def generate_work(num_items):
-    # import random
-    return [300]*num_items
-    # return [random.randint(1, 2000) for x in xrange(num_items)]
-
-# Add your code down here
-
-
-def worker(work_q, done_q):
-    """This is the thread/process main function that will implement c. above"""
-    process_id = os.getpid()
-    thread_id = threading.current_thread().name
-    my_id = "{}-{}".format(process_id, thread_id)
+def capitalize(in_q, out_q):
+    """Capitalize each word as it comes in on the input queue"""
     while True:
-        item = work_q.get()
-        result = work_task(item)
-        done_q.put((my_id, result))
-        work_q.task_done()
+        item = in_q.get()
+        cap = item.upper()
+        out_q.put(cap)
+        in_q.task_done()
 
+def count_chars(in_q, out_q):
+    """Count the length of each word as it comes in on the input queue"""
+    while True:
+        item = in_q.get()
+        c = len(item)
+        out_q.put((item, c))
+        in_q.task_done()
 
-def create_workers(num_workers, use_threads, use_processes, work_q, done_q):
-    """This function creates workers of the requested type and wires them into the queues,
-    per step d. above"""
-    if use_threads:
-        object_create = threading.Thread
-    if use_processes:
-        object_create = multiprocessing.Process
-    workers = []
-    for i in range(num_workers):
-        processor = object_create(target=worker, args=[work_q, done_q])
-        processor.daemon = True
-        workers.append(processor)
-    return workers
-
+def largest(in_q, out_q):
+    """Check if this is the largest so far as it comes in on the input queue"""
+    largest_seen = -1
+    while True:
+        item = in_q.get()
+        if item[1] > largest_seen:
+            largest_seen = item[1]
+            output = (*item, True)
+        else:
+            output = (*item, False)
+        out_q.put(output)
+        in_q.task_done()
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    group = parser.add_mutually_exclusive_group(required=True)
-    group.add_argument("-p", "--process", help="Use multiprocessing",
-                       action="store_true", default=False)
-    group.add_argument("-t", "--thread", help="use threading",
-                       action="store_true", default=False)
-    parser.add_argument("-w", "--workers", help="number of workers to spawn",
-                        type=int, default=5)
-    parser.add_argument("-i", "--items", help="number of items to process",
-                        type=int, default=20)
-    config = parser.parse_args()
-
-    if config.thread:
-        work_q = queue.Queue()
-        done_q = queue.Queue()
-    if config.process:
-        work_q = multiprocessing.JoinableQueue(config.items+1)
-        done_q = multiprocessing.JoinableQueue(config.items+1)
-    workers = create_workers(config.workers, config.thread, config.process, work_q, done_q)
-    work = generate_work(config.items)
-    [w.start() for w in workers]
+    # processes
+    qstart = multiprocessing.JoinableQueue()
+    q1to2 = multiprocessing.JoinableQueue()
+    q2to3 = multiprocessing.JoinableQueue()
+    qend = multiprocessing.JoinableQueue()
+    cap_worker = multiprocessing.Process(target=capitalize, args=[qstart, q1to2])
+    cap_worker.daemon = True
+    count_worker = multiprocessing.Process(target=count_chars, args=[q1to2, q2to3])
+    count_worker.daemon = True
+    larg_worker = multiprocessing.Process(target=largest, args=[q2to3, qend])
+    larg_worker.daemon = True
+    with open('data/dictionary2.txt', 'r') as infile:
+        words = infile.read().splitlines()
+    larg_worker.start()
+    count_worker.start()
+    cap_worker.start()
     start = time.time()
-    [work_q.put(w) for w in work]
-    returned_items = 0
-    while returned_items < config.items:
-        result = done_q.get()
-        # print(("Result from {}: {}".format(result[0], result[1])))
-        returned_items += 1
+    [qstart.put(word) for word in words]
+    largest_so_far = None
+    for returned_items in range(len(words)):
+        word, count, large = qend.get()
+        if large:
+            largest_so_far = word
     stop = time.time()
-    elapsed = stop-start
-    print(("Elapsed {} ({} msec)".format(elapsed, elapsed*1000.0)))
-    avg = elapsed / config.items
-    print("Avg. time per work item: {} ({} msec)".format(avg, avg*1000.0))
+    print('(Processes) Largest: {} in {:.2f} sec'.format(largest_so_far, stop-start))
+
+    # threads
+    qstart = queue.Queue()
+    q1to2 = queue.Queue()
+    q2to3 = queue.Queue()
+    qend = queue.Queue()
+    cap_worker = threading.Thread(target=capitalize, args=[qstart, q1to2])
+    cap_worker.daemon = True
+    count_worker = threading.Thread(target=count_chars, args=[q1to2, q2to3])
+    count_worker.daemon = True
+    larg_worker = threading.Thread(target=largest, args=[q2to3, qend])
+    larg_worker.daemon = True
+    with open('data/dictionary2.txt', 'r') as infile:
+        words = infile.read().splitlines()
+    larg_worker.start()
+    count_worker.start()
+    cap_worker.start()
+    start = time.time()
+    [qstart.put(word) for word in words]
+    largest_so_far = None
+    for returned_items in range(len(words)):
+        word, count, large = qend.get()
+        if large:
+            largest_so_far = word
+    stop = time.time()
+    print('(Threads) Largest: {} in {:.2f} sec'.format(largest_so_far, stop-start))
