@@ -75,3 +75,66 @@ try:
     validate("1")
 except ValueError as e:
     print(e)
+
+
+# Objects
+class FakeClass:
+    pass
+
+a = 1
+b = 'hello'
+c = FakeClass()
+print(a, b, c)
+
+
+# "Variables" in python
+x = 1000
+print(id(x))
+y = 'abc'
+print(id(y))
+
+
+# More about binding
+class FakeClass:
+    def __init__(self):
+        self.hello = 100
+a = FakeClass()
+b = a
+print(b.hello)
+a.hello = 'world'
+print(b.hello)
+
+
+# What about the built in types
+x = 123
+print(x.__add__)
+print(x.__add__(321))
+print(dir(x))
+
+
+# Since everything is just names bound to objects
+import datetime
+import imp
+
+print(datetime.datetime.now())
+print(datetime.datetime.max, datetime.datetime.min)
+
+class PartyTime():
+    def __call__(self, *args):
+        imp.reload(datetime)
+        value = datetime.datetime(*args)
+        datetime.datetime = self
+        return value
+
+    def __getattr__(self, value):
+        if value == 'now':
+            return lambda: print('Party Time!')
+        else:
+            imp.reload(datetime)
+            value = getattr(datetime.datetime, value)
+            datetime.datetime = self
+            return value
+
+datetime.datetime = PartyTime()
+print(datetime.datetime.now())
+print(datetime.datetime.max, datetime.datetime.min)

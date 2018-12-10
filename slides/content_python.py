@@ -469,3 +469,123 @@ def subtract(x, y):
     return x - y
 values = {'x': 10, 'y': 5}
 subtract(**values)
+
+
+# Since everything is just names bound to objects
+import datetime
+import importlib
+
+print(datetime.datetime.now())
+print(datetime.datetime.max, datetime.datetime.min)
+
+class PartyTime():
+    def __call__(self, *args):
+        imp.reload(datetime)
+        value = datetime.datetime(*args)
+        datetime.datetime = self
+        return value
+
+    def __getattr__(self, value):
+        if value == 'now':
+            return lambda: print('Party Time!')
+        else:
+            importlib.reload(datetime)
+            value = getattr(datetime.datetime, value)
+            datetime.datetime = self
+            return value
+
+datetime.datetime = PartyTime()
+print(datetime.datetime.now())
+print(datetime.datetime.max, datetime.datetime.min)
+
+
+# Mutable vs. Immutable
+
+x = 'abc'
+print(hex(id(x)))
+x += 'def'
+print(hex(id(x)))
+
+y = 1.23
+print(hex(id(y)))
+y += 2.9
+print(hex(id(y)))
+
+z = ['abc']
+print(hex(id(z)))
+z.append(123)
+print(hex(id(z)))
+
+
+# Tuples are immutable, right?
+class myInt():
+    def __init__(self):
+        self.value = 0
+    def __str__(self):
+        return str(self.value)
+    def __repr__(self):
+        return str(self.value)
+
+x = myInt()
+y = myInt()
+print(x, hex(id(x)))
+print(y, hex(id(y)))
+
+x_tup = (x, y)
+print(x_tup, hex(id(x_tup)), hex(id(x_tup[0])), hex(id(x_tup[1])))
+
+try:
+    x_tup[0] = 999  # exception!
+except TypeError:
+    print('Error as expected')
+
+x.value = 999
+print(x, hex(id(x)))
+print(x_tup, hex(id(x_tup)), hex(id(x_tup[0])), hex(id(x_tup[1])))
+
+
+# Mutable Lists
+def list_widget(in_list):
+    in_list[0] = 10
+
+    in_list = list(range(1, 5))
+    print(in_list)
+    in_list[0] = 10
+    print(in_list)
+
+my_list = [9, 9, 9, 9]
+list_widget(my_list)
+print(my_list)
+
+
+# Even functions are objects
+import dis
+
+def myFunc():
+    x = 1
+    y = 2
+    z = 'abc'
+    return x + y
+
+print(myFunc.__name__)
+print(myFunc.__code__.co_varnames)
+print(myFunc.__code__.co_consts)
+print(myFunc.__code__.co_code)
+
+dis.disassemble(myFunc.__code__)
+
+
+# Let's explore objects
+class myobj:
+    def __init__(self):
+        self.y = 111
+z = myobj()
+# get all the attributes of an object
+dir(z)
+
+# get a specific attribute of an object
+# equivalent to: obj.y
+x = getattr(z, 'y')
+
+# check if an object has an attribute named 'y'
+hasattr(z, 'y')
