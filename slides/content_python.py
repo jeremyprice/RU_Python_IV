@@ -359,3 +359,73 @@ r = requests.options('https://httpbin.org/get')
 
 headers = {'X-Auth-Token': '62c0e8d7305c4fd88d3772cde0d06d38'}
 r = requests.get("https://httpbin.org/get", headers=headers)
+
+
+# Minimal Flask Application
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return '<h1>Hello World!</h1>'
+
+if __name__ == '__main__':
+    app.run()
+
+
+# Routes
+dogs = ['Daisy', 'Sparky', 'Bo']
+@app.route('/dogs')
+def list_dogs():
+    # return the full list of dogs
+    return str(dogs)
+
+@app.route('/user/<username>')
+def show_user_profile(username):
+    # show the user profile for that user
+    return 'User {}'.format(username)
+
+@app.route('/post/<int:post_id>')
+def show_post(post_id):
+    # show the post with the given id, the id is an integer
+    return 'Post {}'.format(post_id)
+
+
+# Routes continued
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        return do_the_login()
+    else:
+        return show_the_login_form()
+
+@app.route('/hello/')
+@app.route('/hello/<name>')
+def hello(name=None):
+    if name is None:
+        return "Hello what's-your-name"
+    else:
+        return "Hello {}".format(name)
+
+
+# Templates
+from flask import render_template
+
+@app.route('/hello/')
+@app.route('/hello/<name>')
+def hello(name=None):
+    return render_template('hello.html', name=name)
+
+
+# Debug mode
+from flask import Flask
+app = Flask(__name__)
+@app.route('/')
+def hello_world():
+    return '<h1>Hello world!</h1>'
+if __name__ == '__main__':
+    # either
+    app.debug = True
+    app.run()
+    # or
+    app.run(debug=True)
