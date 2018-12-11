@@ -10,12 +10,12 @@ LAB_YAML Learning Objective: Learn to parse a YAML file using the PyYAML library
                              and use the information.
 ::
 
- a. Start with your code (or the solution code) from lab_multi.
+ a. Load the data/widget.yml file using the PyYAML library.
 
- b. Replace the command line config parsing with a YAML config parsing function.  Use the only
-    command line argument to the program as the config file to parse.
+ b. Change the value for the width and height of the window element to be 1/2 their current value.
+    Change the size of the text element to be 1/4 it's current value.
+    Change the image alignment element to 'justified'.
 
- c. Create a YAML file that contains the same config items as the old command line.  Verify you
-    can configure the program by changing the config file options.
+ c. Save your updated object to widget_updated.yaml using the PyYAML library.
 
 """
