@@ -3,36 +3,55 @@
 
 """
 
-:mod:`lab_json` -- JSON Navigation
+:mod:`lab_json` -- JSON to YAML and back again
 =========================================
 
 LAB_JSON Learning Objective: Learn to navigate a JSON file and convert to a
-                             python object. Practice file IO using with.
+                             python object.
 ::
 
- a. Load the data/widget.json file using the Python JSON library.
+ a. Create a script that expects 3 command line arguments: -j or -y, json_filename, yaml_filename
+    The first argument is -j or -y based on whether to convert from JSON to YAML (-j) or
+    YAML to JSON (-y)
+    The second argument is the name of the json file to parse or save to
+    The third argument is the name of the yaml file to parse or save to
 
- b. Change the value for the width and height of the window element to be 1/2 their current value.
-    Change the size of the text element to be 1/4 it's current value.
-    Change the image alignment element to 'justified'.
+ b. Based on the -y/-j selection, parse the contents of the input file using the appropriate
+    library.
 
- c. Save your updated object to widget_updated.json using Python's JSON library.
+ c. Using the other library, save the parsed object to the output filename
+
+ d. Test your script using the json and yml files in the data directory.
 
 """
 
 import json
+import yaml
 import sys
 
-# step a
-with open('data/widget.json', 'r') as widget:
-    w_json = json.load(widget)
+if len(sys.argv) < 4:
+    print('Usage: {} -j/-y <json_filename> <yaml_filename>'.format(sys.argv[0]))
+    raise SystemExit(1)
 
-# step b
-w_json['widget']['window']['width'] = int(w_json['widget']['window']['width'] / 2)
-w_json['widget']['window']['height'] = int(w_json['widget']['window']['width'] / 2)
-w_json['widget']['text']['size'] = int(w_json['widget']['text']['size'] / 4)
-w_json['widget']['image']['alignment'] = 'justified'
+option = sys.argv[1]
+if option == '-j':
+    json_to_yaml = True
+elif option == '-y':
+    json_to_yaml = False
+else:
+    print('Invalid option')
+    print('Usage: {} -j/-y <json_filename> <yaml_filename>'.format(sys.argv[0]))
+    raise SystemExit(1)
 
-# step c
-with open('widget_updated.json', 'w') as widget:
-    json.dump(w_json, widget, sort_keys=True, indent=4)
+json_fname = sys.argv[2]
+yaml_fname = sys.argv[3]
+
+if json_to_yaml: # translate json to yaml
+    with open(json_fname, 'r') as infile:
+        json_obj = json.load(infile)
+    with open(yaml_fname, 'w') as outfile:
+        yaml.dump(json_obj, outfile, default_flow_style=False)
+else: # translate yaml to json
+    with open(yaml_fname, 'r') as infile, open(json_fname, 'w') as outfile:
+        yaml_obj = yaml.load(infile)
+        json.dump(yaml_obj, outfile)
