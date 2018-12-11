@@ -1,0 +1,7 @@
+host: localhost
+mongodb: mongodb://localhost:27017/api
+paginate:
+  default: 10
+  max: 50
+port: 3030
+public: ../public/

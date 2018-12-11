@@ -1,0 +1,22 @@
+data:
+- __v: 0
+  _id: 5968fcad629fa84ab65a5247
+  address: 69756 Wendy Junction
+  createdAt: '2017-07-14T17:17:33.010Z'
+  email: donny54@yahoo.com
+  first_name: Sabrina
+  last_name: Mayert
+  phone: 1-406-866-3476 x478
+  updatedAt: '2017-07-14T17:17:33.010Z'
+- __v: 0
+  _id: 5968fcad629fa84ab65a5246
+  address: 42080 Federico Greens
+  createdAt: '2017-07-14T17:17:33.006Z'
+  email: betty_schaefer1@gmail.com
+  first_name: Taryn
+  last_name: Dietrich
+  phone: (197) 679-7020 x98462
+  updatedAt: '2017-07-14T17:17:33.006Z'
+limit: 10
+skip: 0
+total: 25
