@@ -21,5 +21,7 @@ LAB_JSON Learning Objective: Learn to navigate a JSON file and convert to a
  c. Using the other library, save the parsed object to the output filename
 
  d. Test your script using the json and yml files in the data directory.
- 
+
+ e. If you have time, create your own JSON and YAML files and translate between the formats.
+
 """
