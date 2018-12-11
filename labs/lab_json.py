@@ -7,26 +7,15 @@
 =========================================
 
 LAB_JSON Learning Objective: Learn to navigate a JSON file and convert to a
-                             python object. Practice file IO using with.
+                             python object.
 ::
 
- a. Using urllib2, explore the GitHub JSON API.  Load the initial api page, parse it
-    into JSON, and use it for the following tasks.
+ a. Load the data/widget.json file using the Python JSON library.
 
- b. Load the list of emojis from the GitHub API and print a random one from the list.
-    Save the list to emojis.json
+ b. Change the value for the width and height of the window element to be 1/2 their current value.
+    Change the size of the text element to be 1/4 it's current value.
+    Change the image alignment element to 'justified'.
 
- c. Load the information for a GitHub username passed in from the command line, print
-    the number of repositories the user has and what organizations they belong to.
-    Save the user info to {{username}}.json
+ c. Save your updated object to widget_updated.json using Python's JSON library.
 
 """
-
-# see https://docs.python.org/2/library/urllib2.html for more info on urllib2
-# example use of urllib2 to get a web resource:
-import urllib.request
-import urllib.error
-import urllib.parse
-
-data = urllib.request.urlopen("https://api.github.com/")
-print(("{}".format(data.read())))

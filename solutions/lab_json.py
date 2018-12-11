@@ -10,60 +10,29 @@ LAB_JSON Learning Objective: Learn to navigate a JSON file and convert to a
                              python object. Practice file IO using with.
 ::
 
- a. Using urllib2, explore the GitHub JSON API.  Load the initial api page, parse it
-    into JSON, and use it for the following tasks.
+ a. Load the data/widget.json file using the Python JSON library.
 
- b. Load the list of emojis from the GitHub API and print a random one from the list.
-    Save the list to emojis.json
+ b. Change the value for the width and height of the window element to be 1/2 their current value.
+    Change the size of the text element to be 1/4 it's current value.
+    Change the image alignment element to 'justified'.
 
- c. Load the information for a GitHub username passed in from the command line, print
-    the number of repositories the user has and what organizations they belong to.
-    Save the user info to {{username}}.json
+ c. Save your updated object to widget_updated.json using Python's JSON library.
 
 """
 
-# see https://docs.python.org/2/library/urllib2.html for more info on urllib2
-# example use of urllib2 to get a web resource:
 import json
-import random
 import sys
-import urllib.request
-import urllib.error
-import urllib.parse
 
-token = open('github_api_key', 'r').read().strip()
-url_token = "?access_token={}".format(token)
+# step a
+with open('data/widget.json', 'r') as widget:
+    w_json = json.load(widget)
 
-# step a.
-url = "https://api.github.com/" + url_token
-data = urllib.request.urlopen(url)
-data = data.read().decode()
-initial_page = json.loads(data)
-json.dump(initial_page, open('initial.json', 'w'), sort_keys=True, indent=4)
-print("wrote initial page to initial.json")
+# step b
+w_json['widget']['window']['width'] = int(w_json['widget']['window']['width'] / 2)
+w_json['widget']['window']['height'] = int(w_json['widget']['window']['width'] / 2)
+w_json['widget']['text']['size'] = int(w_json['widget']['text']['size'] / 4)
+w_json['widget']['image']['alignment'] = 'justified'
 
-# step b.
-url = initial_page['emojis_url'] + url_token
-data = urllib.request.urlopen(url)
-data = data.read().decode()
-emojis = json.loads(data)
-json.dump(emojis, open('emojis.json', 'w'), sort_keys=True, indent=4)
-print("wrote emojis page to emojies.json")
-rand_emoji = random.choice(list(emojis.keys()))
-print(("A random emoji for you:\n{} - {}".format(rand_emoji, emojis[rand_emoji])))
-
-# step c.
-username = sys.argv[1]
-# get the user url from the initial api info
-url = initial_page["user_url"].replace("{user}", username) + url_token
-data = urllib.request.urlopen(url)
-data = data.read().decode()
-user_info = json.loads(data)
-json.dump(user_info, open('{}.json'.format(username), 'w'), sort_keys=True, indent=4)
-print(("wrote {0} user info page to {0}.json".format(username)))
-print(("{} has {} public repos".format(username, user_info["public_repos"])))
-url = user_info["organizations_url"] + url_token
-data = urllib.request.urlopen(url)
-data = data.read().decode()
-org_info = json.loads(data)
-print(("{} belongs to {} organization(s)".format(username, len(org_info))))
+# step c
+with open('widget_updated.json', 'w') as widget:
+    json.dump(w_json, widget, sort_keys=True, indent=4)
