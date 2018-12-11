@@ -23,9 +23,9 @@ if __name__ == '__main__':
 
 # Objects and methods
 i = 123
-a.numerator
-a.denominator
-a.bit_length()
+i.numerator
+i.denominator
+i.bit_length()
 
 
 # Text, bytes, and Unicode in Python 3
