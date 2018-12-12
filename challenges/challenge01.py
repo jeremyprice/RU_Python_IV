@@ -33,7 +33,7 @@ print(foo())
 #
 #
 # answer:
-# The new list, which is the default value for the argument, gets created at
+# The new list, which is the default value for the argument, gets created
 # when the code is defined/compiled, not when the function is executed.
 # A common way to fix this is:
 

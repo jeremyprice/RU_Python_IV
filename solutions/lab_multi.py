@@ -62,9 +62,9 @@ def largest(in_q, out_q):
         item = in_q.get()
         if item[1] > largest_seen:
             largest_seen = item[1]
-            output = (*item, True)
+            output = (item[0], item[1], True)
         else:
-            output = (*item, False)
+            output = (item[0], item[1], False)
         out_q.put(output)
         in_q.task_done()
 
