@@ -11,9 +11,9 @@ a. Create a decorator that times the function it wraps.  It should start the tim
    elapsed time.
 
 An example of timing a function is as follows:
-start_time = time.time()
+start_time = time.perf_counter()
 do_something()
-stop_time = time.time()
+stop_time = time.perf_counter()
 elapsed = stop_time - start_time
 """
 

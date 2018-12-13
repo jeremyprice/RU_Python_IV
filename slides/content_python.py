@@ -587,3 +587,298 @@ x = getattr(z, 'y')
 
 # check if an object has an attribute named 'y'
 hasattr(z, 'y')
+
+
+# Decorators - we all know about functions
+def func():
+    return "hi"
+
+print(func())
+
+
+# Scope
+info = "hello world"
+
+def localonly():
+    print(locals())
+
+print(globals())
+localonly()
+
+
+# Scope (globals)
+info = "hello world"
+
+def localonly():
+    print(info)
+
+localonly()
+
+
+# scope (global shadowing)
+info = "hello world"
+
+def localonly():
+   info = "inside localonly"
+   print(info)
+
+localonly()
+print(info)
+
+
+# Lifetime of Identifiers
+def localonly():
+   info = "inside localonly"
+   print(info)
+
+localonly()
+print(info)
+
+
+# function parameters and args
+def hello(arg1):
+   print(locals())
+
+hello(1)
+
+
+# Function parameters and args
+def hello(arg1, arg2=0):
+   print(locals())
+
+hello(1)
+hello(1, 3)
+hello()
+hello(arg2=15, arg1=10)
+hello(arg2=99)
+
+
+# Nested functions
+def outer():
+    info = 1
+    def inner():
+        print(info)
+    inner()
+
+outer()
+
+
+# functions are Objects
+def func():
+    pass
+
+print(type(func))
+print(func.__class__)
+print(issubclass(func.__class__, object))
+
+
+# treating functions like the Objects
+def add(x, y):
+    return x + y
+
+def sub(x, y):
+    return x - y
+
+def do_math(operation, x, y):
+    return operation(x, y)
+
+print(do_math(sub, 10, 5))
+print(do_math(add, 2, 2))
+
+
+# what about those weird inner functions
+def outer():
+    def inner():
+        print("inside the inner function")
+    return inner
+
+my_func = outer()
+print(my_func)
+print(my_func())
+
+
+# Closures
+def outside():
+    info = 1
+    def inside():
+        print(info)
+    return inside
+
+my_func = outside()
+my_func.__closure__
+my_func()
+
+
+# even function arguments work with Closures
+def outside(arg1):
+    def inside():
+        print(arg1)
+    return inside
+
+my_func1 = outside(123)
+my_func2 = outside('xyz')
+my_func1()
+my_func2()
+
+
+# decorators (finally!)
+def wrapper(passed_in_func):
+    def inside():
+        print("before passed_in_func")
+        retval = passed_in_func()
+        return retval + 1
+    return inside
+
+def constant():
+    return 2
+
+decorated = wrapper(constant)
+decorated()
+
+
+# what can decorators do?
+def add_two_numbers(x, y):
+    return x + y
+
+def ensure_positivity(func):
+    def inner(x, y):
+        return func(abs(x), abs(y))
+    return inner
+
+add_two_numbers(-10, 10)
+add_two_numbers = ensure_positivity(add_two_numbers)
+add_two_numbers(-10, 10)
+
+
+# Decorator syntax
+def ensure_positivity(func):
+    def inner(x, y):
+        return func(abs(x), abs(y))
+    return inner
+
+@ensure_positivity
+def add_two_numbers(x, y):
+    return x + y
+
+add_two_numbers(-10, 10)
+
+
+# Args and Kwargs in decorators
+def debug_call(func):
+    def inner(*args, **kwargs):
+        print("{} called with {} {}".format(func.func_name, args, kwargs))
+        return func(*args, **kwargs)
+    return inner
+
+@debug_call
+def add(x, y=0):
+    return x + y
+
+print(add(1, 2))
+print(add(y=3, x=5))
+print(add(5))
+
+
+# who are you really?
+def ensure_positivity(func):
+    def inner(x, y):
+        return func(abs(x), abs(y))
+    return inner
+
+@ensure_positivity
+def add_two_numbers(x, y):
+    return x + y
+
+print(add_two_numbers)
+print(add_two_numbers.__name__)
+help(add_two_numbers)
+print(add_two_numbers.__closure__[0].cell_contents.__name__)
+
+
+# Better debug function args
+def debug(func):
+    """Print the function signature and return value"""
+    def wrapper_debug(*args, **kwargs):
+        args_repr = [repr(a) for a in args]
+        kwargs_repr = [f"{k}={v!r}" for k, v in kwargs.items()]
+        signature = ", ".join(args_repr + kwargs_repr)
+        print("Calling {}({})".format(func.__name__, signature))
+        value = func(*args, **kwargs)
+        print("{!r} returned {!r}".format(func.__name__, value))           # 4
+        return value
+    return wrapper_debug
+
+@debug
+def add_two_numbers(x, y):
+    return x + y
+
+add_two_numbers(5, 10)
+add_two_numbers(x=7, y=16)
+
+
+# plugin decorator example
+import random
+PLUGINS = dict()
+
+def register(func):
+    """Register a function as a plug-in"""
+    PLUGINS[func.__name__] = func
+    return func
+
+@register
+def say_hello(name):
+    return "Hello {}".format(name)
+
+@register
+def be_awesome(name):
+    return "Yo {}, together we are the awesomest!".format(name)
+
+def randomly_greet(name):
+    greeter, greeter_func = random.choice(list(PLUGINS.items()))
+    print("Using {!r}".format(greeter))
+    return greeter_func(name)
+
+print(randomly_greet('Jeremy'))
+print(randomly_greet('Not Jeremy'))
+
+
+# walk down memory lane...
+@debug_call
+def add(x, y=0):
+    return x + y
+
+# translates into:
+add = debug_call(add)
+
+
+# Decorators with parameters return ???
+@decorator_with_args(arg)
+def foo(*args, **kwargs):
+    pass
+
+# translates into:
+foo = decorator_with_args(arg)(foo)
+
+
+# Decorator with parameter
+def debug_call(enabled=True):
+    def real_debug_call(func):
+        def inner(*args, **kwargs):
+            if enabled:
+                print("{} called with {} {}".format(func.__name__,
+                                                    args,
+                                                    kwargs))
+            return func(*args, **kwargs)
+        return inner
+    return real_debug_call
+
+@debug_call()
+def add(x, y=0):
+    return x + y
+
+@debug_call(enabled=False)
+def sub(x, y):
+    return x - y
+
+print(add(1, 2))
+print(sub(3, 4))

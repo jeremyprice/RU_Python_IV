@@ -66,3 +66,17 @@ if __name__ == "__main__":
         time_me(nth)
     print(time_me.__closure__)
     print(time_me.__code__.co_freevars)
+
+
+# Unittest module
+import calculator.operations.arithmetic as arith
+import unittest
+
+class TestCalculations(unittest.TestCase):
+    def test_multiply(self):
+        """ test multiply 2 * 2 """
+        testVal = arith.mult(2,2)
+        self.assertEqual(testVal, 4)
+
+if __name__ == "__main__":
+    unittest.main()

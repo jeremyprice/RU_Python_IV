@@ -22,9 +22,9 @@ import time
 
 def function_timer(func):
     def inside(*args, **kwargs):
-        start = time.time()
+        start = time.perf_counter()
         retval = func(*args, **kwargs)
-        stop = time.time()
+        stop = time.perf_counter()
         elapsed = stop - start
         print("Function {} took {} sec ({} msec)".format(func.__name__,
                                                          elapsed,
