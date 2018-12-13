@@ -320,11 +320,9 @@ j_obj = json.loads(txt)
 
 
 # urllib DELETE example
-from urllib import request, parse
+from urllib import request
 import json
-data = parse.urlencode({'param1': 1, 'param2': 'value', 'param3': 10000})
-data = data.encode('ascii')
-req = request.Request('https://httpbin.org/delete', data=data, method='DELETE')
+req = request.Request('https://httpbin.org/delete', method='DELETE')
 response = request.urlopen(req)
 txt = response.read().decode()
 j_obj = json.loads(txt)
