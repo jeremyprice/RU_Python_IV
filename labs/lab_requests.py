@@ -15,17 +15,22 @@ LAB_REQUESTS Learning Objective: Learn to interact with RESTful APIs using reque
     Use HTTP POST to send the `token` you received from the initial page back to the server
     at the next url to load the second page.
 
-    The returned JSON object will be in the form: {'<some_key>': url, 'token': <your_token>}
-    where <some_key> will change for each access and <your_token> will be the same token you
-    sent to the server.
+    The returned JSON object will be in the form: {'next': url, 'token': <your_token>}
+    where the value for the 'next' key is the url you should post to next, and <your_token> will
+    be the same token you sent to the server.
 
-    Your post JSON should be only one element: {'token': <your_token> }
+    Your post JSON should be only one element: {'token': <your_token>}
 
  c. Continue the pattern from step b until you get a JSON response that contains the element
     called `answer`.  Print out the final object you recieved from the server.
 
  Note: the token has a short timeout, so you will have to pull all the steps in a loop,
        otherwise the token will invalidate due to timeout
+
+ d. (Optional) If you want more of a challenge, head to the advanced URL given by the instructor.
+    Note that for this challenging API the JSON objects returned have a random key for the url and
+    the token returned for each response.  You will have to determine how to get the url from the
+    JSON response object.
 
 """
 
