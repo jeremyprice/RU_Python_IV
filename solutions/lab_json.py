@@ -48,12 +48,12 @@ else:
 json_fname = sys.argv[2]
 yaml_fname = sys.argv[3]
 
-if json_to_yaml: # translate json to yaml
+if json_to_yaml:  # translate json to yaml
     with open(json_fname, 'r') as infile:
         json_obj = json.load(infile)
     with open(yaml_fname, 'w') as outfile:
         yaml.dump(json_obj, outfile, default_flow_style=False)
-else: # translate yaml to json
+else:  # translate yaml to json
     with open(yaml_fname, 'r') as infile, open(json_fname, 'w') as outfile:
-        yaml_obj = yaml.load(infile)
+        yaml_obj = yaml.safe_load(infile)
         json.dump(yaml_obj, outfile)

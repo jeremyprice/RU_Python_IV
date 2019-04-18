@@ -23,7 +23,7 @@ import yaml
 
 # step a
 with open('data/widget.yml', 'r') as widget:
-    w_yaml = yaml.load(widget)
+    w_yaml = yaml.safe_load(widget)
 
 # step b
 w_yaml['widget']['window']['width'] = int(w_yaml['widget']['window']['width'] / 2)
