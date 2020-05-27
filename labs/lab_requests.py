@@ -3,10 +3,10 @@
 
 """
 
-:mod:`lab_requests` -- interacting with REST
+:mod:`lab_requests` -- interacting with an HTTP server
 =========================================
 
-LAB_REQUESTS Learning Objective: Learn to interact with RESTful APIs using requests library
+LAB_REQUESTS Learning Objective: Learn to interact with HTTP servers using requests library
 ::
 
  a. Using requests, HTTP GET the initial page from the url given to you by the instructor.

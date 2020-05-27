@@ -3,10 +3,10 @@
 
 """
 
-:mod:`lab_flask` -- serving up REST
+:mod:`lab_flask` -- serving up for HTTP clients
 =========================================
 
-LAB_FLASK Learning Objective: Learn to serve RESTful APIs using the Flask library
+LAB_FLASK Learning Objective: Learn to serve an API using the Flask library
 ::
 
  a. Using Flask create a simple server that serves the following string for the root route ('/'):
